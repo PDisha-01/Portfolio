@@ -20,7 +20,7 @@ import {
   SiScikitlearn,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
-import { techData } from "../data/TechData";
+import { techData } from "../data/techData";
 
 export default function TechArsenal() {
 
