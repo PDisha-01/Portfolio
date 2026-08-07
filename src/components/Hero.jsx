@@ -1,4 +1,5 @@
 import profile from "../assets/images/profile photo.jpeg";
+import resume from "../assets/resume_disha.pdf";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 function Hero() {
@@ -62,17 +63,22 @@ function Hero() {
 
       {/* Buttons */}
 
-      <div className="flex gap-6 mt-10">
+<div className="flex gap-6 mt-10">
 
-        <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-xl font-semibold duration-300">
-          Download Resume
-        </button>
+  <a
+  href={resume}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-xl font-semibold duration-300 inline-block"
+>
+  Download Resume
+</a>
 
-        <button className="border border-blue-500 hover:bg-blue-500 px-8 py-3 rounded-xl duration-300">
-          Contact Me
-        </button>
+  <button className="border border-blue-500 hover:bg-blue-500 px-8 py-3 rounded-xl duration-300">
+    Contact Me
+  </button>
 
-      </div>
+</div>
 
       {/* Icons */}
 

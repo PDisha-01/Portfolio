@@ -6,11 +6,10 @@ import schoolLogo from "../assets/dps.jpeg";
 export default function About() {
   return (
     <>
-    <section className="min-h-screen bg-[#030712] text-gray-100 py-24 px-6 md:px-12 overflow-hidden flex flex-col justify-center">
-      <div className="max-w-7xl mx-auto w-full">
-        
+      <section id="about" className="about-section">
+
         {/* Premium Chapter Pill */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -55,10 +54,10 @@ export default function About() {
             className="lg:col-span-5 bg-white/[0.02] backdrop-blur-xl border border-white/[0.08] p-6 rounded-2xl shadow-2xl relative group overflow-hidden"
           >
             <div className="absolute -inset-px bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+            <h3 className="text-xl font-semibold mb-4 text-[var(--text)] flex items-center gap-2">
               <span className="text-purple-400 font-mono">&lt;/&gt;</span> The Code
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed font-light relative z-10">
+            <p className="text-[var(--text-muted)] text-sm leading-relaxed font-light relative z-10">
               Every project I build represents another chapter in my journey toward becoming an engineer who creates solutions people genuinely enjoy using.
             </p>
           </motion.div>
@@ -304,8 +303,6 @@ Education Journey
           </div>
 
         </motion.div>
-
-      </div>
 
     </section>
     </>

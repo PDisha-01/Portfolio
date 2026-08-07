@@ -1,25 +1,42 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import IntroScreen from "./components/IntroScreen";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Experience from "./components/Experience";
 import TechArsenal from "./components/TechArsenal";
+import Projects from "./components/Projects/Projects";
+import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-function App() {
+import PythonMLLab from "./pages/ProjectDetails/PythonMLLab";
+import ScrollToHash from "./components/ScrollToHash";
+import TrafficOps from "./pages/ProjectDetails/TrafficOps";
 
-  const [showIntro, setShowIntro] = useState(true);
+
+function MainPortfolio() {
+
+  const [showIntro, setShowIntro] = useState(
+    !sessionStorage.getItem("introShown")
+  );
+
+
+  const finishIntro = () => {
+    sessionStorage.setItem("introShown", "true");
+    setShowIntro(false);
+  };
 
 
   if(showIntro){
 
     return(
       <IntroScreen
-        onFinish={()=>setShowIntro(false)}
+        onFinish={finishIntro}
       />
-    )
+    );
 
   }
 
@@ -31,11 +48,52 @@ function App() {
       <Navbar />
 
       <Home />
-      
-<Experience />
-<TechArsenal />
 
+      <Experience />
+
+      <TechArsenal />
+
+      <Projects />
+      <Certifications />
+<Contact />
+<Footer />
     </div>
+
+  );
+
+}
+
+
+function App() {
+
+  return (
+
+    <BrowserRouter>
+    <ScrollToHash />
+
+      <Routes>
+
+        <Route 
+          path="/" 
+          element={<MainPortfolio />} 
+        />
+
+
+        <Route 
+          path="/projects/python-ml-laboratory-suite"
+          element={<PythonMLLab />}
+        />
+<Route
+  path="/projects/trafficops-smart-city-traffic-management-system"
+  element={<TrafficOps />}
+/>
+<Route 
+  path="/certifications" 
+  element={<Certifications />} 
+/>
+      </Routes>
+
+    </BrowserRouter>
 
   );
 
