@@ -1,10 +1,10 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 function BackgroundAnimation() {
 
   const particlesInit = async (main) => {
-    await loadFull(main);
+    await loadSlim(engine);
   };
 
   return (
