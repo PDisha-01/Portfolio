@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import PythonMLLab from "./pages/ProjectDetails/PythonMLLab";
 import ScrollToHash from "./components/ScrollToHash";
 import TrafficOps from "./pages/ProjectDetails/TrafficOps";
+import ZenithProject from "./pages/ProjectDetails/ZenithProject";
 
 
 function MainPortfolio() {
@@ -90,6 +91,10 @@ function App() {
 <Route 
   path="/certifications" 
   element={<Certifications />} 
+/>
+<Route
+  path="/projects/personal-portfolio"
+  element={<ZenithProject />}
 />
       </Routes>
 
