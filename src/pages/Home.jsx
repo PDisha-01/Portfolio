@@ -2,6 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import profile from "../assets/profile photo.jpeg";
+import resume from "../assets/resume_disha.pdf";
 import About from "./about";
 function Home() {
   return (
@@ -62,9 +63,9 @@ function Home() {
   </a>
 
   <a
-  href="/c:\Users\HP\Downloads\resume_disha.pdf"
+  href={resume}
   target="_blank"
-  rel="noreferrer"
+  rel="noopener noreferrer"
 >
   <FaFileAlt />
   <span>Resume</span>
