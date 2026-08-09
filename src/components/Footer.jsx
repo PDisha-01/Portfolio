@@ -1,98 +1,68 @@
 import "./Footer.css";
 
-
 const Footer = () => {
+  return (
+    <footer className="footer">
 
+      {/* Top Line */}
+      <div className="footer-line"></div>
 
-return (
+      {/* Main Footer */}
+      <div className="footer-content">
 
-<footer className="footer">
+        {/* Brand */}
+        <div className="footer-brand">
+          <h2>
+            DISHA mallick<span>.</span>
+          </h2>
 
+          <p>
+            DESIGN • CODE • INNOVATION
+          </p>
+        </div>
 
-<div className="footer-line"></div>
+        {/* Links */}
+        <div className="footer-links">
 
+          <a
+            href="https://github.com/PDisha-01"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GITHUB
+          </a>
 
+          <a
+            href="https://www.linkedin.com/in/dishamallick/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LINKEDIN
+          </a>
 
-<div className="footer-content">
+          <a href="mailto:mallickdisha186@gmail.com">
+            EMAIL
+          </a>
 
+        </div>
 
-<div className="footer-brand">
+      </div>
 
-<h2>
-DISHA mallick
-<span>.</span>
-</h2>
+      {/* Bottom */}
+      <div className="footer-bottom">
 
+        <p>
+          © 2026 Zenith. All rights reserved.
+        </p>
 
-<p>
-AI • ML • FULL STACK DEVELOPER
-</p>
+        <p>
+          Built with love & curiosity.
+        </p>
 
+      </div>
 
-</div>
-
-
-
-
-<div className="footer-links">
-
-
-<a 
-href="https://github.com/"
-target="_blank"
-rel="noopener noreferrer"
->
-GITHUB
-</a>
-
-
-<a 
-href="https://linkedin.com/"
-target="_blank"
-rel="noopener noreferrer"
->
-LINKEDIN
-</a>
-
-
-<a 
-href="mailto:your-email@gmail.com"
->
-EMAIL
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-<div className="footer-bottom">
-
-
-<p>
-© 2026 Disha Mallick. All rights reserved.
-</p>
-
-
-<p>
-Built with React & curiosity
-</p>
-
-
-</div>
-
-
-
-</footer>
-
-);
-
+    </footer>
+  );
 };
-
 
 export default Footer;

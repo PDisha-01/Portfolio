@@ -5,7 +5,7 @@ const contactLinks = [
   {
     title: "EMAIL",
     value: "mallickdisha186@gmail.com",
-    link: "mailto:your-email@gmail.com"
+    link: "mailto:mallickdisha186@gmail.com"
   },
 
   {
@@ -17,7 +17,7 @@ const contactLinks = [
   {
   title: "LINKEDIN",
   value: "linkedin.com/in/disha-mallick",
-  link: "https://www.linkedin.com/in/disha-mallick/"
+  link: "https://www.linkedin.com/in/dishamallick/"
 },
 
   {
