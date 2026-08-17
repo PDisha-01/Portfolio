@@ -103,15 +103,15 @@ function Navbar() {
      THEME
   ========================= */
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.add("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+ useEffect(() => {
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+}, [darkMode]);
 
   /* =========================
      SEARCH
@@ -178,7 +178,7 @@ function Navbar() {
             shrink-0
           "
         >
-          ZENITH
+          DM
         </a>
 
 

@@ -3,28 +3,9 @@ import ExperienceCard from "./ExperienceCard";
 
 import aicteLogo from "../assets/aicte.jpeg";
 import downloadLogo from "../assets/download.png";
-import bitmesraLogo from "../assets/bitmesra.jpeg";
-import robonixLoge from "../assets/robonix.jpeg"; // add when you have it 
 import nssLogo from "../assets/nss.png";
 
-//import { techData } from "../data/techData";
-
 const experiences = [
-  {
-    logo: robonixLoge,
-    company: "Robonixx Club",
-    role: "Event Management Head",
-    duration: "Aug 2026 - present (on-site)",
-    location: "Bengal college of Engineering & Technology, Durgapur, West Bengal, India",
-    domain: "Robotics & AI",
-    project: "Event management and robotics initiatives",
-    toolkit: [
-        "Arduino UNO",
-    ],
-    goal:
-      "Leading teams and large-scale events."
-  },
-
   {
     logo: aicteLogo,
     company: "EDUSKILLS powered by AICTE",
@@ -46,24 +27,6 @@ const experiences = [
   },
 
   {
-    logo: bitmesraLogo,
-    company: "BIT Mesra foundation",
-    role: "Techfest'25 participant",
-    duration: "Sep 2025, 7th & 8th (on-site)",
-    location: "BIT Mesra, Ranchi, Jharkhand, India",
-    domain: "Python & AI",
-    project: "TrafficOps+ - safer & greener city traffic playbook.",
-    toolkit: [
-      "YOLOv8",
-      "OpenCV",
-      "Streamlit",
-      "Python",
-    ],
-    goal:
-      "AI based emergency vehicle and traffic monitoring system designed to real-time video analysis ans vehicle classification.",
-  },
-
-  {
     logo: downloadLogo,
     company: "Steel India Authority Limited",
     role: "Vocational Trainee (internship)",
@@ -79,208 +42,464 @@ const experiences = [
     ],
     goal:
       "Built a foundational understanding of python and machine-learning.",
-  }
+  },
 ];
 
 export default function Experience() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] px-6 py-24 md:px-10 lg:px-16">
-      {/* ================= Background ================= */}
+    <section
+      className="
+        portfolio-section
+        relative
+        overflow-hidden
+        px-6
+        py-24
+        md:px-10
+        lg:px-16
+
+        bg-slate-50
+        text-slate-900
+
+        dark:bg-[#050816]
+        dark:text-white
+
+        transition-colors
+        duration-500
+      "
+    >
+
+      {/* =========================================
+          BACKGROUND GLOWS
+      ========================================= */}
 
       {/* Cyan Glow */}
-      <div className="absolute -top-40 -left-32 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+
+      <div
+        className="
+          absolute
+          -top-40
+          -left-32
+          w-96
+          h-96
+          rounded-full
+          bg-cyan-400/10
+          dark:bg-cyan-400/10
+          blur-[120px]
+          pointer-events-none
+        "
+      />
 
       {/* Purple Glow */}
-      <div className="absolute bottom-0 -right-32 w-[420px] h-[420px] rounded-full bg-purple-500/10 blur-[150px]" />
 
-      {/* Blueprint Grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="
+          absolute
+          bottom-0
+          -right-32
+          w-[420px]
+          h-[420px]
+          rounded-full
+          bg-purple-400/10
+          dark:bg-purple-500/10
+          blur-[150px]
+          pointer-events-none
+        "
+      />
+
+      {/* =========================================
+          BLUEPRINT GRID
+      ========================================= */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          pointer-events-none
+          opacity-[0.035]
+          dark:opacity-[0.04]
+        "
         style={{
           backgroundImage: `
-            linear-gradient(to right, white 1px, transparent 1px),
-            linear-gradient(to bottom, white 1px, transparent 1px)
+            linear-gradient(
+              to right,
+              currentColor 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              to bottom,
+              currentColor 1px,
+              transparent 1px
+            )
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
-      {/* ================= Content ================= */}
+      {/* =========================================
+          CONTENT
+      ========================================= */}
 
       <div className="relative max-w-7xl mx-auto">
 
-        {/* Chapter Pill */}
+        {/* =========================================
+            CHAPTER PILL
+        ========================================= */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/10"
-        >
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          className="
+            inline-flex
+            items-center
+            gap-2
+            px-4
+            py-2
+            rounded-full
 
-          <span className="text-xs uppercase tracking-[4px] font-mono text-cyan-400">
+            border
+            border-cyan-500/20
+            bg-cyan-500/10
+
+            shadow-[0_0_25px_rgba(34,211,238,0.08)]
+          "
+        >
+          <span
+            className="
+              w-2
+              h-2
+              rounded-full
+              bg-cyan-400
+              animate-pulse
+              shadow-[0_0_10px_#22d3ee]
+            "
+          />
+
+          <span
+            className="
+              text-xs
+              uppercase
+              tracking-[4px]
+              font-mono
+              font-semibold
+              text-cyan-600
+              dark:text-cyan-400
+            "
+          >
             Chapter • 02
           </span>
         </motion.div>
 
-        {/* Heading */}
+
+        {/* =========================================
+            MAIN HEADING
+        ========================================= */}
 
         <motion.h2
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.8 }}
+          transition={{
+            delay: 0.15,
+            duration: 0.8,
+          }}
           viewport={{ once: true }}
-          className="mt-10 text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent"
+          className="
+            mt-10
+            text-5xl
+            md:text-6xl
+            font-extrabold
+            tracking-tight
+
+            bg-gradient-to-r
+            from-slate-900
+            via-slate-700
+            to-slate-400
+
+            dark:from-white
+            dark:via-gray-200
+            dark:to-gray-500
+
+            bg-clip-text
+            text-transparent
+          "
         >
           Blueprint of an Engineer
         </motion.h2>
 
-        {/* Subtitle */}
+
+        {/* =========================================
+            SUBTITLE
+        ========================================= */}
 
         <motion.p
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+          }}
           viewport={{ once: true }}
-          className="mt-8 max-w-3xl text-lg leading-8 text-gray-400"
+          className="
+            mt-8
+            max-w-3xl
+            text-lg
+            leading-8
+
+            text-slate-600
+            dark:text-gray-400
+
+            transition-colors
+            duration-500
+          "
         >
-          Every internship, collaboration, and engineering challenge has added
-          a new layer to my journey—shaping how I think, build, and solve
-          real-world problems through technology.So, here comes a glimpse of few experiences 
-          of working with different companies, mentors and talented teams ofc. 
+          Every internship, collaboration, and engineering challenge has
+          added a new layer to my journey—shaping how I think, build, and
+          solve real-world problems through technology. Here's a glimpse of
+          my experience working with different companies, mentors, and
+          talented teams.
         </motion.p>
 
-        {/* Divider */}
+
+        {/* =========================================
+            DIVIDER
+        ========================================= */}
 
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 1,
+          }}
           viewport={{ once: true }}
-          className="origin-left mt-16 h-px bg-gradient-to-r from-cyan-500 via-purple-500 to-transparent"
+          className="
+            origin-left
+            mt-16
+            h-px
+            bg-gradient-to-r
+            from-cyan-500
+            via-purple-500
+            to-transparent
+          "
         />
 
-        {/* Placeholder */}
 
-        <div className="relative mt-24 pb-20">
+        {/* =========================================
+            EXPERIENCE CARDS
+        ========================================= */}
 
-  {/* Main Vertical Line */}
-  <motion.div
-  initial={{ scaleY: 0 }}
-  whileInView={{ scaleY: 1 }}
-  transition={{ duration: 2 }}
-  viewport={{ once: true }}
-  style={{ transformOrigin: "top" }}
-  className="
-    absolute
-    left-[76px]
-    top-[34px]
-    h-[2250px]
-    w-[2px]
-    bg-gradient-to-b
-    from-cyan-400
-    via-purple-500
-    to-cyan-400
-    z-0
-  "
-/>
+        <div className="mt-16 pb-16">
 
-  
-  <div className="mt-10">
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-2
+              gap-6
+            "
+          >
 
-  {experiences.map((exp, index) => (
+            {experiences.map((exp, index) => (
 
-    <div
-  key={index}
-  className={`relative mb-16 flex
-  ${
-    index % 2 === 0
-      ? "justify-start md:pl-64 pl-4"
-      : "justify-end md:pr-24 pr-4"
-  }`}
->
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.2,
+                }}
+                className="relative"
+              >
+                <ExperienceCard {...exp} />
+              </motion.div>
 
-      {/* Timeline Dot */}
-      <div className="absolute left-16 top-8 w-6 h-6 rounded-full bg-cyan-400 shadow-[0_0_25px_#22d3ee]" />
+            ))}
 
-      {/* Connector */}
-      {index % 2 === 0 ? (
+          </div>
 
-        <div className="absolute left-[88px] top-[43px] w-44 h-[2px] bg-cyan-400" />
 
-      ) : (
+          {/* =========================================
+              COMMUNITY ENGAGEMENT
+          ========================================= */}
 
-       <div className="absolute right-[490px] top-[43px] w-[705px] h-[2px] bg-cyan-400" />
+          <motion.section
+            className="
+              community-section
+              mt-24
+            "
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+          >
 
-      )}
+            {/* Community Heading */}
 
-      <ExperienceCard {...exp} />
+            <div className="community-heading">
 
-    </div>
+              <span className="heading-line" />
 
-  ))}
+              <h2
+                className="
+                  text-center
+                  font-bold
+                  tracking-[3px]
 
-  {/* ==========================================
-   Community Engagement
-========================================== */}
+                  text-slate-800
+                  dark:text-white
 
-<motion.section
-  className="community-section"
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.3 }}
-  transition={{ duration: 0.8 }}
->
+                  transition-colors
+                  duration-500
+                "
+              >
+                ✦ COMMUNITY ENGAGEMENT ✦
+              </h2>
 
-  <div className="community-heading">
-    <span className="heading-line"></span>
+              <span className="heading-line" />
 
-    <h2>✦ COMMUNITY ENGAGEMENT ✦</h2>
+            </div>
 
-    <span className="heading-line"></span>
-  </div>
 
-  <div className="nss-card">
+            {/* NSS Card */}
 
-    <div className="nss-content">
+            <div
+              className="
+                nss-card
 
-     <div className="nss-title">
-  <img src={nssLogo} alt="NSS Logo" className="nss-logo" />
+                mt-8
 
-  <h3>National Service Scheme (NSS) Volunteer</h3>
-</div>
-      <ul>
+                bg-white/70
+                dark:bg-white/[0.035]
 
-       <li>
-       • Dedicated volunteer contributing to community service over the nation.</li>
-      
-       <li>• social awareness, and outreach initiatives through NSS.</li>
-    
-        <li>
-         • Participated in community welfare and awareness campaigns.
-        </li>
+                border
+                border-slate-200
+                dark:border-white/10
 
-        <li>
-         • Worked collaboratively with fellow volunteers to organize impactful events.
-        </li>
+                backdrop-blur-xl
 
-        <li>
-         • Developed leadership, teamwork, communication, and social responsibility.
-        </li>
+                shadow-xl
+                dark:shadow-none
 
-      </ul>
+                transition-all
+                duration-500
+              "
+            >
 
-    </div>
+              <div className="nss-content">
 
-  </div>
+                {/* NSS Title */}
 
-</motion.section>
+                <div
+                  className="
+                    nss-title
+                    flex
+                    items-center
+                    gap-4
+                  "
+                >
 
-    </div>
-    </div>
-    </div>
+                  <img
+                    src={nssLogo}
+                    alt="NSS Logo"
+                    className="
+                      nss-logo
+                      w-14
+                      h-14
+                      object-contain
+                    "
+                  />
+
+                  <h3
+                    className="
+                      font-bold
+                      text-lg
+                      md:text-xl
+
+                      text-slate-900
+                      dark:text-white
+
+                      transition-colors
+                      duration-500
+                    "
+                  >
+                    National Service Scheme (NSS) Volunteer
+                  </h3>
+
+                </div>
+
+
+                {/* NSS Details */}
+
+                <ul
+                  className="
+                    mt-6
+                    space-y-3
+
+                    text-sm
+                    md:text-base
+
+                    text-slate-600
+                    dark:text-gray-400
+
+                    leading-7
+                  "
+                >
+
+                  <li>
+                    • Dedicated volunteer contributing to community
+                    service and outreach initiatives.
+                  </li>
+
+                  <li>
+                    • Participated in social awareness and community
+                    welfare campaigns.
+                  </li>
+
+                  <li>
+                    • Worked with fellow volunteers to organize
+                    impactful events.
+                  </li>
+
+                  <li>
+                    • Developed leadership, teamwork, communication,
+                    and social responsibility.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </motion.section>
+
+        </div>
+
+      </div>
+
     </section>
-    );
-  }
+  );
+}

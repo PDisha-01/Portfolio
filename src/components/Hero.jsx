@@ -1,135 +1,194 @@
-import profile from "../assets/images/profile photo.jpeg";
-import resume from "../assets/resume_disha.pdf";
+import heroPhoto from "../assets/hero photo.jpeg";
+import resume from "../assets/disha_resume.pdf";
+
 import { TypeAnimation } from "react-type-animation";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowDown,
+} from "react-icons/fa";
+
 function Hero() {
   return (
-    <section
-  id="home"
-  className="relative min-h-screen overflow-hidden bg-[#020617] text-white flex items-center px-8 md:px-16 lg:px-24"
->
+    <section id="home" className="hero-section">
 
-  {/* Background Glow */}
-  <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[150px]"></div>
+      {/* =========================
+          BACKGROUND GLOW
+      ========================== */}
 
-  <div className="absolute bottom-0 -right-40 w-[500px] h-[500px] rounded-full bg-purple-600/20 blur-[150px]"></div>
+      <div className="hero-glow hero-glow-one"></div>
+      <div className="hero-glow hero-glow-two"></div>
 
-  {/* Grid */}
-  <div
-    className="absolute inset-0 opacity-10"
-    style={{
-      backgroundImage: `
-      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
-      `,
-      backgroundSize: "40px 40px",
-    }}
-  ></div>
 
-  {/* Content */}
-  <div className="relative z-10 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+      {/* =========================
+          GRID BACKGROUND
+      ========================== */}
 
-    {/* Left */}
-    <div className="max-w-2xl">
+      <div className="hero-grid"></div>
 
-      <p className="text-blue-400 text-xl mb-4">
-        
-      </p>
 
-     
+      {/* =========================
+          HERO CONTENT
+      ========================== */}
 
-      <h1 className="text-5xl md:text-7xl font-bold font-[Gradient] leading-tight">
-  Disha
-  <span className="text-blue-500"> Mallick</span>
-</h1>
+      <div className="hero-container">
 
-<div className="mt-6 text-xl md:text-2xl font-semibold text-purple-400">
-  <TypeAnimation
-    sequence={[
-      "Software Engineer",
-      1000,
-      "AI/ML Enthusiast",
-      1000,
-      "Full Stack Developer",
-      1000,
-    ]}
-  />
-</div>
-      <p className="mt-8 text-gray-300 leading-8 italic text-lg">
-        I build modern web applications and AI-powered solutions using
-        React, Python, Flask and Machine Learning. Passionate about solving
-        real-world problems through technology.
-      </p>
+        {/* =========================
+            LEFT CONTENT
+        ========================== */}
 
-      {/* Buttons */}
+        <div className="hero-content">
 
-<div className="flex gap-6 mt-10">
+          <span className="hero-small-text">
+            HELLO, I'M
+          </span>
 
-  <a
-  href={resume}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-xl font-semibold duration-300 inline-block"
->
-  Download Resume
-</a>
 
-  <button className="border border-blue-500 hover:bg-blue-500 px-8 py-3 rounded-xl duration-300">
-    Contact Me
-  </button>
+          <h1 className="hero-name">
+            Disha
+            <span> Mallick</span>
+          </h1>
 
-</div>
 
-      {/* Icons */}
+          {/* Typing Animation */}
 
-      <div className="flex gap-8 mt-10 text-3xl">
+          <div className="hero-role">
 
-        <a
-          href="https://github.com/PDisha-01"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-blue-400 duration-300"
-        >
-          <FaGithub />
-        </a>
+            <TypeAnimation
+              sequence={[
+                "AI/ML Enthusiast",
+                1200,
+                "Full Stack Developer",
+                1200,
+              ]}
+              speed={50}
+              repeat={Infinity}
+            />
 
-        <a
-          href="https://www.linkedin.com/in/dishamallick"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-blue-400 duration-300"
-        >
-          <FaLinkedin />
-        </a>
+          </div>
 
-        <a
-          href="mailto:mallickdisha186@gmail.com"
-          className="hover:text-blue-400 duration-300"
-        >
-          <FaEnvelope />
-        </a>
+
+          {/* Description */}
+
+          <p className="hero-description">
+            I build modern web applications and AI-powered solutions using
+            React, Python, Flask and Machine Learning. Passionate about solving
+            real-world problems through technology.
+          </p>
+
+
+          {/* =========================
+              BUTTONS
+          ========================== */}
+
+          <div className="hero-buttons">
+
+            <a
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-btn hero-btn-primary"
+            >
+              Download Resume
+            </a>
+
+
+            <a
+              href="#contact"
+              className="hero-btn hero-btn-outline"
+            >
+              Contact Me
+            </a>
+
+          </div>
+
+
+          {/* =========================
+              SOCIAL ICONS
+          ========================== */}
+
+          <div className="hero-socials">
+
+            <a
+              href="https://github.com/PDisha-01"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/dishamallick"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+
+
+            <a
+              href="mailto:mallickdisha186@gmail.com"
+              aria-label="Email"
+            >
+              <FaEnvelope />
+            </a>
+
+          </div>
+
+        </div>
+
+
+        {/* =========================
+            RIGHT IMAGE
+        ========================== */}
+
+        <div className="hero-image-wrapper">
+
+          {/* Outer glow */}
+
+          <div className="hero-image-glow"></div>
+
+
+          {/* Decorative rings */}
+
+          <div className="hero-ring hero-ring-one"></div>
+          <div className="hero-ring hero-ring-two"></div>
+
+
+          {/* Image */}
+
+          <div className="hero-image-box">
+
+            <img
+              src={heroPhoto}
+              alt="Disha Mallick"
+              className="hero-image"
+            />
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
 
-    {/* Right */}
+      {/* =========================
+          SCROLL INDICATOR
+      ========================== */}
 
-    <div className="relative">
+      <a href="#about" className="hero-scroll">
 
-      <div className="absolute inset-0 rounded-full bg-blue-500 blur-3xl opacity-30"></div>
+        <span>SCROLL</span>
 
-      <img
-        src={profile}
-        alt="Disha Mallick"
-        className="relative w-80 h-80 md:w-[420px] md:h-[420px] rounded-full object-cover border-4 border-blue-500 shadow-[0_0_60px_rgba(59,130,246,0.6)] float-animation"
-      />
+        <FaArrowDown />
 
-    </div>
+      </a>
 
-  </div>
-
-</section>
+    </section>
   );
 }
 

@@ -1,6 +1,10 @@
 import "./Certifications.css";
 
 
+/* =========================================================
+   CERTIFICATIONS / ACHIEVEMENTS
+   ========================================================= */
+
 const certifications = [
   {
     id: "01",
@@ -11,7 +15,7 @@ const certifications = [
     skills: [
       "Discipline",
       "Teamwork",
-      "Leadership"
+      "Leadership",
     ],
   },
 
@@ -24,7 +28,7 @@ const certifications = [
     skills: [
       "Photography",
       "Creativity",
-      "Visual Storytelling"
+      "Visual Storytelling",
     ],
   },
 
@@ -37,7 +41,7 @@ const certifications = [
     skills: [
       "Focus",
       "Memory Skills",
-      "Problem Solving"
+      "Problem Solving",
     ],
   },
 
@@ -50,7 +54,7 @@ const certifications = [
     skills: [
       "German Language",
       "Communication",
-      "A1 Level"
+      "A1 Level",
     ],
   },
 
@@ -63,43 +67,78 @@ const certifications = [
     skills: [
       "AWS",
       "Cloud Computing",
-      "Solutions Architecture"
+      "Solutions Architecture",
     ],
   },
 ];
 
-const testimonials = [
-{
-id: " ❝ ",
-name: "Tanay Sinha",
-role: "JSCO, Robonixx Club, @Bcet",
-message:
-"As a fellow member of the club, I have seen her being responsible with patience, integrity & accountability. I have seen her demonstrate perseverance, proffesionalism and genuine committment towards excellence."
-},
 
-{
-id: "❝",
-name: "Ananya Rout",
-role: "Intern from SAIL, Bokaro.",
-message:
-"As a fellow intern at SAIL Bokaro, I had the opportunity to work closely with them and observe their dedication, teamwork, and problem-solving skills. They consistently approached every task with enthusiasm and professionalism, making them a dependable and supportive teammate."
-},
-{
-id: "❝",
-name: "Harshvardhan Raj",
-role: "Btech, final year, @BCET",
-message:
-"Working alongside her has been a rewarding experience. She brings a positive attitude, reliability, and a strong sense of responsibility to every collaboration. Her discipline, creativity, and dedication towards achieving goals demonstrate her ability to work effectively while maintaining professionalism and respect for others."
-},
+/* =========================================================
+   HACKATHONS
+   ========================================================= */
+
+const hackathons = [
+  {
+    id: "01",
+    category: "HACKATHON",
+    title: "PANTHEON TECHFEST",
+    organizer: "BIT MESRA, Ranchi",
+    year: "2025",
+    role: "Participant",
+    project: "Traffic Ops+ : Smart City traffic management system",
+    skills: [
+      "Streamlit",
+      "OpenCV",
+      "YOLOv8",
+      "Python",
+    ],
+  },
+
 ];
-const Certifications = () => {
 
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
+const testimonials = [
+  {
+    id: "❝",
+    name: "Tanay Sinha",
+    role: "JSCO, Robonixx Club, @BCET",
+    message:
+      "As a fellow member of the club, I have seen her being responsible with patience, integrity & accountability. I have seen her demonstrate perseverance, professionalism and genuine commitment towards excellence.",
+  },
+
+  {
+    id: "❝",
+    name: "Ananya Rout",
+    role: "Intern from SAIL, Bokaro.",
+    message:
+      "As a fellow intern at SAIL Bokaro, I had the opportunity to work closely with them and observe their dedication, teamwork, and problem-solving skills. They consistently approached every task with enthusiasm and professionalism, making them a dependable and supportive teammate.",
+  },
+
+  {
+    id: "❝",
+    name: "Harshvardhan Raj",
+    role: "BTech, Final Year, @BCET",
+    message:
+      "Working alongside her has been a rewarding experience. She brings a positive attitude, reliability, and a strong sense of responsibility to every collaboration. Her discipline, creativity, and dedication towards achieving goals demonstrate her ability to work effectively while maintaining professionalism and respect for others.",
+  },
+];
+
+
+const Certifications = () => {
   return (
 
-    <section 
+    <section
       className="certifications"
       id="credentials"
     >
+
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
 
       <div className="cert-header">
 
@@ -107,161 +146,297 @@ const Certifications = () => {
           ACHIEVEMENTS / LEARNING
         </p>
 
-
         <h1>
-          CERTIFICATION
-          <span> ARCHIVE</span>
+          PERSONAL
+          <span> ACHIVEMENTS</span>
         </h1>
-
 
         <div className="cert-line"></div>
 
-
         <p className="cert-desc">
           A collection of professional learning experiences,
-          achievements and verified skill development.
+          achievements, hackathons and verified skill development.
         </p>
 
-
       </div>
 
 
+      {/* =====================================================
+          CREDENTIALS GRID
+      ===================================================== */}
 
-      <div className="cert-list">
-
-
-        {
-          certifications.map((cert)=>(
-
-            <div 
-              className="cert-item"
-              key={cert.id}
-            >
+      <div className="credentials-grid">
 
 
-              <div className="cert-number">
-                {cert.id}
-              </div>
+        {/* ===================================================
+            CERTIFICATIONS
+        =================================================== */}
 
+        <div className="credential-column">
 
+          <div className="credential-column-header">
 
-              <div className="cert-details">
+            <span>
+              01 
+            </span>
 
+            <h2>
+              Certification Archive
+            </h2>
 
-                <p className="cert-category">
-                  {cert.category}
-                </p>
+            <p>
+              Learning experiences, achievements and
+              professional skill development.
+            </p>
 
-
-
-                <h2>
-                  {cert.title}
-                </h2>
-
-
-
-                <div className="cert-meta">
-
-                  <p>
-                    ISSUED BY
-                    <strong>
-                      {cert.issuer}
-                    </strong>
-                  </p>
-
-
-                  <p>
-                    YEAR
-                    <strong>
-                      {cert.year}
-                    </strong>
-                  </p>
-
-
-                </div>
-
-
-
-                <div className="cert-skills">
-
-                  {
-                    cert.skills.map((skill,index)=>(
-                      <span key={index}>
-                        {skill}
-                      </span>
-                    ))
-                  }
-
-                </div>
-
-
-              </div>
-
-
-            </div>
-
-          ))
-        }
-
-
-      </div>
-<div className="testimonial-section">
-
-  <div className="testimonial-header">
-
-    <p>
-      FEEDBACK from Peers
-    </p>
-
-    <h2>
-      What  Other's  Say ~
-    </h2>
-
-  </div>
-
-
-  <div className="testimonial-list">
-
-    {
-      testimonials.map((item)=>(
-        
-        <div 
-          className="testimonial-item"
-          key={item.id}
-        >
-
-          <div className="testimonial-number">
-            {item.id}
           </div>
 
 
-          <div className="testimonial-content">
+          <div className="cert-list">
 
-            <h3>
-              {item.name}
-            </h3>
+            {certifications.map((cert) => (
 
-            <span>
-              {item.role}
-            </span>
+              <div
+                className="cert-item"
+                key={cert.id}
+              >
 
-            <p>
-              "{item.message}"
-            </p>
+                <div className="cert-number">
+                  {cert.id}
+                </div>
+
+
+                <div className="cert-details">
+
+                  <p className="cert-category">
+                    {cert.category}
+                  </p>
+
+
+                  <h2>
+                    {cert.title}
+                  </h2>
+
+
+                  <div className="cert-meta">
+
+                    <p>
+                      ISSUED BY
+                      <strong>
+                        {cert.issuer}
+                      </strong>
+                    </p>
+
+
+                    <p>
+                      YEAR
+                      <strong>
+                        {cert.year}
+                      </strong>
+                    </p>
+
+                  </div>
+
+
+                  <div className="cert-skills">
+
+                    {cert.skills.map((skill, index) => (
+
+                      <span key={index}>
+                        {skill}
+                      </span>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
 
           </div>
 
         </div>
 
-      ))
-    }
 
-  </div>
+        {/* ===================================================
+            HACKATHONS
+        =================================================== */}
 
-</div>
+        <div className="credential-column hackathon-column">
+
+          <div className="credential-column-header">
+
+            <span>
+              02 
+            </span>
+
+            <h2>
+              Hackathon Archive
+            </h2>
+
+            <p>
+              Collaborative problem solving, innovation and
+              project building under real-world challenges.
+            </p>
+
+          </div>
+
+
+          <div className="hackathon-list">
+
+            {hackathons.map((hackathon) => (
+
+              <div
+                className="hackathon-item"
+                key={hackathon.id}
+              >
+
+                <div className="hackathon-number">
+                  {hackathon.id}
+                </div>
+
+
+                <div className="hackathon-details">
+
+                  <p className="hackathon-category">
+                    {hackathon.category}
+                  </p>
+
+
+                  <h2>
+                    {hackathon.title}
+                  </h2>
+
+
+                  <div className="hackathon-meta">
+
+                    <p>
+                      ORGANIZED BY
+                      <strong>
+                        {hackathon.organizer}
+                      </strong>
+                    </p>
+
+
+                    <p>
+                      YEAR
+                      <strong>
+                        {hackathon.year}
+                      </strong>
+                    </p>
+
+
+                    <p>
+                      ROLE
+                      <strong>
+                        {hackathon.role}
+                      </strong>
+                    </p>
+
+                  </div>
+
+
+                  <div className="hackathon-project">
+
+                    <span>
+                      PROJECT
+                    </span>
+
+                    <p>
+                      {hackathon.project}
+                    </p>
+
+                  </div>
+
+
+                  <div className="hackathon-skills">
+
+                    {hackathon.skills.map((skill, index) => (
+
+                      <span key={index}>
+                        {skill}
+                      </span>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================================
+          TESTIMONIALS
+      ===================================================== */}
+
+      <div className="testimonial-section">
+
+        <div className="testimonial-header">
+
+          <p>
+            FEEDBACK FROM PEERS
+          </p>
+
+          <h2>
+            What Others Say ~
+          </h2>
+
+        </div>
+
+
+        <div className="testimonial-list">
+
+          {testimonials.map((item, index) => (
+
+            <div
+              className="testimonial-item"
+              key={`${item.name}-${index}`}
+            >
+
+              <div className="testimonial-number">
+                {item.id}
+              </div>
+
+
+              <div className="testimonial-content">
+
+                <h3>
+                  {item.name}
+                </h3>
+
+                <span>
+                  {item.role}
+                </span>
+
+                <p>
+                  "{item.message}"
+                </p>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
 
     </section>
   );
 };
+
 
 export default Certifications;

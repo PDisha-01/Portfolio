@@ -1,15 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaPython,
-  FaGitAlt,
-  FaGithub,
-} from "react-icons/fa";
-
+import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaGitAlt, FaGithub, FaJava } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiFlask,
@@ -18,208 +8,119 @@ import {
   SiNumpy,
   SiPandas,
   SiScikitlearn,
+  SiSpringboot,
+  SiMysql,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { techData } from "../data/techData";
 
+const stackGroups = [
+  {
+    title: "Languages",
+    items: [
+      ["Java", "java", FaJava],
+      ["JavaScript", "javascript", FaJsSquare],
+      ["Python", "python", FaPython],
+      ["SQL", "mysql", SiMysql],
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      ["React", "react", FaReact],
+      ["HTML5", "html", FaHtml5],
+      ["CSS3", "css", FaCss3Alt],
+      ["Tailwind CSS", "tailwind", SiTailwindcss],
+    ],
+  },
+  {
+    title: "Backend & Database",
+    items: [
+      ["Spring Boot", "springboot", SiSpringboot],
+      ["Flask", "flask", SiFlask],
+      ["MongoDB", "mongodb", SiMongodb],
+      ["Hibernate", "hibernate", SiHibernate],
+    ],
+  },
+  {
+    title: "Tools & AI/ML",
+    items: [
+      ["Git", "git", FaGitAlt],
+      ["GitHub", "github", FaGithub],
+      ["VS Code", "vscode", VscCode],
+      ["NumPy", "numpy", SiNumpy],
+      ["Pandas", "pandas", SiPandas],
+      ["Scikit-learn", "sklearn", SiScikitlearn],
+    ],
+  },
+];
+
 export default function TechArsenal() {
-
-  const [selectedTech, setSelectedTech] = useState(null);
-
   return (
-    <section className="tech-section">
-
+    <section className="tech-section" id="skills">
       <motion.div
         className="tech-heading"
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
         <span>CHAPTER 03</span>
 
-        <h2>TECH ARSENAL</h2>
+        <h2>TECHNICAL STACK</h2>
 
         <p>
-          Technologies that power every solution I build.
+          Technologies and tools I use to design, develop, integrate,
+          and build practical applications.
         </p>
       </motion.div>
 
-      <div className="tech-content">
+      <div className="tech-stack-wrapper">
+        <div className="tech-stack-intro">
+          <span>CORE SKILLS</span>
 
-  <div className="orbit-container">
+          <h3>What I Work With</h3>
 
+          <p>
+            A focused overview of my technical skills across programming,
+            frontend development, backend development, databases, tools,
+            and AI/ML.
+          </p>
+        </div>
 
-    <div className="orbit orbit-3">
-      {/* Ring 3 icons will go here later */}
-      <div className="orbit orbit-3">
+        <div className="tech-groups">
+          {stackGroups.map((group, groupIndex) => (
+            <motion.div
+              className="tech-group"
+              key={group.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: groupIndex * 0.1,
+              }}
+              viewport={{ once: true }}
+            >
+              <h4>{group.title}</h4>
 
-  <div
-    className="tech-node git"
-    onClick={() => setSelectedTech("git")}
-  >
-    <FaGitAlt />
-  </div>
+              <div className="tech-pills-grid">
+                {group.items.map(([label, id, Icon]) => (
+                  <motion.div
+                    className="tech-stack-pill"
+                    key={id}
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Icon aria-hidden="true" />
 
-  <div
-    className="tech-node github"
-    onClick={() => setSelectedTech("github")}
-  >
-    <FaGithub />
-  </div>
-
-  <div
-    className="tech-node vscode"
-    onClick={() => setSelectedTech("vscode")}
-  >
-    <VscCode />
-  </div>
-
-  <div
-    className="tech-node numpy"
-    onClick={() => setSelectedTech("numpy")}
-  >
-    <SiNumpy />
-  </div>
-
-  <div
-    className="tech-node pandas"
-    onClick={() => setSelectedTech("pandas")}
-  >
-    <SiPandas />
-  </div>
-
-  <div
-    className="tech-node sklearn"
-    onClick={() => setSelectedTech("sklearn")}
-  >
-    <SiScikitlearn />
-  </div>
-
-</div>
-    </div>
-
-<div className="orbit orbit-2">
-
-  {/* Ring 2 icons go here */}
-
-  <div
-  className="tech-node python"
-  onClick={() => setSelectedTech("python")}
->
-  <FaPython />
-</div>
-
-  <div
-  className="tech-node flask"
-  onClick={() => setSelectedTech("flask")}
->
-  <SiFlask />
-</div>
-
-  <div
-  className="tech-node mongodb"
-  onClick={() => setSelectedTech("mongodb")}
->
-  <SiMongodb />
-</div>
-
-  <div
-  className="tech-node hibernate"
-  onClick={() => setSelectedTech("hibernate")}
->
-  <SiHibernate />
-</div>
-
-  <div
-  className="tech-node os"
-  onClick={() => setSelectedTech("os")}
->
-  💻
-</div>
-
-  <div
-  className="tech-node shutil"
-  onClick={() => setSelectedTech("shutil")}
->
-  📁
-</div>
-
-</div>
-
-    
-    <div className="orbit orbit-1">
-
-  <div
-  className="tech-node react"
-  onClick={() => setSelectedTech("react")}
->
-  <FaReact />
-</div>
-
-  <div className="tech-node html"
-    onClick={() => setSelectedTech("html")}
-    >
-    <FaHtml5 />
-  </div>
-
-  <div className="tech-node css"
-  onClick={() => setSelectedTech("css")}>
-    <FaCss3Alt />
-  </div>
-
-  <div
-  className="tech-node js"
-  onClick={() => setSelectedTech("javascript")}
->
-  <FaJsSquare />
-</div>
-
-  <div className="tech-node tailwind"
-  onClick={() => setSelectedTech("tailwind")}>
-    <SiTailwindcss />
-  </div>
-
-  </div>
-  <div className="orbit-core">
-
-        <div className="core-icon">⚡</div>
-
-        <h3>TECH</h3>
-
-        <span>ARSENAL</span>
-
-    </div>
-
-  </div>
-
- {selectedTech && techData[selectedTech] && (
-  <motion.div
-    className="tech-info-card"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4 }}
-  >
-    <h2>{techData[selectedTech].title}</h2>
-
-    <h5 className="tech-category">
-      {techData[selectedTech].category}
-    </h5>
-
-    <p>{techData[selectedTech].description}</p>
-
-    <h4>Core Skills</h4>
-
-    <ul>
-      {techData[selectedTech].skills.map((skill) => (
-        <li key={skill}>{skill}</li>
-      ))}
-    </ul>
-  </motion.div>
-)}
-      
+                    <span>{label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-
     </section>
   );
 }

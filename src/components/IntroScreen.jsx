@@ -57,7 +57,7 @@ function IntroScreen({ onFinish }) {
               stroke-text
             "
           >
-            ZENITH
+            WELCOME TO
           </h1>
 
 
@@ -77,7 +77,7 @@ function IntroScreen({ onFinish }) {
               clipPath: `inset(${100 - progress}% 0 0 0)`
             }}
           >
-            ZENITH
+            WELCOME TO
           </h1>
 
 

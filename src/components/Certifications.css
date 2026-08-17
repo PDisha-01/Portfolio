@@ -1,696 +1,2120 @@
-.certifications {
-  min-height: 100vh;
-  padding: 120px 8%;
-  background:
-    radial-gradient(
-      circle at 80% 10%,
-      rgba(34, 211, 238, 0.12),
-      transparent 35%
-    ),
-    #050816;
-  color: white;
-  overflow: hidden;
+/* =========================================================
+   CREDENTIALS TWO-COLUMN LAYOUT
+   ========================================================= */
+
+.credentials-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 35px;
+
+  align-items: start;
+
+  margin-top: 60px;
 }
 
 
-/* HEADER */
+/* =========================================================
+   CREDENTIAL COLUMN
+   ========================================================= */
 
-.cert-header {
-  max-width: 900px;
-  margin-bottom: 90px;
-  animation: fadeUp 0.8s ease forwards;
+.credential-column {
+  min-width: 0;
 }
 
 
-.cert-tag {
-  color: #22d3ee;
-  letter-spacing: 4px;
-  font-size: 13px;
-  margin-bottom: 20px;
+.credential-column-header {
+  margin-bottom: 28px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--border);
 }
 
 
-.cert-header h1 {
-  font-size: clamp(45px, 7vw, 85px);
-  line-height: 1;
-  letter-spacing: -3px;
-  font-weight: 800;
+.credential-column-header > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.68rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.credential-column-header h2 {
+  margin: 0 0 8px;
+
+  color: var(--text-main);
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(
+    1.35rem,
+    2.5vw,
+    1.9rem
+  );
+
+  line-height: 1.25;
+}
+
+
+.credential-column-header p {
+  max-width: 520px;
+
   margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+
+  line-height: 1.7;
 }
 
 
-.cert-header h1 span {
-  color: #22d3ee;
-}
-
-
-.cert-line {
-  width: 120px;
-  height: 3px;
-  background: #22d3ee;
-  margin: 35px 0;
-
-  box-shadow:
-    0 0 15px #22d3ee;
-}
-
-
-.cert-desc {
-
-  color: #94a3b8;
-  max-width: 600px;
-  line-height: 1.8;
-
-}
-
-
-/* LIST */
-
-.cert-list {
-
-  display:flex;
-  flex-direction:column;
-  gap:70px;
-
-}
-
-
-
-/* ENTRY */
-
-.cert-item {
-
-  display:grid;
-  grid-template-columns:150px 1fr;
-  gap:50px;
-
-  padding-bottom:60px;
-
-  border-bottom:
-    1px solid rgba(255,255,255,0.08);
-
-
-  opacity:0;
-  transform:translateY(40px);
-
-  animation:
-    reveal 0.8s ease forwards;
-
-}
-
-
-.cert-item:nth-child(1){
-  animation-delay:.1s;
-}
-
-.cert-item:nth-child(2){
-  animation-delay:.2s;
-}
-
-.cert-item:nth-child(3){
-  animation-delay:.3s;
-}
-
-.cert-item:nth-child(4){
-  animation-delay:.4s;
-}
-
-.cert-item:nth-child(5){
-  animation-delay:.5s;
-}
-
-
-
-/* NUMBER */
-
-
-.cert-number {
-
-  font-size:90px;
-  font-weight:900;
-
-  color:
-  rgba(34,211,238,0.18);
-
-  transition:.4s ease;
-
-}
-
-
-.cert-item:hover .cert-number {
-
-  color:#22d3ee;
-
-  text-shadow:
-  0 0 25px rgba(34,211,238,.7);
-
-}
-
-
-
-/* CONTENT */
-
-
-.cert-category {
-
-  color:#22d3ee;
-
-  font-size:13px;
-
-  letter-spacing:3px;
-
-  margin-bottom:15px;
-
-}
-
-
-
-.cert-details h2 {
-
-  font-size:34px;
-
-  margin:0 0 30px;
-
-  font-weight:700;
-
-  transition:.3s;
-
-}
-
-
-.cert-item:hover h2 {
-
-  color:#22d3ee;
-
-}
-
-
-
-/* META */
-
-
-.cert-meta {
-
-  display:flex;
-
-  gap:60px;
-
-  margin-bottom:30px;
-
-}
-
-
-.cert-meta p {
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:8px;
-
-  color:#64748b;
-
-  font-size:12px;
-
-  letter-spacing:2px;
-
-}
-
-
-.cert-meta strong {
-
-  color:white;
-
-  font-size:15px;
-
-  letter-spacing:0;
-
-}
-
-
-
-/* SKILLS */
-
-
-.cert-skills {
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:12px;
-
-}
-
-
-
-.cert-skills span {
-
-  padding:8px 16px;
-
-  border:
-
-  1px solid rgba(34,211,238,.3);
-
-
-  border-radius:30px;
-
-  color:#cbd5e1;
-
-  font-size:13px;
-
-  transition:.3s;
-
-
-}
-
-
-.cert-skills span:hover {
-
-  background:#22d3ee;
-
-  color:#050816;
-
-  transform:translateY(-4px);
-
-}
-
-
-
-/* HOVER EFFECT */
-
-.cert-item {
-
-  position:relative;
-
-}
-
-
-.cert-item::before {
-
-  content:"";
-
-  position:absolute;
-
-  left:-30px;
-
-  top:0;
-
-  width:3px;
-
-  height:0;
-
-  background:#22d3ee;
-
-  transition:.5s;
-
-}
-
-
-.cert-item:hover::before {
-
-  height:100%;
-
-}
-
-
-
-/* ANIMATIONS */
-
-
-@keyframes reveal {
-
-  from {
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-  }
-
-
-  to {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-  }
-
-}
-
-
-
-@keyframes fadeUp {
-
-  from {
-
-    opacity:0;
-
-    transform:translateY(30px);
-
-  }
-
-
-  to {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-  }
-
-}
-
-
-
-/* MOBILE */
-
-
-@media(max-width:768px){
-
-
-  .certifications{
-
-    padding:90px 6%;
-
-  }
-
-
-  .cert-item{
-
-    grid-template-columns:1fr;
-
-    gap:20px;
-
-  }
-
-
-  .cert-number{
-
-    font-size:60px;
-
-  }
-
-
-  .cert-details h2{
-
-    font-size:26px;
-
-  }
-
-
-  .cert-meta{
-
-    flex-direction:column;
-
-    gap:20px;
-
-  }
-
-
-}
-/* ================================
-   TESTIMONIALS SECTION
-================================ */
-
-
-.testimonial-section {
-
-  margin-top: 140px;
-
-}
-
-
-
-/* HEADER */
-
-.testimonial-header p {
-
-  color: #22d3ee;
-
-  font-size: 13px;
-
-  letter-spacing: 4px;
-
-  margin-bottom: 15px;
-
-}
-
-
-.testimonial-header h2 {
-
-  font-size: clamp(40px, 5vw, 65px);
-
-  font-weight: 800;
-
-  letter-spacing: -2px;
-
-  margin-bottom: 70px;
-
-}
-
-
-
-/* LIST */
-
-.testimonial-list {
-
+/* =========================================================
+   HACKATHON LIST
+   ========================================================= */
+
+.hackathon-list {
   display: flex;
 
   flex-direction: column;
 
-  gap: 60px;
-
+  gap: 18px;
 }
 
 
+/* =========================================================
+   HACKATHON ITEM
+   ========================================================= */
 
-/* ITEM */
-
-.testimonial-item {
+.hackathon-item {
+  position: relative;
 
   display: grid;
 
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 45px minmax(0, 1fr);
 
-  gap: 45px;
+  gap: 18px;
 
-  padding-bottom: 50px;
+  padding: 24px;
 
-  border-bottom:
+  border: 1px solid var(--border);
 
-  1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
 
 
+.hackathon-item::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--glow-purple),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+.hackathon-item:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 30px var(--accent-soft),
+    var(--shadow-md);
+}
+
+
+/* =========================================================
+   HACKATHON NUMBER
+   ========================================================= */
+
+.hackathon-number {
   position: relative;
 
-  transition: 0.4s ease;
+  z-index: 2;
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  padding-top: 3px;
+}
+
+
+/* =========================================================
+   HACKATHON DETAILS
+   ========================================================= */
+
+.hackathon-details {
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 0;
+}
+
+
+.hackathon-category {
+  margin: 0 0 8px;
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+
+.hackathon-details h2 {
+  margin: 0 0 18px;
+
+  color: var(--text-main);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 1.08rem;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   HACKATHON META
+   ========================================================= */
+
+.hackathon-meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.hackathon-meta p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.58rem;
+
+  line-height: 1.5;
+}
+
+
+.hackathon-meta strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-secondary);
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   HACKATHON PROJECT
+   ========================================================= */
+
+.hackathon-project {
+  margin-bottom: 18px;
+
+  padding-left: 12px;
+
+  border-left: 2px solid var(--accent);
+}
+
+
+.hackathon-project span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 1px;
+}
+
+
+.hackathon-project p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HACKATHON SKILLS
+   ========================================================= */
+
+.hackathon-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.hackathon-skills span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+
+  font-size: 0.62rem;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.hackathon-skills span:hover {
+  border-color: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .credentials-grid {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
 
 }
 
 
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
 
-/* LEFT NUMBER */
+@media (max-width: 600px) {
 
-.testimonial-number {
+  .credentials-grid {
+    margin-top: 45px;
 
-  font-size: 70px;
+    gap: 50px;
+  }
 
-  font-weight: 900;
 
-  color:
+  .credential-column-header {
+    margin-bottom: 22px;
+  }
 
-  rgba(34,211,238,0.18);
 
-  transition: 0.4s ease;
+  .credential-column-header h2 {
+    font-size: 1.4rem;
+  }
+
+
+  .credential-column-header p {
+    font-size: 0.78rem;
+  }
+
+
+  .hackathon-item {
+    grid-template-columns: 35px minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 18px;
+  }
+
+
+  .hackathon-details h2 {
+    font-size: 0.98rem;
+  }
+
+
+  .hackathon-meta {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+
+  .hackathon-project p {
+    font-size: 0.76rem;
+  }
 
 }
 
 
+/* =========================================================
+   RESPONSIVE — 400px
+   ========================================================= */
 
-/* HOVER NUMBER */
+@media (max-width: 400px) {
 
-.testimonial-item:hover .testimonial-number {
+  .hackathon-item {
+    padding: 16px;
+  }
 
-  color:#22d3ee;
+
+  .hackathon-number {
+    font-size: 0.68rem;
+  }
+
+
+  .hackathon-category {
+    font-size: 0.56rem;
+  }
+
+
+  .hackathon-details h2 {
+    font-size: 0.92rem;
+  }
+
+
+  .hackathon-skills span {
+    font-size: 0.58rem;
+
+    padding: 4px 7px;
+  }
+
+}
+/* =========================================================
+   CERTIFICATION ARCHIVE — FIX
+   ========================================================= */
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* =========================================================
+   CERTIFICATION CARD
+   ========================================================= */
+
+.cert-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr);
+
+  gap: 18px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(15px);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* subtle cyan glow */
+
+.cert-item::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(34, 211, 238, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+.cert-item:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(34, 211, 238, 0.45);
+
+  box-shadow:
+    0 0 30px rgba(34, 211, 238, 0.08);
+}
+
+
+/* =========================================================
+   CERTIFICATION NUMBER
+   ========================================================= */
+
+.cert-number {
+  position: relative;
+
+  z-index: 2;
+
+  color: #22d3ee;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  padding-top: 3px;
+}
+
+
+/* =========================================================
+   CERTIFICATION DETAILS
+   ========================================================= */
+
+.cert-details {
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 0;
+}
+
+
+.cert-category {
+  margin: 0 0 8px;
+
+  color: #22d3ee;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+
+.cert-details h2 {
+  margin: 0 0 18px;
+
+  color: #f8fafc;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 1.08rem;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CERTIFICATION META
+   ========================================================= */
+
+.cert-meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+.cert-meta p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.58rem;
+
+  line-height: 1.5;
+}
+
+
+.cert-meta strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #cbd5e1;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CERTIFICATION SKILLS
+   ========================================================= */
+
+.cert-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.cert-skills span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgba(34, 211, 238, 0.16);
+
+  border-radius: 999px;
+
+  background: rgba(34, 211, 238, 0.06);
+
+  color: #22d3ee;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 0.62rem;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.cert-skills span:hover {
+  border-color: #22d3ee;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CERTIFICATION COLUMN HEADER
+   ========================================================= */
+
+.credential-column-header {
+  margin-bottom: 28px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+.credential-column-header > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #22d3ee;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 0.68rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.credential-column-header h2 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+
+  line-height: 1.25;
+}
+
+
+.credential-column-header p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 0.82rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .credentials-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .cert-item {
+    grid-template-columns: 35px minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 18px;
+  }
+
+
+  .cert-details h2 {
+    font-size: 0.98rem;
+  }
+
+
+  .cert-meta {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+
+  .cert-category {
+    font-size: 0.56rem;
+  }
+
+
+  .cert-skills span {
+    font-size: 0.58rem;
+
+    padding: 4px 7px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .cert-item {
+    padding: 16px;
+  }
+
+
+  .cert-number {
+    font-size: 0.68rem;
+  }
+
+
+  .cert-details h2 {
+    font-size: 0.92rem;
+  }
+
+}
+/* =========================================================
+   CERTIFICATIONS / CREDENTIALS PAGE
+   ========================================================= */
+
+.certifications {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 150px 8% 100px;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(0, 234, 255, 0.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(147, 51, 234, 0.05),
+      transparent 30%
+    ),
+    #020617;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.certifications::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 90%
+  );
+}
+
+
+/* =========================================================
+   MAIN HEADER
+   ========================================================= */
+
+.cert-header {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  margin: 0 auto 100px;
+
+  text-align: left;
+}
+
+
+/* Small top label */
+
+.cert-tag {
+  margin: 0 0 18px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    monospace;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* Main title */
+
+.cert-header h1 {
+  margin: 0;
+
+  font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+  font-size: clamp(42px, 6vw, 82px);
+
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  color: #f8fafc;
+}
+
+
+/* Archive part */
+
+.cert-header h1 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px #22d3ee;
 
   text-shadow:
-
-  0 0 25px rgba(34,211,238,0.7);
-
+    0 0 20px rgba(34, 211, 238, 0.15);
 }
 
 
+/* Header line */
 
-/* CONTENT */
+.cert-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 30px 0 25px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      rgba(147, 51, 234, 0.7),
+      transparent
+    );
+
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.35);
+}
+
+
+/* Description */
+
+.cert-desc {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   CERTIFICATION + HACKATHON LAYOUT
+   ========================================================= */
+
+/*
+   If your parent component uses a wrapper around
+   certification + hackathon sections, this creates
+   the two-column layout.
+*/
+
+.credentials-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 60px;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CERTIFICATION ARCHIVE
+   ========================================================= */
+
+.cert-list {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CERTIFICATION
+   ========================================================= */
+
+.cert-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 70px 1fr;
+
+  gap: 25px;
+
+  padding: 38px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.cert-item:last-child {
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* Hover */
+
+.cert-item:hover {
+  transform: translateX(8px);
+
+  border-color:
+    rgba(34, 211, 238, 0.4);
+}
+
+
+/* =========================================================
+   CERTIFICATION NUMBER
+   ========================================================= */
+
+.cert-number {
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    monospace;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  padding-top: 4px;
+}
+
+
+/* =========================================================
+   CERTIFICATION DETAILS
+   ========================================================= */
+
+.cert-details {
+  min-width: 0;
+}
+
+
+/* Category */
+
+.cert-category {
+  margin: 0 0 10px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    monospace;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* Certification title */
+
+.cert-details h2 {
+  margin: 0 0 22px;
+
+  color: #f8fafc;
+
+  font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+  font-size: clamp(22px, 2vw, 30px);
+
+  line-height: 1.25;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CERTIFICATION META
+   ========================================================= */
+
+.cert-meta {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 1fr)
+    minmax(100px, auto);
+
+  gap: 30px;
+
+  margin-bottom: 20px;
+}
+
+
+.cert-meta p {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+}
+
+
+.cert-meta strong {
+  color: #cbd5e1;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   CERTIFICATION SKILLS
+   ========================================================= */
+
+.cert-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.cert-skills span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 12px;
+
+  border: 1px solid
+    rgba(34, 211, 238, 0.18);
+
+  border-radius: 999px;
+
+  background:
+    rgba(34, 211, 238, 0.04);
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  letter-spacing: 0.4px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.cert-skills span:hover {
+  color: #22d3ee;
+
+  border-color:
+    rgba(34, 211, 238, 0.55);
+
+  background:
+    rgba(34, 211, 238, 0.08);
+}
+
+
+/* =========================================================
+   HACKATHON ARCHIVE
+   ========================================================= */
+
+/*
+   These styles support the hackathon section.
+   If your JSX uses these class names, they will
+   automatically match.
+*/
+
+.hackathon-section {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.hackathon-header {
+  margin-bottom: 35px;
+}
+
+
+.hackathon-tag {
+  margin: 0 0 12px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+
+.hackathon-header h2 {
+  margin: 0 0 14px;
+
+  color: #f8fafc;
+
+  font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+
+.hackathon-header p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HACKATHON CARD
+   ========================================================= */
+
+.hackathon-card {
+  position: relative;
+
+  padding: 35px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.9),
+      rgba(2, 6, 23, 0.96)
+    );
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.hackathon-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #22d3ee,
+      #9333ea,
+      transparent
+    );
+}
+
+
+.hackathon-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(34, 211, 238, 0.08);
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+
+.hackathon-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(34, 211, 238, 0.28);
+
+  box-shadow:
+    0 30px 70px
+    rgba(0, 0, 0, 0.5),
+    0 0 30px
+    rgba(34, 211, 238, 0.05);
+}
+
+
+/* =========================================================
+   HACKATHON CARD TOP
+   ========================================================= */
+
+.hackathon-number {
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.hackathon-category {
+  display: inline-block;
+
+  margin: 0 0 15px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.hackathon-card h3 {
+  margin: 0 0 25px;
+
+  color: #f8fafc;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   HACKATHON META
+   ========================================================= */
+
+.hackathon-meta {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 25px;
+
+  margin-bottom: 25px;
+}
+
+
+.hackathon-meta-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.hackathon-meta-item span {
+  color: #64748b;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.hackathon-meta-item strong {
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   HACKATHON PROJECT
+   ========================================================= */
+
+.hackathon-project {
+  position: relative;
+
+  padding: 5px 0 5px 15px;
+
+  margin-bottom: 25px;
+
+  border-left:
+    2px solid #22d3ee;
+}
+
+
+.hackathon-project span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+}
+
+
+.hackathon-project p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HACKATHON TECHNOLOGY TAGS
+   ========================================================= */
+
+.hackathon-tech {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.hackathon-tech span {
+  padding: 7px 11px;
+
+  border:
+    1px solid rgba(34, 211, 238, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(34, 211, 238, 0.05);
+
+  color: #67e8f9;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 10px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.hackathon-tech span:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(34, 211, 238, 0.5);
+}
+
+
+/* =========================================================
+   FEEDBACK FROM PEERS
+   ========================================================= */
+
+.testimonial-section {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1400px;
+
+  margin: 140px auto 0;
+
+  padding-top: 80px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   TESTIMONIAL HEADER
+   ========================================================= */
+
+.testimonial-header {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+
+.testimonial-header p {
+  margin: 0 0 15px;
+
+  color: #22d3ee;
+
+  font-family:
+    "JetBrains Mono",
+    monospace;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+.testimonial-header h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+  font-size: clamp(32px, 4vw, 55px);
+
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   TESTIMONIAL LIST
+   ========================================================= */
+
+.testimonial-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CARD
+   ========================================================= */
+
+.testimonial-item {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 30px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.75),
+      rgba(2, 6, 23, 0.9)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.testimonial-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #9333ea
+    );
+
+  opacity: 0.7;
+}
+
+
+.testimonial-item:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(34, 211, 238, 0.3);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.35),
+    0 0 25px
+    rgba(34, 211, 238, 0.05);
+}
+
+
+/* =========================================================
+   TESTIMONIAL NUMBER / QUOTE
+   ========================================================= */
+
+.testimonial-number {
+  margin-bottom: 25px;
+
+  color: #22d3ee;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CONTENT
+   ========================================================= */
 
 .testimonial-content h3 {
+  margin: 0 0 5px;
 
-  font-size: 30px;
+  color: #f8fafc;
 
-  margin:0 0 10px;
+  font-size: 18px;
 
-  transition:.3s ease;
-
+  font-weight: 600;
 }
-
-
-
-.testimonial-item:hover h3 {
-
-  color:#22d3ee;
-
-}
-
 
 
 .testimonial-content span {
+  display: block;
 
-  color:#22d3ee;
+  margin-bottom: 22px;
 
-  font-size:14px;
+  color: #64748b;
 
-  letter-spacing:2px;
+  font-family:
+    "JetBrains Mono",
+    monospace;
 
+  font-size: 10px;
+
+  letter-spacing: 0.7px;
+
+  line-height: 1.6;
 }
-
 
 
 .testimonial-content p {
+  margin: 0;
 
-  max-width:750px;
+  color: #94a3b8;
 
-  margin-top:25px;
+  font-size: 13px;
 
-  color:#94a3b8;
+  line-height: 1.9;
 
-  line-height:1.8;
-
-  font-style:italic;
-
-  font-size:16px;
-
+  font-style: italic;
 }
 
 
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
 
-/* GLOW LINE */
+@media (max-width: 1100px) {
 
-.testimonial-item::before {
-
-  content:"";
-
-  position:absolute;
-
-  left:-25px;
-
-  top:0;
-
-  height:0;
-
-  width:3px;
-
-  background:#22d3ee;
-
-  transition:.5s ease;
-
-}
-
-
-
-.testimonial-item:hover::before {
-
-  height:100%;
-
-}
-
-
-
-/* REVEAL ANIMATION */
-
-.testimonial-item {
-
-  opacity:0;
-
-  transform:translateY(35px);
-
-  animation:testimonialReveal .8s ease forwards;
-
-}
-
-
-.testimonial-item:nth-child(1){
-
-  animation-delay:.2s;
-
-}
-
-
-.testimonial-item:nth-child(2){
-
-  animation-delay:.4s;
-
-}
-
-
-
-@keyframes testimonialReveal {
-
-  from {
-
-    opacity:0;
-
-    transform:translateY(35px);
-
+  .certifications {
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
 
-  to {
+  .credentials-grid {
+    gap: 40px;
+  }
 
-    opacity:1;
 
-    transform:translateY(0);
-
+  .testimonial-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-/* MOBILE */
+@media (max-width: 850px) {
 
-@media(max-width:768px){
+  .certifications {
+    padding:
+      130px 5% 80px;
+  }
+
+
+  .cert-header {
+    margin-bottom: 70px;
+  }
+
+
+  .cert-header h1 {
+    font-size: clamp(38px, 9vw, 65px);
+  }
+
+
+  .credentials-grid {
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+  }
 
 
   .testimonial-section {
+    margin-top: 100px;
 
-    margin-top:90px;
+    padding-top: 60px;
+  }
 
+
+  .testimonial-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .certifications {
+    padding:
+      110px 20px 60px;
+  }
+
+
+  /* Header */
+
+  .cert-header {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+
+
+  .cert-tag {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .cert-header h1 {
+    font-size: 40px;
+
+    line-height: 1.05;
+  }
+
+
+  .cert-desc {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  /* Certification */
+
+  .cert-item {
+    grid-template-columns: 42px 1fr;
+
+    gap: 14px;
+
+    padding: 28px 0;
+  }
+
+
+  .cert-number {
+    font-size: 11px;
+  }
+
+
+  .cert-category {
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .cert-details h2 {
+    font-size: 20px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .cert-meta {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .cert-meta p {
+    font-size: 9px;
+  }
+
+
+  .cert-meta strong {
+    font-size: 12px;
+  }
+
+
+  .cert-skills span {
+    padding: 6px 9px;
+
+    font-size: 9px;
+  }
+
+
+  /* Hackathon */
+
+  .hackathon-card {
+    padding: 24px;
+
+    border-radius: 14px;
+  }
+
+
+  .hackathon-header h2 {
+    font-size: 32px;
+  }
+
+
+  .hackathon-header p {
+    font-size: 12px;
+  }
+
+
+  .hackathon-meta {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .hackathon-card h3 {
+    font-size: 19px;
+  }
+
+
+  /* Testimonials */
+
+  .testimonial-section {
+    margin-top: 80px;
+
+    padding-top: 50px;
+  }
+
+
+  .testimonial-header {
+    margin-bottom: 40px;
+  }
+
+
+  .testimonial-header p {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .testimonial-header h2 {
+    font-size: 32px;
+  }
+
+
+  .testimonial-list {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
 
   .testimonial-item {
+    min-height: auto;
 
-    grid-template-columns:1fr;
-
-    gap:20px;
-
+    padding: 25px;
   }
 
 
   .testimonial-number {
+    font-size: 34px;
 
-    font-size:55px;
-
+    margin-bottom: 20px;
   }
 
 
   .testimonial-content h3 {
-
-    font-size:24px;
-
+    font-size: 16px;
   }
 
+
+  .testimonial-content p {
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .certifications {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  .cert-header h1 {
+    font-size: 34px;
+  }
+
+
+  .cert-item {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+
+  .cert-number {
+    margin-bottom: 5px;
+  }
+
+
+  .hackathon-card {
+    padding: 20px;
+  }
+
+
+  .testimonial-item {
+    padding: 20px;
+  }
 
 }

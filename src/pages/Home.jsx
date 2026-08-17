@@ -1,101 +1,112 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
+import resume from "../assets/disha_resume.pdf";
 import { MdEmail } from "react-icons/md";
-import profile from "../assets/profile photo.jpeg";
-import resume from "../assets/resume_disha.pdf";
+import profile from "../assets/hero photo.jpeg";
 import About from "./about";
+
 function Home() {
   return (
-     <>
-    <section className="hero" 
-    id="home">
+    <>
+      <section className="hero" id="home">
+        <div className="hero-bg-glow hero-bg-glow-left" aria-hidden="true" />
+        <div className="hero-bg-glow hero-bg-glow-right" aria-hidden="true" />
+        <div className="hero-grid" aria-hidden="true" />
 
-      <div className="hero-content">
+        <div className="hero-inner">
+          <div className="hero-content">
+            <div className="hero-badge">Introducing</div>
 
-        <p className="hero-greeting">
-          Hello, I'm
-        </p>
+            <h1 className="hero-name">
+              Disha <span>Mallick</span>
+            </h1>
 
-        <h1 className="hero-name">
-          Disha Mallick
-        </h1>
+            <div className="hero-role" aria-label="Professional roles">
+              <TypeAnimation
+                sequence={[
+                  "Full-Stack Developer",
+                  2000,
+                  
+                  "AI/ML Enthusiast",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </div>
 
-        <div className="hero-role">
-  <TypeAnimation
-    sequence={[
-      "Full Stack Developer",
-      2000,
-      "AI & Machine Learning Enthusiast",
-      2000,
-        "Software Engineer",
-        2000,
-    ]}
-    wrapper="span"
-    speed={50}
-    repeat={Infinity}
-  />
-</div>
-<p> </p>
+            <p className="hero-description">
+              I build responsive web applications and practical AI-powered
+              solutions, combining clean interfaces with real-world problem
+              solving.
+            </p>
 
-        <p className="hero-quote">
-  “Every line of code is a step toward the <span>ZENITH</span> of innovation,
-  where ideas transform into impactful solutions.”
-</p>
+            <div className="hero-buttons">
+              <a className="primary-btn" href="#projects">
+                View Projects <span aria-hidden="true">↗</span>
+              </a>
 
-<div className="hero-icons">
-
-  <a
-  href="https://github.com/PDisha-01"
-  target="_blank"
-  rel="noreferrer"
->
-  <FaGithub />
-  <span>GitHub</span>
-</a>
-
-  <a
-    href="https://linkedin.com/in/dishamallick"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <FaLinkedin />
-    <span>LinkedIn</span>
-  </a>
-
-  <a
+              <a
+  className="secondary-btn"
   href={resume}
-  target="_blank"
-  rel="noopener noreferrer"
+  download="Disha_Mallick_Resume.pdf"
+  aria-label="Download Disha Mallick's resume"
 >
-  <FaFileAlt />
-  <span>Resume</span>
+  <FaFileAlt aria-hidden="true" />
+  Download Resume
 </a>
+            </div>
 
-  <a href="mailto:mallickdisha186@gmail.com">
-    <MdEmail />
-    <span>Email</span>
-  </a>
+            <div className="hero-proof">
+              <span>LET'S  CONNECT !</span>
+            
+            </div>
 
-</div>
+            <div className="hero-icons" aria-label="Social links">
+              <a
+                href="https://github.com/PDisha-01"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+                <span>GitHub</span>
+              </a>
 
-      </div>
+              <a
+                href="https://www.linkedin.com/in/dishamallick"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+                <span>LinkedIn</span>
+              </a>
 
-      <div className="hero-image">
+              <a href="mailto:mallickdisha186@gmail.com" aria-label="Email">
+                <MdEmail />
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
 
-        <div className="profile-circle">
-  <img
-    src={profile}
-    alt="Disha Mallick"
-    className="profile-image"
-  />
-</div>
+          <div className="hero-image" aria-label="Profile photo">
+            <div className="profile-orbit profile-orbit-one" aria-hidden="true" />
+            <div className="profile-orbit profile-orbit-two" aria-hidden="true" />
+            <div className="profile-circle">
+              <img
+                src={profile}
+                alt="Disha Mallick"
+                className="profile-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </div>
-
-    </section>
-    
-<About />
-    </> 
+      <About />
+    </>
   );
 }
 
