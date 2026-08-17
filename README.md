@@ -1,4 +1,4 @@
-# 🌟 Zenith – MY Portfolio
+# 🌟 MY Portfolio
 
 > *Building modern, responsive, and interactive digital experiences with passion and precision.*
 
