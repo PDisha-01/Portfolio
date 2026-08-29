@@ -51,26 +51,32 @@ const projects = [
       "Framer Motion",
     ],
     image: project3,
-    status: "Currently Working"
+    status: "Developing"
   },
-  {
-    id: 4,
-  title: "NEXORA AI",
-  slug: "nexora-ai-student-placement-prediction-system",
-  category: "AI • MACHINE LEARNING • GROUP PROJECT",
+  
+    {
+  id: 4,
+
+  title: "SAKHI",
+
+  slug: "sakhi-women-empowerment",
+
+  category: "WEB DEVELOPMENT • WOMEN EMPOWERMENT",
+
   tagline:
-    "AI-Integrated Web Application for Smart Learning & Performance Prediction. A collaborative platform that analyzes student performance, delivers personalized insights, and predicts academic outcomes.",
+    "A women empowerment platform designed to provide awareness, support, safety resources, and essential information through an accessible and user-friendly web experience.",
+
   tech: [
-    "Python",
-    "Machine Learning",
-    "Scikit-learn",
-    "Flask",
-    "React",
-    "MongoDB"
+    "Typescript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Vercel"
   ],
+
   image: project4,
-  team: "Group Project",
-  status: "Currently Working"
+
+  team: "Personal Project",
 }
 ];
 

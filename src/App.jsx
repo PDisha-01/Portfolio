@@ -16,6 +16,7 @@ import PythonMLLab from "./pages/ProjectDetails/PythonMLLab";
 import ScrollToHash from "./components/ScrollToHash";
 import TrafficOps from "./pages/ProjectDetails/TrafficOps";
 import ZenithProject from "./pages/ProjectDetails/ZenithProject";
+import SakhiProject from "./pages/ProjectDetails/SakhiProject";
 
 
 function MainPortfolio() {
@@ -95,6 +96,10 @@ function App() {
 <Route
   path="/projects/personal-portfolio"
   element={<ZenithProject />}
+/>
+<Route
+  path="/projects/sakhi-women-empowerment"
+  element={<SakhiProject />}
 />
       </Routes>
 

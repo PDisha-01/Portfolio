@@ -10,6 +10,9 @@ import {
   SiScikitlearn,
   SiSpringboot,
   SiMysql,
+  SiTypescript,
+  SiPrisma,
+  SiVercel,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { techData } from "../data/techData";
@@ -22,6 +25,7 @@ const stackGroups = [
       ["JavaScript", "javascript", FaJsSquare],
       ["Python", "python", FaPython],
       ["SQL", "mysql", SiMysql],
+    
     ],
   },
   {
@@ -31,6 +35,7 @@ const stackGroups = [
       ["HTML5", "html", FaHtml5],
       ["CSS3", "css", FaCss3Alt],
       ["Tailwind CSS", "tailwind", SiTailwindcss],
+      ["Typescript", "typescript", SiTypescript],
     ],
   },
   {
@@ -40,6 +45,7 @@ const stackGroups = [
       ["Flask", "flask", SiFlask],
       ["MongoDB", "mongodb", SiMongodb],
       ["Hibernate", "hibernate", SiHibernate],
+      ["Prisma", "prisma", SiPrisma],
     ],
   },
   {
@@ -51,6 +57,7 @@ const stackGroups = [
       ["NumPy", "numpy", SiNumpy],
       ["Pandas", "pandas", SiPandas],
       ["Scikit-learn", "sklearn", SiScikitlearn],
+      ["Vercel", "vercel", SiVercel],
     ],
   },
 ];

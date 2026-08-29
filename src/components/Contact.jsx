@@ -87,6 +87,7 @@ I would love to connect and create something meaningful.
   className="contact-form"
   action="
 https://formspree.io/f/meajovzv"
+
   method="POST"
 >
 

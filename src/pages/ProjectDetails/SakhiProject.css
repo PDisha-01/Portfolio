@@ -1,0 +1,865 @@
+/* =========================================================
+   SAKHI PROJECT — PREMIUM CASE STUDY
+   ========================================================= */
+
+.sakhi-project {
+  --sakhi-bg: #0d0b12;
+  --sakhi-card: #15121c;
+  --sakhi-card-2: #1b1723;
+  --sakhi-border: rgba(255, 255, 255, 0.09);
+  --sakhi-text: #f8f5fa;
+  --sakhi-muted: #aaa2b1;
+  --sakhi-accent: #e8a8c7;
+  --sakhi-accent-2: #b98ad4;
+
+  min-height: 100vh;
+  padding: 35px 7vw 100px;
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(213, 132, 183, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 40%,
+      rgba(154, 111, 190, 0.08),
+      transparent 28%
+    ),
+    var(--sakhi-bg);
+
+  color: var(--sakhi-text);
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--sakhi-muted);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  padding: 10px 16px;
+  border: 1px solid var(--sakhi-border);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition: 0.3s ease;
+}
+
+.back-project:hover {
+  color: white;
+  border-color: rgba(232, 168, 199, 0.45);
+  background: rgba(232, 168, 199, 0.08);
+  transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.sakhi-project-hero {
+  max-width: 1050px;
+  margin: 105px auto 0;
+  text-align: center;
+}
+
+.project-label {
+  display: inline-block;
+
+  padding: 8px 15px;
+
+  border: 1px solid rgba(232, 168, 199, 0.25);
+  border-radius: 999px;
+
+  background: rgba(232, 168, 199, 0.06);
+
+  color: var(--sakhi-accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.sakhi-project-hero h1 {
+  margin: 25px 0 20px;
+
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+  font-weight: 800;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff 20%,
+    #f1c8dc 55%,
+    #c99bdc 90%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sakhi-project-hero > p {
+  max-width: 720px;
+  margin: 0 auto;
+
+  color: var(--sakhi-muted);
+
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   PROJECT TYPE
+   ========================================================= */
+
+.project-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 32px;
+  padding: 12px 18px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.project-client span {
+  color: #817887;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-client strong {
+  color: #eee6f0;
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+   ========================================================= */
+
+.sakhi-project-content {
+  max-width: 1100px;
+  margin: 110px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+/* =========================================================
+   DETAIL CARDS
+   ========================================================= */
+
+.project-detail-card {
+  position: relative;
+
+  padding: 38px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.project-detail-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  right: -90px;
+
+  background: rgba(232, 168, 199, 0.08);
+
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.project-detail-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(232, 168, 199, 0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(232, 168, 199, 0.07),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.project-detail-card > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--sakhi-accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.project-detail-card h2 {
+  margin: 0 0 14px;
+
+  font-size: 1.55rem;
+  letter-spacing: -0.025em;
+}
+
+.project-detail-card p {
+  margin: 0;
+
+  color: var(--sakhi-muted);
+
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.project-actions {
+  max-width: 1100px;
+  margin: 45px auto 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.live-demo-btn,
+.github-project-btn {
+  text-decoration: none;
+
+  padding: 13px 24px;
+
+  border-radius: 12px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.live-demo-btn {
+  color: #1b1018;
+
+  background: linear-gradient(
+    135deg,
+    #f2b8d2,
+    #d79edc
+  );
+
+  box-shadow: 0 12px 35px rgba(215, 158, 220, 0.18);
+}
+
+.live-demo-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 45px rgba(215, 158, 220, 0.3);
+}
+
+.github-project-btn {
+  color: #eee8f0;
+
+  border: 1px solid var(--sakhi-border);
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.github-project-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 255, 255, 0.22);
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   INTERFACE SECTION
+   ========================================================= */
+
+.interface-section {
+  max-width: 1200px;
+
+  margin: 125px auto 0;
+
+  text-align: center;
+}
+
+.interface-section > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--sakhi-accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.interface-section h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  letter-spacing: -0.04em;
+}
+
+.interface-section > p {
+  max-width: 650px;
+
+  margin: 18px auto 55px;
+
+  color: var(--sakhi-muted);
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   IMAGE GALLERY
+   ========================================================= */
+
+.interface-gallery {
+  display: grid;
+
+  grid-template-columns: 1.6fr 1fr;
+
+  gap: 22px;
+
+  text-align: left;
+}
+
+
+/* MAIN IMAGE */
+
+.interface-main {
+  position: relative;
+
+  min-height: 600px;
+
+  padding: 12px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+}
+
+.interface-main::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  box-shadow:
+    inset 0 0 80px rgba(232, 168, 199, 0.05);
+}
+
+.interface-main img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 17px;
+
+  transition: transform 0.6s ease;
+}
+
+.interface-main:hover img {
+  transform: scale(1.015);
+}
+
+
+/* SMALL IMAGES */
+
+.interface-small {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.interface-small img {
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: cover;
+
+  display: block;
+
+  padding: 10px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.interface-small img:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(232, 168, 199, 0.3);
+}
+
+
+/* =========================================================
+   TECH STACK
+   ========================================================= */
+
+.sakhi-project > .project-detail-card {
+  max-width: 1100px;
+
+  margin: 110px auto 0;
+}
+
+.tech-stack-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.tech-stack-list span {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(232, 168, 199, 0.16);
+  border-radius: 999px;
+
+  background: rgba(232, 168, 199, 0.055);
+
+  color: #e9cadb;
+
+  font-size: 0.8rem;
+
+  transition: 0.3s ease;
+}
+
+.tech-stack-list span:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(232, 168, 199, 0.4);
+
+  background: rgba(232, 168, 199, 0.1);
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+   ========================================================= */
+
+.achievements-section {
+  max-width: 1100px;
+
+  margin: 130px auto 0;
+}
+
+.achievement-heading > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--sakhi-accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.achievement-heading h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  letter-spacing: -0.04em;
+}
+
+.achievement-heading p {
+  max-width: 620px;
+
+  margin: 15px 0 45px;
+
+  color: var(--sakhi-muted);
+
+  line-height: 1.8;
+}
+
+
+/* ACHIEVEMENT GRID */
+
+.achievements-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.achievement-card {
+  position: relative;
+
+  min-height: 220px;
+
+  padding: 30px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 22px;
+
+  background: var(--sakhi-card);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.achievement-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  right: -70px;
+  bottom: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(185, 138, 212, 0.07);
+
+  filter: blur(15px);
+}
+
+.achievement-card:hover {
+  border-color: rgba(232, 168, 199, 0.28);
+
+  background: var(--sakhi-card-2);
+}
+
+.achievement-number {
+  color: #776d7d;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.achievement-card h3 {
+  margin: 22px 0 12px;
+
+  font-size: 1.1rem;
+}
+
+.achievement-card p {
+  margin: 0;
+
+  color: var(--sakhi-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.back-to-top-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 100px;
+}
+
+.back-to-top {
+  color: var(--sakhi-muted);
+
+  text-decoration: none;
+
+  padding: 11px 18px;
+
+  border: 1px solid var(--sakhi-border);
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+
+  transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: white;
+
+  border-color: rgba(232, 168, 199, 0.35);
+
+  background: rgba(232, 168, 199, 0.06);
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sakhi-project {
+    padding: 25px 5vw 80px;
+  }
+
+  .sakhi-project-hero {
+    margin-top: 75px;
+  }
+
+  .sakhi-project-content {
+    grid-template-columns: 1fr;
+
+    margin-top: 80px;
+  }
+
+  .interface-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .interface-main {
+    min-height: auto;
+  }
+
+  .interface-main img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .interface-small {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .interface-small img {
+    height: 180px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .sakhi-project {
+    padding: 20px 20px 70px;
+  }
+
+  .back-project {
+    font-size: 0.78rem;
+  }
+
+  .sakhi-project-hero {
+    margin-top: 65px;
+  }
+
+  .project-label {
+    font-size: 0.62rem;
+
+    padding: 7px 11px;
+  }
+
+  .sakhi-project-hero h1 {
+    font-size: 3rem;
+
+    line-height: 1;
+  }
+
+  .sakhi-project-hero > p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .project-client {
+    margin-top: 25px;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .sakhi-project-content {
+    margin-top: 65px;
+
+    gap: 15px;
+  }
+
+  .project-detail-card {
+    padding: 25px;
+
+    border-radius: 19px;
+  }
+
+  .project-detail-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-detail-card p {
+    font-size: 0.87rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+
+    margin-top: 30px;
+  }
+
+  .live-demo-btn,
+  .github-project-btn {
+    text-align: center;
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .interface-section {
+    margin-top: 90px;
+  }
+
+  .interface-section > p {
+    margin-bottom: 30px;
+  }
+
+  .interface-gallery {
+    gap: 14px;
+  }
+
+  .interface-main {
+    padding: 8px;
+
+    border-radius: 18px;
+  }
+
+  .interface-main img {
+    border-radius: 12px;
+  }
+
+  .interface-small {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .interface-small img {
+    height: auto;
+
+    max-height: 350px;
+
+    object-fit: contain;
+
+    padding: 7px;
+
+    border-radius: 17px;
+  }
+
+  .sakhi-project > .project-detail-card {
+    margin-top: 80px;
+  }
+
+  .tech-stack-list {
+    gap: 7px;
+  }
+
+  .tech-stack-list span {
+    font-size: 0.72rem;
+
+    padding: 8px 11px;
+  }
+
+  .achievements-section {
+    margin-top: 90px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .achievement-card {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+  .back-to-top-wrapper {
+    margin-top: 75px;
+  }
+}
