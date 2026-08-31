@@ -57,7 +57,7 @@ function IntroScreen({ onFinish }) {
               stroke-text
             "
           >
-            WELCOME TO
+            LOADING ...
           </h1>
 
 
@@ -77,7 +77,7 @@ function IntroScreen({ onFinish }) {
               clipPath: `inset(${100 - progress}% 0 0 0)`
             }}
           >
-            WELCOME TO
+            LOADING ...
           </h1>
 
 
