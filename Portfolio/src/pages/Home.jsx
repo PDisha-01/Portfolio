@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import resume from "../assets/disha_resume.pdf";
+import resume from "../assets/disha resume.pdf";
 import { MdEmail } from "react-icons/md";
 import profile from "../assets/hero photo.jpeg";
 import About from "./about";

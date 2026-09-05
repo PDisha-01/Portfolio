@@ -1,5 +1,5 @@
 import heroPhoto from "../assets/hero photo.jpeg";
-import resume from "../assets/disha_resume.pdf";
+import resume from "../assets/disha resume.pdf";
 
 import { TypeAnimation } from "react-type-animation";
 import {
