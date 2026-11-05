@@ -1,0 +1,895 @@
+/* =========================================================
+   FASHNOVA PROJECT — AI FASHION INTELLIGENCE CASE STUDY
+   ========================================================= */
+
+.fashnova-project {
+  --fashnova-bg: #09060d;
+  --fashnova-card: #130d1a;
+  --fashnova-card-2: #1a1224;
+  --fashnova-border: rgba(255, 255, 255, 0.09);
+  --fashnova-text: #fcf8fa;
+  --fashnova-muted: #b3a7b8;
+  --fashnova-accent: #fb7185;
+  --fashnova-accent-strong: #f43f5e;
+  --fashnova-accent-2: #c084fc;
+  --fashnova-glow: rgba(251, 113, 133, 0.16);
+
+  min-height: 100vh;
+  padding: 35px 7vw 100px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(244, 63, 94, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 10% 45%,
+      rgba(192, 132, 252, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(225, 29, 72, 0.08),
+      transparent 35%
+    ),
+    var(--fashnova-bg);
+
+  color: var(--fashnova-text);
+  font-family: inherit;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--fashnova-muted);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  padding: 10px 18px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s ease;
+}
+
+.back-project:hover {
+  color: white;
+  border-color: rgba(251, 113, 133, 0.45);
+  background: rgba(251, 113, 133, 0.1);
+  transform: translateX(-4px);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.fashnova-project-hero {
+  max-width: 1080px;
+  margin: 95px auto 0;
+  text-align: center;
+}
+
+.project-label {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border: 1px solid rgba(251, 113, 133, 0.28);
+  border-radius: 999px;
+
+  background: rgba(251, 113, 133, 0.08);
+
+  color: var(--fashnova-accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.fashnova-project-hero h1 {
+  margin: 24px 0 18px;
+
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+  font-weight: 800;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff 20%,
+    #fda4af 50%,
+    #e879f9 85%,
+    #ffffff 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fashnova-project-hero > p {
+  max-width: 760px;
+  margin: 0 auto;
+
+  color: var(--fashnova-muted);
+
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   CLIENT METADATA
+   ========================================================= */
+
+.project-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 32px;
+  padding: 12px 22px;
+
+  border: 1px solid var(--fashnova-border);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+.project-client span {
+  color: #8c8094;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project-client strong {
+  color: #f3ebf5;
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.project-actions {
+  max-width: 1100px;
+  margin: 42px auto 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.live-demo-btn,
+.github-project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  transition: 0.3s ease;
+}
+
+.live-demo-btn {
+  color: #12070f;
+
+  background: linear-gradient(
+    135deg,
+    #fb7185,
+    #f43f5e 50%,
+    #d946ef 100%
+  );
+
+  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.28);
+}
+
+.live-demo-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 45px rgba(244, 63, 94, 0.42);
+  filter: brightness(1.08);
+}
+
+.github-project-btn {
+  color: #f3ecf5;
+
+  border: 1px solid var(--fashnova-border);
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.github-project-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(251, 113, 133, 0.35);
+
+  background: rgba(251, 113, 133, 0.08);
+  color: white;
+}
+
+/* =========================================================
+   CONTENT GRID (CHALLENGES & SOLUTIONS)
+   ========================================================= */
+
+.fashnova-project-content {
+  max-width: 1100px;
+  margin: 100px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.project-detail-card {
+  position: relative;
+
+  padding: 40px;
+
+  border: 1px solid var(--fashnova-border);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.project-detail-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  right: -90px;
+
+  background: rgba(251, 113, 133, 0.08);
+
+  border-radius: 50%;
+  filter: blur(25px);
+}
+
+.project-detail-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(251, 113, 133, 0.3);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(251, 113, 133, 0.07),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.project-detail-card > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--fashnova-accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.project-detail-card h2 {
+  margin: 0 0 16px;
+
+  font-size: 1.6rem;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.project-detail-card p {
+  margin: 0;
+
+  color: var(--fashnova-muted);
+
+  line-height: 1.8;
+  font-size: 0.96rem;
+}
+
+/* =========================================================
+   INTERFACE GALLERY
+   ========================================================= */
+
+.interface-section {
+  max-width: 1200px;
+  margin: 125px auto 0;
+  text-align: center;
+}
+
+.interface-section > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--fashnova-accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.interface-section h2 {
+  margin: 0;
+
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.interface-section > p {
+  max-width: 680px;
+
+  margin: 18px auto 55px;
+
+  color: var(--fashnova-muted);
+
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.interface-gallery {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+/* Main Showcase Card */
+.interface-main {
+  position: relative;
+  min-height: 620px;
+  padding: 14px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 26px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.interface-main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 90px rgba(251, 113, 133, 0.08);
+}
+
+.interface-main img {
+  width: 100%;
+  height: 520px;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.6s ease;
+}
+
+.interface-main:hover img {
+  transform: scale(1.02);
+}
+
+.interface-caption {
+  padding: 16px 12px 6px;
+}
+
+.interface-caption h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.interface-caption p {
+  margin: 0;
+  color: var(--fashnova-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Small Showcase Grid */
+.interface-small {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.interface-thumb-card {
+  border: 1px solid var(--fashnova-border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.interface-thumb-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(251, 113, 133, 0.3);
+  background: rgba(251, 113, 133, 0.06);
+}
+
+.interface-thumb-card img {
+  width: 130px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.interface-thumb-text h4 {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  color: #ffffff;
+}
+
+.interface-thumb-text span {
+  display: inline-block;
+  color: var(--fashnova-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.interface-thumb-text p {
+  margin: 0;
+  color: var(--fashnova-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   CORE PILLARS (ARCHITECTURE MODULES)
+   ========================================================= */
+
+.pillars-section {
+  max-width: 1100px;
+  margin: 130px auto 0;
+}
+
+.pillars-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--fashnova-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.pillars-heading h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.pillars-heading p {
+  max-width: 650px;
+  margin: 15px 0 45px;
+  color: var(--fashnova-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.pillar-card {
+  position: relative;
+  min-height: 240px;
+  padding: 34px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 22px;
+  background: var(--fashnova-card);
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: -70px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: rgba(251, 113, 133, 0.08);
+  filter: blur(20px);
+}
+
+.pillar-card:hover {
+  border-color: rgba(251, 113, 133, 0.3);
+  background: var(--fashnova-card-2);
+  transform: translateY(-6px);
+}
+
+.pillar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pillar-number {
+  color: #7a6e80;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.pillar-badge {
+  padding: 4px 10px;
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.25);
+  border-radius: 50px;
+  color: var(--fashnova-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.pillar-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.pillar-card p {
+  margin: 0 0 16px;
+  color: var(--fashnova-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.pillar-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pillar-highlights span {
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 0.74rem;
+  color: #e2d8e6;
+}
+
+/* =========================================================
+   TECH STACK
+   ========================================================= */
+
+.fashnova-project > .tech-detail-card {
+  max-width: 1100px;
+  margin: 120px auto 0;
+}
+
+.tech-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.tech-stack-list span {
+  padding: 10px 16px;
+  border: 1px solid rgba(251, 113, 133, 0.18);
+  border-radius: 999px;
+  background: rgba(251, 113, 133, 0.06);
+  color: #fce7eb;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.tech-stack-list span:hover {
+  transform: translateY(-2px);
+  border-color: rgba(251, 113, 133, 0.45);
+  background: rgba(251, 113, 133, 0.12);
+}
+
+/* =========================================================
+   ACHIEVEMENTS SECTION
+   ========================================================= */
+
+.achievements-section {
+  max-width: 1100px;
+  margin: 130px auto 0;
+}
+
+.achievement-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--fashnova-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.achievement-heading h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.achievement-heading p {
+  max-width: 620px;
+  margin: 15px 0 45px;
+  color: var(--fashnova-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.achievement-card {
+  position: relative;
+  min-height: 220px;
+  padding: 32px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 22px;
+  background: var(--fashnova-card);
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: -70px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: rgba(192, 132, 252, 0.08);
+  filter: blur(18px);
+}
+
+.achievement-card:hover {
+  border-color: rgba(251, 113, 133, 0.3);
+  background: var(--fashnova-card-2);
+  transform: translateY(-6px);
+}
+
+.achievement-number {
+  color: #7a6e80;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.achievement-card h3 {
+  margin: 20px 0 12px;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.achievement-card p {
+  margin: 0;
+  color: var(--fashnova-muted);
+  font-size: 0.91rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   BOTTOM CTA & FOOTER
+   ========================================================= */
+
+.final-cta-section {
+  max-width: 900px;
+  margin: 140px auto 0;
+  text-align: center;
+  padding: 60px 30px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(251, 113, 133, 0.12),
+      transparent 70%
+    ),
+    rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+}
+
+.final-cta-section span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--fashnova-accent);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.final-cta-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.final-cta-section p {
+  max-width: 620px;
+  margin: 0 auto 35px;
+  color: var(--fashnova-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.back-to-top-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.back-to-top {
+  color: var(--fashnova-muted);
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid var(--fashnova-border);
+  border-radius: 999px;
+  font-size: 0.84rem;
+  transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: white;
+  border-color: rgba(251, 113, 133, 0.4);
+  background: rgba(251, 113, 133, 0.08);
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .fashnova-project {
+    padding: 25px 5vw 80px;
+  }
+
+  .fashnova-project-hero {
+    margin-top: 75px;
+  }
+
+  .fashnova-project-content,
+  .pillars-grid,
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .interface-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .interface-main img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fashnova-project {
+    padding: 20px 18px 70px;
+  }
+
+  .fashnova-project-hero {
+    margin-top: 55px;
+  }
+
+  .fashnova-project-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .fashnova-project-hero > p {
+    font-size: 0.92rem;
+  }
+
+  .project-client {
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 16px;
+  }
+
+  .project-detail-card,
+  .pillar-card,
+  .achievement-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .interface-main {
+    padding: 10px;
+  }
+
+  .interface-main img {
+    height: 300px;
+  }
+
+  .interface-thumb-card {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .interface-thumb-card img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .live-demo-btn,
+  .github-project-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .final-cta-section {
+    padding: 40px 20px;
+  }
+}

@@ -1,8 +1,10 @@
 {
+  "name": "portfolio-root",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npm --prefix Portfolio run dev",
+    "build": "npm --prefix Portfolio run build",
+    "preview": "npm --prefix Portfolio run preview"
   },
   "dependencies": {
     "react-router-dom": "^7.18.2"

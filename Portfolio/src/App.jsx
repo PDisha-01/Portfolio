@@ -17,6 +17,7 @@ import ScrollToHash from "./components/ScrollToHash";
 import TrafficOps from "./pages/ProjectDetails/TrafficOps";
 import ZenithProject from "./pages/ProjectDetails/ZenithProject";
 import SakhiProject from "./pages/ProjectDetails/SakhiProject";
+import FashnovaProject from "./pages/ProjectDetails/FashnovaProject";
 
 
 function MainPortfolio() {
@@ -100,6 +101,14 @@ function App() {
 <Route
   path="/projects/sakhi-women-empowerment"
   element={<SakhiProject />}
+/>
+<Route
+  path="/projects/fashnova-ai-fashion-intelligence"
+  element={<FashnovaProject />}
+/>
+<Route
+  path="/projects/fashnova"
+  element={<FashnovaProject />}
 />
       </Routes>
 

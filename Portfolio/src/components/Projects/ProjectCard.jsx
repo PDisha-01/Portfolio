@@ -9,11 +9,13 @@ export default function ProjectCard({ project }) {
       transition={{ duration: 0.3 }}
     >
 
-      <img
-        src={project.image}
-        alt={project.title}
-        className={project.id === 3 ? "portfolio-image" : ""}
-      />
+      <div className="project-image">
+        <img
+          src={project.image}
+          alt={project.title}
+          className={project.id === 3 ? "portfolio-image" : ""}
+        />
+      </div>
 
       <div className="project-content">
 
