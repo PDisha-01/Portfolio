@@ -10,11 +10,11 @@ import TechGraphicsBackground from "../components/TechGraphicsBackground";
 function Home() {
   return (
     <>
-      <section id="home" className="relative overflow-hidden">
-        {/* Computer Graphics with Neon Blue & Cyan Low-Opacity Effects */}
+      <section id="home" className="relative isolate overflow-hidden">
+        {/* Computer Graphics with Neon Blue & Cyan Visible Effects */}
         <TechGraphicsBackground />
 
-        <div className="relative pt-24 pb-14 md:pt-32 md:pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
+        <div className="relative z-10 pt-24 pb-14 md:pt-32 md:pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Bio & Core Info (7 Cols) */}
             <motion.div
