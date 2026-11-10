@@ -63,11 +63,7 @@ export default function About() {
               <p className="bento-story-bio">
                 I am a final-year Computer Science &amp; Engineering student with a deep
                 passion for Artificial Intelligence, Machine Learning, Computer Vision, and
-                Full-Stack Web Development. From developing multimodal fashion intelligence
-                with OpenAI CLIP (<strong className="text-cyan-400">FASHNOVA</strong>) to building
-                real-time YOLOv8 traffic orchestration (<strong className="text-cyan-400">TrafficOps+</strong>)
-                and women-empowerment platforms (<strong className="text-cyan-400">SAKHI</strong>),
-                I love turning cutting-edge research into intuitive, production-ready applications.
+                Full-Stack Web Development. From building AI-powered applications to leading tech communities, I thrive on solving complex problems and delivering innovative solutions.
               </p>
             </div>
 
@@ -81,52 +77,6 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Card 2: Interactive Dev Terminal (5 Cols) */}
-          <motion.div
-            className="bento-card bento-terminal-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            viewport={{ once: true }}
-          >
-            <div className="terminal-header">
-              <div className="terminal-dots">
-                <span className="terminal-dot dot-red" />
-                <span className="terminal-dot dot-yellow" />
-                <span className="terminal-dot dot-green" />
-              </div>
-              <div className="terminal-title">disha@portfolio:~$ cat developer.json</div>
-              <FaTerminal className="text-xs text-slate-500" />
-            </div>
-
-            <div className="terminal-body">
-              <span className="term-comment">// Developer Persona &amp; Configuration</span>
-              <br />
-              <span className="term-bracket">&#123;</span>
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"name"</span>: <span className="term-val-str">"Disha Mallick"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"role"</span>: <span className="term-val-str">"Full-Stack &amp; AI/ML Engineer"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"degree"</span>: <span className="term-val-str">"B.Tech Computer Science &amp; Eng"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"institution"</span>: <span className="term-val-str">"BCET Durgapur (MAKAUT)"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"graduation"</span>: <span className="term-val-num">2026</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"cgpa"</span>: <span className="term-val-num">7.5</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"graphicsScore"</span>: <span className="term-val-str">"100/100 (AISSC XII)"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"leadership"</span>: <span className="term-val-str">"Event Head @ Robonixx Club"</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"languages"</span>: <span className="term-bracket">[</span><span className="term-val-str">"English"</span>, <span className="term-val-str">"Hindi"</span>, <span className="term-val-str">"German A1"</span><span className="term-bracket">]</span>,
-              <br />
-              &nbsp;&nbsp;<span className="term-key">"openToRoles"</span>: <span className="term-val-bool">true</span>
-              <br />
-              <span className="term-bracket">&#125;</span>
-            </div>
-          </motion.div>
         </div>
 
         {/* Bento Grid Row 2: Leadership, Community & Beyond Code */}

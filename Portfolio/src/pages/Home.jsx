@@ -26,7 +26,7 @@ function Home() {
               {/* Availability Status Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 mb-5 shadow-sm w-fit">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Open for Software Engineering Roles • 2026 Grad</span>
+                <span>Open for Software Engineering Roles • 2027 Class</span>
               </div>
 
               {/* Name Heading (Tasteful & Balanced) */}
@@ -37,12 +37,12 @@ function Home() {
               {/* Clean Role Subtitle */}
               <div className="flex items-center gap-2 text-base sm:text-lg md:text-xl font-medium text-cyan-400 mb-4">
                 <span className="font-mono text-zinc-500">&gt;</span>
-                <span>Full-Stack Software Engineer &amp; Systems Developer</span>
+                <span>Full-Stack Developer &amp; AI/ML engineer </span>
               </div>
 
               {/* Authentic Description */}
               <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-6 max-w-xl">
-                Computer Science engineer at BCET Durgapur (MAKAUT). Currently a Virtual Intern at Infosys Springboard, architecting responsive full-stack applications, scalable backend microservices with Java &amp; Spring Boot, and practical Machine Learning systems.
+                Passionate about building innovative web applications and exploring the realms of artificial intelligence and machine learning. I thrive on solving complex problems and delivering impactful solutions that enhance user experiences. 
               </p>
 
               {/* Action Buttons */}
@@ -80,12 +80,7 @@ function Home() {
                 <span className="px-3 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
                   📍 West Bengal, India
                 </span>
-                <span className="px-3 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
-                  🎓 B.Tech CSE (2026) • 7.5 CGPA
-                </span>
-                <span className="px-3 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800 text-cyan-300">
-                  💼 Infosys Springboard Intern
-                </span>
+                
               </div>
 
               {/* Social Links */}

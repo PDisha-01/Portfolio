@@ -71,10 +71,6 @@ function Navbar() {
     { name: "Experiences & Internships", type: "Section", link: "experience", icon: Briefcase },
     { name: "Technical Arsenal", type: "Section", link: "skills", icon: Code2 },
     { name: "Featured Projects", type: "Section", link: "projects", icon: Code2 },
-    { name: "FASHNOVA (AI Fashion)", type: "Project", link: "projects", icon: Sparkles },
-    { name: "TrafficOps+ (Vision)", type: "Project", link: "projects", icon: Code2 },
-    { name: "SAKHI (Women Empowerment)", type: "Project", link: "projects", icon: Code2 },
-    { name: "Python ML Suite", type: "Project", link: "projects", icon: Code2 },
     { name: "Credentials & Achievements", type: "Section", link: "credentials", icon: GraduationCap },
     { name: "Contact & Collaboration", type: "Section", link: "contact", icon: Compass },
   ];
@@ -122,7 +118,7 @@ function Navbar() {
                 DISHA MALLICK
               </span>
               <span className="text-[10px] tracking-widest text-zinc-400 font-mono">
-                ENGINEERING '26
+                ENGINEERING '27
               </span>
             </div>
           </a>
