@@ -5,28 +5,14 @@ import { HiArrowUpRight, HiChatBubbleLeftRight } from "react-icons/hi2";
 import resume from "../assets/disha resume.pdf";
 import dishaPortrait from "../assets/disha-portrait.jpg";
 import About from "./about";
+import TechGraphicsBackground from "../components/TechGraphicsBackground";
 
 function Home() {
   return (
     <>
       <section id="home" className="relative overflow-hidden">
-        {/* Ambient Turquoise Shaded Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
-          {/* Subtle Top-Left Turquoise Mist */}
-          <div className="absolute -top-36 -left-32 w-[520px] h-[520px] rounded-full bg-teal-500/[0.09] blur-[140px]" />
-          {/* Subtle Upper-Right Turquoise/Cyan Mist */}
-          <div className="absolute top-1/4 -right-24 w-[600px] h-[600px] rounded-full bg-cyan-500/[0.10] blur-[150px]" />
-          {/* Soft Central Turquoise Accent Aura */}
-          <div className="absolute top-1/2 left-1/3 w-[450px] h-[450px] rounded-full bg-teal-400/[0.06] blur-[130px]" />
-          {/* Gentle Radial Turquoise Vignette */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse at 65% 32%, rgba(20, 184, 166, 0.08) 0%, rgba(6, 182, 212, 0.04) 42%, transparent 75%)",
-            }}
-          />
-        </div>
+        {/* Computer Graphics with Neon Blue & Cyan Low-Opacity Effects */}
+        <TechGraphicsBackground />
 
         <div className="relative pt-24 pb-14 md:pt-32 md:pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
