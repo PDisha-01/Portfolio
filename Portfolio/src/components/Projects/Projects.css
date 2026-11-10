@@ -645,6 +645,6 @@
    ========================================================= */
 .projects-glider-section {
   position: relative;
-  background: #09090b;
+  background: transparent;
   min-height: auto;
 }

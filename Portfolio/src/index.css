@@ -17,46 +17,45 @@
 
 
 /* =========================================================
-   2. THEME (STRICTLY DARK - BLACK & CHARCOAL GRAY)
+   2. THEME (LAVENDER & WHITE COMBINATION)
    ========================================================= */
 
 :root,
-.dark,
 body,
 #root {
 
-  --page-bg: #09090b;
-  --page-bg-secondary: #121215;
+  --page-bg: #faf8ff;
+  --page-bg-secondary: #f3e8ff;
 
-  --surface: rgba(24, 24, 27, 0.78);
-  --surface-solid: #18181b;
-  --surface-soft: rgba(255, 255, 255, 0.04);
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-solid: #ffffff;
+  --surface-soft: rgba(139, 92, 246, 0.05);
 
-  --border: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(255, 255, 255, 0.18);
+  --border: rgba(139, 92, 246, 0.16);
+  --border-strong: rgba(139, 92, 246, 0.32);
 
-  --text-main: #f4f4f5;
-  --text-secondary: #a1a1aa;
+  --text-main: #18181b;
+  --text-secondary: #52525b;
   --text-muted: #71717a;
 
-  --accent: #d4d4d8;
-  --accent-bright: #ffffff;
-  --accent-soft: rgba(255, 255, 255, 0.08);
+  --accent: #7c3aed;
+  --accent-bright: #6d28d9;
+  --accent-soft: rgba(139, 92, 246, 0.12);
 
-  --purple: #a1a1aa;
-  --purple-soft: rgba(161, 161, 170, 0.08);
+  --purple: #8b5cf6;
+  --purple-soft: rgba(139, 92, 246, 0.10);
 
-  --success: #22c55e;
+  --success: #10b981;
 
-  --grid-color: rgba(255, 255, 255, 0.035);
+  --grid-color: rgba(139, 92, 246, 0.06);
 
-  --glow-cyan: rgba(255, 255, 255, 0.04);
-  --glow-purple: rgba(161, 161, 170, 0.04);
-  --glow-blue: rgba(255, 255, 255, 0.03);
+  --glow-cyan: rgba(196, 181, 253, 0.40);
+  --glow-purple: rgba(216, 180, 254, 0.35);
+  --glow-blue: rgba(167, 139, 250, 0.30);
 
-  --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.40);
-  --shadow-md: 0 15px 45px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.70);
+  --shadow-sm: 0 4px 15px rgba(124, 58, 237, 0.06);
+  --shadow-md: 0 10px 30px rgba(124, 58, 237, 0.09);
+  --shadow-lg: 0 20px 50px rgba(124, 58, 237, 0.13);
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -143,23 +142,25 @@ h6 {
   background:
     radial-gradient(
       circle at 10% 5%,
-      var(--glow-cyan),
-      transparent 27%
+      rgba(216, 180, 254, 0.35),
+      transparent 32%
     ),
     radial-gradient(
       circle at 90% 15%,
-      var(--glow-purple),
-      transparent 30%
+      rgba(196, 181, 253, 0.30),
+      transparent 35%
     ),
     radial-gradient(
       circle at 50% 100%,
-      var(--glow-blue),
-      transparent 35%
+      rgba(233, 213, 255, 0.40),
+      transparent 45%
     ),
     linear-gradient(
-      135deg,
-      var(--page-bg),
-      var(--page-bg-secondary)
+      180deg,
+      #ffffff 0%,
+      #faf8ff 35%,
+      #f5f3ff 70%,
+      #ede9fe 100%
     );
 
   color: var(--text-main);
@@ -374,7 +375,7 @@ nav button {
   padding: 95px 6vw 42px;
   display: flex;
   align-items: center;
-  background: #09090b;
+  background: transparent;
 }
 
 .hero-profile-container {
@@ -409,9 +410,9 @@ nav button {
   aspect-ratio: 4 / 5;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(6, 182, 212, 0.15);
-  background: #09090b;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.12);
+  background: #ffffff;
 }
 
 .hero-photo-natural {

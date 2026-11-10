@@ -47,7 +47,7 @@ function MainPortfolio() {
 
   return (
 
-    <div className="dark bg-[#09090b] text-[#f4f4f5] min-h-screen">
+    <div className="min-h-screen bg-[#faf8ff] text-zinc-800 transition-colors duration-300 relative selection:bg-purple-200 selection:text-purple-900">
 
       <Navbar />
 

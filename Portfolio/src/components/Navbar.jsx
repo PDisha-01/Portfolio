@@ -103,8 +103,8 @@ function Navbar() {
           fixed top-0 left-0 w-full z-50 transition-all duration-300
           ${
             scrolled
-              ? "bg-[#09090b]/92 backdrop-blur-2xl border-b border-white/10 shadow-lg py-2.5"
-              : "bg-[#09090b]/75 backdrop-blur-md border-b border-white/5 py-3"
+              ? "bg-white/85 backdrop-blur-2xl border-b border-purple-100 shadow-[0_4px_20px_rgba(139,92,246,0.06)] py-2.5"
+              : "bg-white/70 backdrop-blur-md border-b border-purple-100/60 py-3"
           }
         `}
       >
@@ -117,9 +117,9 @@ function Navbar() {
             aria-label="Disha Mallick - Go to top"
             title="Disha Mallick"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 via-zinc-400 to-zinc-700 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(6,182,212,0.25)]">
-              <div className="w-full h-full bg-[#121215] rounded-[10px] flex items-center justify-center">
-                <span className="font-bold text-xs tracking-wider bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-500 via-indigo-400 to-purple-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_14px_rgba(139,92,246,0.25)]">
+              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                <span className="font-bold text-xs tracking-wider bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   DM
                 </span>
               </div>
@@ -129,15 +129,15 @@ function Navbar() {
           {/* LOCATION & TIME (CENTER / RESPONSIVE) */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Location */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-mono text-xs shadow-sm">
-              <MapPin size={12} className="text-cyan-400 flex-shrink-0" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 border border-purple-100 text-zinc-700 font-mono text-xs shadow-sm">
+              <MapPin size={12} className="text-purple-600 flex-shrink-0" />
               <span className="hidden sm:inline">West Bengal, India</span>
               <span className="sm:hidden">India</span>
             </div>
 
             {/* Live Time */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-mono text-xs shadow-sm">
-              <Clock size={12} className="text-cyan-400 flex-shrink-0" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 border border-purple-100 text-zinc-700 font-mono text-xs shadow-sm">
+              <Clock size={12} className="text-purple-600 flex-shrink-0" />
               <span>{time} IST</span>
             </div>
           </div>
@@ -147,13 +147,13 @@ function Navbar() {
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-cyan-500/50 text-zinc-300 hover:text-white transition-all duration-200 font-mono text-xs cursor-pointer shadow-sm group"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 hover:bg-purple-50/80 border border-purple-100 hover:border-purple-300 text-zinc-600 hover:text-zinc-900 transition-all duration-200 font-mono text-xs cursor-pointer shadow-sm group"
               title="Search sections and projects (⌘K)"
               aria-label="Open search popup"
             >
-              <Search size={13} className="text-zinc-400 group-hover:text-cyan-400 transition-colors" />
-              <span className="hidden md:inline text-zinc-400 group-hover:text-zinc-200">Search...</span>
-              <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-zinc-500 bg-zinc-800/90 border border-zinc-700/60 rounded">
+              <Search size={13} className="text-purple-500 group-hover:text-purple-700 transition-colors" />
+              <span className="hidden md:inline text-zinc-600 group-hover:text-zinc-900">Search...</span>
+              <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-purple-700 bg-purple-50 border border-purple-200 rounded">
                 ⌘K
               </kbd>
             </button>
@@ -169,7 +169,7 @@ function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] flex items-start justify-center pt-20 sm:pt-28 px-4 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-start justify-center pt-20 sm:pt-28 px-4 bg-purple-950/20 backdrop-blur-md"
             onClick={() => setSearchOpen(false)}
           >
             <motion.div
@@ -178,24 +178,24 @@ function Navbar() {
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-lg rounded-2xl bg-[#121215] border border-zinc-800 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden"
+              className="w-full max-w-lg rounded-2xl bg-white border border-purple-100 shadow-[0_25px_70px_rgba(124,58,237,0.18)] overflow-hidden"
             >
               {/* Search Bar Input */}
-              <div className="relative flex items-center px-4 py-3.5 border-b border-zinc-800">
-                <Search size={16} className="text-cyan-400 mr-3 flex-shrink-0" />
+              <div className="relative flex items-center px-4 py-3.5 border-b border-purple-100">
+                <Search size={16} className="text-purple-600 mr-3 flex-shrink-0" />
                 <input
                   type="text"
                   value={search}
                   autoFocus
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Type to search About, Experiences, Projects, Skills..."
-                  className="w-full bg-transparent text-sm text-white placeholder-zinc-500 outline-none font-mono"
+                  className="w-full bg-transparent text-sm text-zinc-900 placeholder-zinc-400 outline-none font-mono"
                 />
                 {search && (
                   <button
                     type="button"
                     onClick={() => setSearch("")}
-                    className="mr-2 text-zinc-400 hover:text-white text-xs cursor-pointer px-1"
+                    className="mr-2 text-zinc-400 hover:text-zinc-700 text-xs cursor-pointer px-1"
                   >
                     Clear
                   </button>
@@ -203,7 +203,7 @@ function Navbar() {
                 <button
                   type="button"
                   onClick={() => setSearchOpen(false)}
-                  className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+                  className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-700 hover:bg-purple-50 transition-colors cursor-pointer"
                   aria-label="Close search popup"
                 >
                   <X size={16} />
@@ -220,20 +220,20 @@ function Navbar() {
                         key={`${item.name}-${idx}`}
                         type="button"
                         onClick={() => scrollTo(item.link)}
-                        className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left text-xs font-mono text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors cursor-pointer group"
+                        className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left text-xs font-mono text-zinc-700 hover:text-purple-950 hover:bg-purple-50/80 transition-colors cursor-pointer group"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="p-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-cyan-400 group-hover:border-cyan-500/40">
+                          <div className="p-1.5 rounded-lg bg-purple-50 border border-purple-100 text-purple-600 group-hover:border-purple-300">
                             <Icon size={14} />
                           </div>
                           <div>
-                            <div className="text-white font-medium">{item.name}</div>
+                            <div className="text-zinc-900 font-medium">{item.name}</div>
                             {item.desc && (
                               <div className="text-[11px] text-zinc-500 font-sans">{item.desc}</div>
                             )}
                           </div>
                         </div>
-                        <span className="text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">
+                        <span className="text-[10px] text-purple-700 px-2 py-0.5 rounded bg-purple-50 border border-purple-100">
                           {item.type}
                         </span>
                       </button>
@@ -247,7 +247,7 @@ function Navbar() {
               </div>
 
               {/* Footer Guide */}
-              <div className="px-4 py-2.5 border-t border-zinc-800/80 bg-zinc-950/60 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+              <div className="px-4 py-2.5 border-t border-purple-100 bg-purple-50/50 flex items-center justify-between text-[11px] text-purple-900/70 font-mono">
                 <span>Click any item to jump directly</span>
                 <span>ESC to close</span>
               </div>

@@ -93,9 +93,9 @@ export default function TechArsenal() {
   });
 
   return (
-    <section className="tech-section py-12 md:py-14 px-5 md:px-8" id="skills">
+    <section className="tech-section py-12 md:py-14 px-5 md:px-8 bg-transparent" id="skills">
       {/* Delicate Glowing Bridge Line */}
-      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent mb-10" />
 
       <motion.div
         className="max-w-7xl mx-auto"
@@ -104,7 +104,7 @@ export default function TechArsenal() {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Compact Header (No long explanation) */}
+        {/* Compact Header */}
         <motion.div
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5"
           initial={{ opacity: 0, y: 20 }}
@@ -113,15 +113,15 @@ export default function TechArsenal() {
           viewport={{ once: true }}
         >
           <div>
-            <span className="text-[11px] uppercase tracking-[3px] font-mono font-bold text-zinc-500 dark:text-zinc-400 block mb-2">
+            <span className="text-[11px] uppercase tracking-[3px] font-mono font-bold text-purple-600 block mb-2">
               SKILLS &amp; TECHNOLOGIES
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight m-0 text-zinc-950 dark:text-white">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight m-0 text-zinc-950">
               Technical Arsenal
             </h2>
           </div>
 
-          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 flex items-center gap-2">
+          <div className="text-xs font-mono text-purple-700/70 flex items-center gap-2">
             <span>← Sideways Scrollable →</span>
           </div>
         </motion.div>
@@ -144,8 +144,8 @@ export default function TechArsenal() {
                   px-4 py-2 rounded-full font-mono text-xs font-bold tracking-wider whitespace-nowrap transition-all cursor-pointer
                   ${
                     isActive
-                      ? "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 shadow-md border dark:border-white border-zinc-950"
-                      : "bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600"
+                      ? "bg-purple-600 text-white shadow-md shadow-purple-500/20 border border-purple-600"
+                      : "bg-white/90 text-zinc-700 border border-purple-200 hover:border-purple-400 hover:bg-purple-50/60"
                   }
                 `}
               >
@@ -168,7 +168,7 @@ export default function TechArsenal() {
               pt-2
               px-1
               scrollbar-thin
-              scrollbar-thumb-zinc-700
+              scrollbar-thumb-purple-300
               scrollbar-track-transparent
             "
           >
@@ -198,17 +198,17 @@ export default function TechArsenal() {
                       cursor-default
                       ${
                         tech.highlight
-                          ? "bg-zinc-200/80 dark:bg-zinc-800/80 border-zinc-300 dark:border-zinc-700 text-zinc-950 dark:text-white shadow-sm"
-                          : "bg-zinc-100/70 dark:bg-zinc-900/60 border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300"
+                          ? "bg-white/95 border-purple-200 text-zinc-950 shadow-[0_4px_16px_rgba(139,92,246,0.08)]"
+                          : "bg-white/80 border-purple-100/90 text-zinc-800 shadow-[0_2px_10px_rgba(139,92,246,0.04)] hover:border-purple-300 hover:bg-white"
                       }
                     `}
                   >
-                    <Icon className="text-xl text-zinc-800 dark:text-zinc-200 flex-shrink-0" />
+                    <Icon className="text-xl text-purple-600 flex-shrink-0" />
                     <div className="flex flex-col">
                       <span className="font-semibold text-xs tracking-wide">
                         {tech.name}
                       </span>
-                      <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-400">
+                      <span className="text-[10px] font-mono text-purple-700/70 font-medium">
                         {tech.category}
                       </span>
                     </div>

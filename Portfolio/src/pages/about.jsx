@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section className="about-section" id="about">
       {/* Delicate Glowing Bridge Line */}
-      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent mb-10" />
 
       <motion.div
         className="about-container"
@@ -27,7 +27,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <div className="about-chapter-badge">
-            <HiSparkles className="text-cyan-400" />
+            <HiSparkles className="text-purple-600" />
             <span>Profile &amp; Narrative</span>
           </div>
 
@@ -175,7 +175,7 @@ export default function About() {
               </div>
 
               <div className="education-highlight-pill">
-                <HiAcademicCap className="text-cyan-400 text-base" />
+                <HiAcademicCap className="text-purple-600 text-base" />
                 <span>CGPA: 7.5 (through 6th Semester)</span>
               </div>
             </div>
