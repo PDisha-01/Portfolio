@@ -4,8 +4,27 @@ import ExperienceCard from "./ExperienceCard";
 import aicteLogo from "../assets/aicte.jpeg";
 import downloadLogo from "../assets/download.png";
 import nssLogo from "../assets/nss.png";
+import robonixLogo from "../assets/robonix.jpeg";
 
 const experiences = [
+  {
+    logo: robonixLogo,
+    company: "Robonixx Club @ BCET",
+    role: "Event Management Head",
+    duration: "Aug 2024 – Present",
+    location: "Durgapur, West Bengal, India",
+    domain: "Leadership & Technical Operations",
+    project: "Robotics workshops, tech fests, college hackathons, and participant coordination",
+    toolkit: [
+      "Team Leadership",
+      "Event Logistics",
+      "Public Speaking",
+      "Cross-Functional Coordination",
+      "Student Outreach",
+    ],
+    goal:
+      "Leading executive operations for BCET's robotics and tech club, orchestrating college fests and technical seminars.",
+  },
   {
     logo: aicteLogo,
     company: "EDUSKILLS powered by AICTE",
@@ -48,6 +67,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section
+      id="experience"
       className="
         portfolio-section
         relative
@@ -295,7 +315,8 @@ export default function Experience() {
             className="
               grid
               grid-cols-1
-              lg:grid-cols-2
+              md:grid-cols-2
+              lg:grid-cols-3
               gap-6
             "
           >

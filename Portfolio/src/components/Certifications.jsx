@@ -148,7 +148,7 @@ const Certifications = () => {
 
         <h1>
           PERSONAL
-          <span> ACHIVEMENTS</span>
+          <span> ACHIEVEMENTS</span>
         </h1>
 
         <div className="cert-line"></div>

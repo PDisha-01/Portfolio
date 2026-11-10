@@ -1,5 +1,15 @@
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaGitAlt, FaGithub, FaJava } from "react-icons/fa";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaPython,
+  FaGitAlt,
+  FaGithub,
+  FaJava,
+  FaBrain,
+} from "react-icons/fa";
 import {
   SiTailwindcss,
   SiFlask,
@@ -13,50 +23,73 @@ import {
   SiTypescript,
   SiPrisma,
   SiVercel,
+  SiFastapi,
+  SiPytorch,
+  SiOpencv,
+  SiPostgresql,
+  SiFramer,
+  SiPostman,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
-import { techData } from "../data/techData";
 
 const stackGroups = [
   {
-    title: "Languages",
+    title: "Programming Languages",
+    badge: "Core",
     items: [
+      ["Python", "python", FaPython],
       ["Java", "java", FaJava],
       ["JavaScript", "javascript", FaJsSquare],
-      ["Python", "python", FaPython],
-      ["SQL", "mysql", SiMysql],
-    
-    ],
-  },
-  {
-    title: "Frontend",
-    items: [
-      ["React", "react", FaReact],
+      ["TypeScript", "typescript", SiTypescript],
+      ["SQL", "sql", SiMysql],
       ["HTML5", "html", FaHtml5],
       ["CSS3", "css", FaCss3Alt],
-      ["Tailwind CSS", "tailwind", SiTailwindcss],
-      ["Typescript", "typescript", SiTypescript],
     ],
   },
   {
-    title: "Backend & Database",
+    title: "AI, ML & Computer Vision",
+    badge: "Specialization",
     items: [
+      ["PyTorch", "pytorch", SiPytorch],
+      ["OpenAI CLIP", "clip", FaBrain],
+      ["OpenCV", "opencv", SiOpencv],
+      ["Scikit-learn", "sklearn", SiScikitlearn],
+      ["NumPy", "numpy", SiNumpy],
+      ["Pandas", "pandas", SiPandas],
+    ],
+  },
+  {
+    title: "Frontend Engineering",
+    badge: "UI/UX",
+    items: [
+      ["React 19", "react", FaReact],
+      ["Tailwind CSS", "tailwind", SiTailwindcss],
+      ["Framer Motion", "framer", SiFramer],
+      ["Responsive UI", "responsive", FaCss3Alt],
+    ],
+  },
+  {
+    title: "Backend & Systems",
+    badge: "Architecture",
+    items: [
+      ["FastAPI", "fastapi", SiFastapi],
       ["Spring Boot", "springboot", SiSpringboot],
       ["Flask", "flask", SiFlask],
-      ["MongoDB", "mongodb", SiMongodb],
       ["Hibernate", "hibernate", SiHibernate],
-      ["Prisma", "prisma", SiPrisma],
+      ["RESTful APIs", "rest", SiPostman],
     ],
   },
   {
-    title: "Tools & AI/ML",
+    title: "Databases, Cloud & Dev Tools",
+    badge: "Ecosystem",
     items: [
+      ["PostgreSQL", "postgres", SiPostgresql],
+      ["MongoDB", "mongodb", SiMongodb],
+      ["Prisma ORM", "prisma", SiPrisma],
       ["Git", "git", FaGitAlt],
       ["GitHub", "github", FaGithub],
       ["VS Code", "vscode", VscCode],
-      ["NumPy", "numpy", SiNumpy],
-      ["Pandas", "pandas", SiPandas],
-      ["Scikit-learn", "sklearn", SiScikitlearn],
+      ["Postman", "postman", SiPostman],
       ["Vercel", "vercel", SiVercel],
     ],
   },
@@ -72,26 +105,26 @@ export default function TechArsenal() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <span>CHAPTER 03</span>
+        <span>CHAPTER • 03</span>
 
-        <h2>TECHNICAL STACK</h2>
+        <h2>Technical Arsenal</h2>
 
         <p>
-          Technologies and tools I use to design, develop, integrate,
-          and build practical applications.
+          Production-tested technologies, machine learning frameworks, and modern
+          engineering tools I use to build scalable, intelligent applications.
         </p>
       </motion.div>
 
       <div className="tech-stack-wrapper">
         <div className="tech-stack-intro">
-          <span>CORE SKILLS</span>
+          <span>CORE COMPETENCIES</span>
 
-          <h3>What I Work With</h3>
+          <h3>What I Build With</h3>
 
           <p>
-            A focused overview of my technical skills across programming,
-            frontend development, backend development, databases, tools,
-            and AI/ML.
+            A comprehensive spectrum across computer vision, full-stack web
+            development, backend microservices, data science pipelines, and cloud
+            deployment.
           </p>
         </div>
 
@@ -104,22 +137,26 @@ export default function TechArsenal() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.5,
-                delay: groupIndex * 0.1,
+                delay: groupIndex * 0.08,
               }}
               viewport={{ once: true }}
             >
-              <h4>{group.title}</h4>
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="m-0">{group.title}</h4>
+                <span className="text-[10px] uppercase tracking-widest font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  {group.badge}
+                </span>
+              </div>
 
               <div className="tech-pills-grid">
                 {group.items.map(([label, id, Icon]) => (
                   <motion.div
                     className="tech-stack-pill"
                     key={id}
-                    whileHover={{ y: -4, scale: 1.02 }}
+                    whileHover={{ y: -4, scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Icon aria-hidden="true" />
-
+                    <Icon aria-hidden="true" className="text-cyan-400" />
                     <span>{label}</span>
                   </motion.div>
                 ))}

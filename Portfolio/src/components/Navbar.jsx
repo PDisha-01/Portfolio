@@ -5,12 +5,17 @@ import {
   Search,
   Sun,
   Moon,
-  Clock
+  Clock,
+  FileText,
+  ExternalLink,
+  Sparkles
 } from "lucide-react";
+import resume from "../assets/disha resume.pdf";
 
 function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Search
   const [searchOpen, setSearchOpen] = useState(false);
@@ -21,7 +26,7 @@ function Navbar() {
     return localStorage.getItem("theme") !== "light";
   });
 
-  // Live time
+  // Live time (IST)
   const [time, setTime] = useState(
     new Date().toLocaleTimeString([], {
       hour: "2-digit",
@@ -31,41 +36,26 @@ function Navbar() {
   );
 
   const navItems = [
-    {
-      name: "Home",
-      link: "home"
-    },
-    {
-      name: "About",
-      link: "about"
-    },
-    {
-      name: "Projects",
-      link: "projects"
-    },
-    {
-      name: "Credentials",
-      link: "credentials"
-    },
-    {
-      name: "Contact",
-      link: "contact"
-    }
+    { name: "Home", link: "home" },
+    { name: "About", link: "about" },
+    { name: "Experience", link: "experience" },
+    { name: "Skills", link: "skills" },
+    { name: "Projects", link: "projects" },
+    { name: "Credentials", link: "credentials" },
+    { name: "Contact", link: "contact" }
   ];
 
-  /* =========================
-     ACTIVE SECTION
-  ========================= */
-
+  /* Detect Scroll for Glassmorphism */
   useEffect(() => {
     const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+
       const sections = navItems
         .map((item) => document.getElementById(item.link))
         .filter(Boolean);
 
       sections.forEach((section) => {
-        const top = section.offsetTop - 150;
-
+        const top = section.offsetTop - 180;
         if (window.scrollY >= top) {
           setActive(section.id);
         }
@@ -73,18 +63,11 @@ function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* =========================
-     LIVE CLOCK
-  ========================= */
-
+  /* Live Clock */
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(
@@ -95,27 +78,19 @@ function Navbar() {
         })
       );
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
-  /* =========================
-     THEME
-  ========================= */
-
- useEffect(() => {
-  if (darkMode) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }
-}, [darkMode]);
-
-  /* =========================
-     SEARCH
-  ========================= */
+  /* Theme Sync */
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const filteredItems = navItems.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
@@ -123,12 +98,8 @@ function Navbar() {
 
   const handleSearch = (item) => {
     const section = document.getElementById(item.link);
-
     if (section) {
-      section.scrollIntoView({
-        behavior: "smooth"
-      });
-
+      section.scrollIntoView({ behavior: "smooth" });
       setActive(item.link);
       setSearch("");
       setSearchOpen(false);
@@ -138,178 +109,118 @@ function Navbar() {
 
   return (
     <nav
-      className="
-        fixed
-        top-0
-        left-0
-        w-full
-        z-50
-        bg-[#050816]/70
-        backdrop-blur-xl
-        border-b
-        border-cyan-400/20
-        shadow-[0_0_30px_rgba(34,211,238,0.15)]
-      "
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-all duration-300
+        ${
+          scrolled
+            ? "bg-[#050816]/85 backdrop-blur-2xl border-b border-cyan-400/20 shadow-[0_10px_35px_rgba(0,0,0,0.5)] py-3"
+            : "bg-transparent backdrop-blur-md border-b border-white/5 py-4"
+        }
+      `}
     >
-      <div
-        className="
-          max-w-7xl
-          mx-auto
-          flex
-          justify-between
-          items-center
-          px-6
-          py-4
-        "
-      >
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
 
-        {/* =========================
-            LOGO
-        ========================= */}
+        {/* LOGO & STATUS */}
+        <div className="flex items-center gap-4">
+          <a
+            href="#home"
+            className="flex items-center gap-2 group font-mono"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-500 to-rose-500 p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shadow-[0_0_20px_rgba(34,211,238,0.35)]">
+              <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center">
+                <span className="font-bold text-base bg-gradient-to-r from-cyan-400 via-purple-300 to-rose-400 bg-clip-text text-transparent">
+                  DM
+                </span>
+              </div>
+            </div>
+            <div className="hidden sm:flex flex-col">
+              <span className="font-bold text-sm tracking-wide text-white group-hover:text-cyan-400 transition">
+                Disha Mallick
+              </span>
+              <span className="text-[10px] tracking-widest text-cyan-400/80 font-mono">
+                AI • FULL STACK
+              </span>
+            </div>
+          </a>
 
-        <a
-          href="#home"
-          className="
-            text-2xl
-            font-bold
-            text-cyan-400
-            tracking-wider
-            drop-shadow-[0_0_10px_#22d3ee]
-            shrink-0
-          "
-        >
-          DM
-        </a>
+          {/* ONLINE STATUS BADGE */}
+          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-medium tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+            <span>Open to Roles</span>
+          </div>
+        </div>
 
-
-        {/* =========================
-            DESKTOP NAVIGATION
-        ========================= */}
-
-        <div className="hidden lg:flex items-center gap-7">
-
+        {/* DESKTOP NAV LINKS */}
+        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-inner">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={`#${item.link}`}
               className={`
-                relative
-                transition-all
-                duration-300
-                group
+                relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300
                 ${
                   active === item.link
-                    ? "text-cyan-400"
-                    : "text-gray-300 hover:text-cyan-400"
+                    ? "text-cyan-300 bg-cyan-400/15 shadow-[0_0_15px_rgba(34,211,238,0.3)] font-semibold"
+                    : "text-gray-300 hover:text-white hover:bg-white/5"
                 }
               `}
             >
               {item.name}
-
-{item.link === "home" && (
-  <span className="ml-2 text-[9px] font-bold tracking-wider text-green-400">
-    ● ONLINE
-  </span>
-)}
-
-              <span
-                className={`
-                  absolute
-                  left-0
-                  -bottom-2
-                  h-[2px]
-                  bg-cyan-400
-                  transition-all
-                  duration-300
-                  ${
-                    active === item.link
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
-                  }
-                `}
-              />
             </a>
           ))}
-
         </div>
 
+        {/* RIGHT ACTION TOOLS */}
+        <div className="hidden md:flex items-center gap-3">
 
-        {/* =========================
-            NAVBAR TOOLS
-        ========================= */}
-
-        <div className="hidden md:flex items-center gap-3 ml-6">
+          {/* QUICK RESUME BUTTON */}
+          <a
+            href={resume}
+            download="Disha_Mallick_Resume.pdf"
+            className="
+              inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold
+              bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500
+              text-[#04111c] shadow-[0_0_20px_rgba(34,211,238,0.35)]
+              transition-all duration-300 hover:scale-105 active:scale-95
+            "
+          >
+            <FileText size={14} />
+            <span>Resume</span>
+          </a>
 
           {/* SEARCH */}
-
           <div className="relative">
-
             {searchOpen && (
-              <div className="absolute right-0 top-12 w-64">
-
+              <div className="absolute right-0 top-12 w-64 z-50">
                 <input
                   autoFocus
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search sections..."
+                  placeholder="Search portfolio..."
                   className="
-                    w-full
-                    px-4
-                    py-2.5
-                    rounded-xl
-                    bg-[#0b1220]
-                    border
-                    border-cyan-400/30
-                    text-white
-                    placeholder-gray-500
-                    outline-none
-                    focus:border-cyan-400
-                    shadow-lg
+                    w-full px-4 py-2.5 rounded-xl bg-[#0b1220]
+                    border border-cyan-400/40 text-white placeholder-gray-500
+                    outline-none focus:border-cyan-400 shadow-2xl text-xs font-sans
                   "
                 />
-
                 {search && (
-                  <div
-                    className="
-                      mt-2
-                      rounded-xl
-                      overflow-hidden
-                      bg-[#0b1220]
-                      border
-                      border-cyan-400/20
-                      shadow-xl
-                    "
-                  >
-
+                  <div className="mt-2 rounded-xl overflow-hidden bg-[#0b1220] border border-cyan-400/20 shadow-2xl">
                     {filteredItems.length > 0 ? (
                       filteredItems.map((item) => (
                         <button
                           key={item.name}
                           onClick={() => handleSearch(item)}
-                          className="
-                            w-full
-                            text-left
-                            px-4
-                            py-3
-                            text-gray-300
-                            hover:text-cyan-400
-                            hover:bg-cyan-400/10
-                            transition
-                          "
+                          className="w-full text-left px-4 py-2.5 text-xs text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition"
                         >
                           {item.name}
                         </button>
                       ))
                     ) : (
-                      <p className="px-4 py-3 text-gray-500 text-sm">
-                        No section found
-                      </p>
+                      <p className="px-4 py-2.5 text-gray-500 text-xs">No section found</p>
                     )}
-
                   </div>
                 )}
-
               </div>
             )}
 
@@ -318,150 +229,70 @@ function Navbar() {
                 setSearchOpen(!searchOpen);
                 setSearch("");
               }}
-              className="
-                p-2
-                rounded-full
-                text-gray-300
-                hover:text-cyan-400
-                hover:bg-cyan-400/10
-                transition
-              "
+              className="p-2 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition border border-transparent hover:border-cyan-400/20"
               aria-label="Search"
             >
-              <Search size={19} />
+              <Search size={17} />
             </button>
-
           </div>
-
 
           {/* THEME TOGGLE */}
-
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="
-              p-2
-              rounded-full
-              text-gray-300
-              hover:text-cyan-400
-              hover:bg-cyan-400/10
-              transition
-            "
+            className="p-2 rounded-xl text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition border border-transparent hover:border-cyan-400/20"
             aria-label="Toggle theme"
           >
-            {darkMode ? (
-              <Sun size={19} />
-            ) : (
-              <Moon size={19} />
-            )}
+            {darkMode ? <Sun size={17} /> : <Moon size={17} />}
           </button>
 
-
           {/* LIVE CLOCK */}
-
-          <div
-            className="
-              flex
-              items-center
-              gap-2
-              px-3
-              py-2
-              rounded-full
-              border
-              border-cyan-400/20
-              bg-cyan-400/5
-              text-cyan-400
-              text-sm
-              font-mono
-              whitespace-nowrap
-            "
-          >
-            <Clock size={16} />
-
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-cyan-400/20 bg-cyan-400/5 text-cyan-400 text-xs font-mono">
+            <Clock size={13} />
             <span>{time}</span>
           </div>
-
         </div>
 
-
-        {/* =========================
-            MOBILE MENU BUTTON
-        ========================= */}
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="
-            md:hidden
-            text-cyan-400
-            p-2
-          "
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* MOBILE MENU BUTTON */}
+        <div className="flex md:hidden items-center gap-2">
+          <a
+            href={resume}
+            download="Disha_Mallick_Resume.pdf"
+            className="p-2 rounded-xl text-cyan-400 border border-cyan-400/20 bg-cyan-400/5"
+            aria-label="Download Resume"
+          >
+            <FileText size={18} />
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-cyan-400 p-2 rounded-xl border border-cyan-400/20"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
       </div>
 
-
-      {/* =========================
-          MOBILE MENU
-      ========================= */}
-
+      {/* MOBILE MENU */}
       {open && (
-        <div
-          className="
-            md:hidden
-            border-t
-            border-cyan-400/10
-            bg-[#050816]/95
-            backdrop-blur-xl
-            px-6
-            py-5
-          "
-        >
-
+        <div className="md:hidden border-t border-cyan-400/10 bg-[#050816]/95 backdrop-blur-2xl px-6 py-6 animate-fadeIn">
           {/* Mobile Search */}
-
-          <div className="relative mb-5">
-
+          <div className="relative mb-4">
             <Search
-              size={18}
-              className="
-                absolute
-                left-3
-                top-1/2
-                -translate-y-1/2
-                text-gray-500
-              "
+              size={16}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
             />
-
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search sections..."
-              className="
-                w-full
-                pl-10
-                pr-4
-                py-3
-                rounded-xl
-                bg-[#0b1220]
-                border
-                border-cyan-400/20
-                text-white
-                placeholder-gray-500
-                outline-none
-                focus:border-cyan-400
-              "
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-[#0b1220] border border-cyan-400/20 text-white text-xs placeholder-gray-500 outline-none focus:border-cyan-400"
             />
-
           </div>
 
-
           {/* Mobile Navigation */}
-
-          <div className="flex flex-col gap-2">
-
+          <div className="flex flex-col gap-1">
             {filteredItems.map((item) => (
               <a
                 key={item.name}
@@ -472,81 +303,34 @@ function Navbar() {
                   setSearch("");
                 }}
                 className={`
-                  block
-                  py-3
-                  text-lg
-                  transition-all
+                  block px-4 py-2.5 rounded-xl text-sm font-medium tracking-wide transition-all
                   ${
                     active === item.link
-                      ? "text-cyan-400"
-                      : "text-gray-300 hover:text-cyan-400"
+                      ? "text-cyan-400 bg-cyan-400/10 font-bold"
+                      : "text-gray-300 hover:text-cyan-400 hover:bg-white/5"
                   }
                 `}
               >
                 {item.name}
               </a>
             ))}
-
           </div>
 
-
-          {/* Mobile Tools */}
-
-          <div
-            className="
-              flex
-              items-center
-              justify-between
-              mt-5
-              pt-5
-              border-t
-              border-cyan-400/10
-            "
-          >
-
+          {/* Mobile Tools Footer */}
+          <div className="flex items-center justify-between mt-5 pt-4 border-t border-cyan-400/10 text-xs">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="
-                flex
-                items-center
-                gap-2
-                text-gray-300
-                hover:text-cyan-400
-              "
+              className="flex items-center gap-2 text-gray-300 hover:text-cyan-400"
             >
-              {darkMode ? (
-                <>
-                  <Sun size={18} />
-                  Light Mode
-                </>
-              ) : (
-                <>
-                  <Moon size={18} />
-                  Dark Mode
-                </>
-              )}
+              {darkMode ? <><Sun size={15} /> Light</> : <><Moon size={15} /> Dark</>}
             </button>
-
-
-            <div
-              className="
-                flex
-                items-center
-                gap-2
-                text-cyan-400
-                font-mono
-                text-sm
-              "
-            >
-              <Clock size={16} />
-              {time}
+            <div className="flex items-center gap-1.5 text-cyan-400 font-mono">
+              <Clock size={13} />
+              <span>{time}</span>
             </div>
-
           </div>
-
         </div>
       )}
-
     </nav>
   );
 }

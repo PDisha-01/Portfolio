@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="footer-brand">
           <h2>
-            DISHA mallick<span>.</span>
+            DISHA MALLICK<span>.</span>
           </h2>
 
           <p>
@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="footer-bottom">
 
         <p>
-          © 2026 Zenith. All rights reserved.
+          © 2026 Disha Mallick. All rights reserved.
         </p>
 
         <p>
