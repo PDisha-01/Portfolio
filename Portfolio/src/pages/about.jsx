@@ -34,7 +34,7 @@ export default function About() {
           <h2>Behind The Code</h2>
 
           <p className="about-header-bio">
-            I am a final-year Computer Science &amp; Engineering student at Bengal College of Engineering and Technology (MAKAUT, CGPA 7.5) with a deep passion for Full-Stack Systems, Artificial Intelligence, and Computer Vision. Currently gaining industry experience as a Virtual Intern at Infosys Springboard, I love architecting robust backend services, scalable web applications, and leading student engineering communities.
+            I am a final-year Computer Science &amp; Engineering student at Bengal College of Engineering and Technology (MAKAUT, CGPA 7.5) with a deep passion for Full-Stack Systems, Artificial Intelligence, and Computer Vision. Currently gaining industry experience as a Technical Intern at Infosys Springboard developing AI Agentic Construction Site Risk Analytics, I love architecting robust backend services, scalable web applications, and leading student engineering communities.
           </p>
 
           <div className="about-header-tags">

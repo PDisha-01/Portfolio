@@ -192,7 +192,7 @@ function Home() {
                   <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
                   <div className="text-[11px] font-mono leading-tight">
                     <span className="block text-white font-semibold">Infosys Springboard</span>
-                    <span className="block text-zinc-400 text-[10px]">Virtual Intern '26</span>
+                    <span className="block text-zinc-400 text-[10px]">Technical Intern</span>
                   </div>
                 </div>
 

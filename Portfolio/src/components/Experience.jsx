@@ -13,20 +13,21 @@ import aicteLogo from "../assets/aicte.jpeg";
 import downloadLogo from "../assets/download.png";
 import nssLogo from "../assets/nss.png";
 import robonixLogo from "../assets/robonix.jpeg";
+import infosysLogo from "../assets/infosys-springboard.jpg";
 
 const experiences = [
   {
     id: "exp-1",
-    logo: downloadLogo,
+    logo: infosysLogo,
     company: "Infosys Springboard",
-    role: "Virtual Intern",
+    role: "Technical Intern",
     duration: "2026 – Present (Ongoing)",
     location: "Virtual / Remote, India",
-    domain: "Software Engineering & Cloud Architecture",
+    domain: "AI Agents & Site Risk Analytics",
     summary:
-      "Gaining industry-grade software development experience covering modern architecture patterns, cloud deployment, and scalable code design.",
-    toolkit: ["Java", "Python", "Cloud Fundamentals", "Agile Engineering"],
-    highlight: "Enterprise Cloud & Software Systems",
+      "Architecting an AI Agentic Construction Site Risk Analytics platform, integrating autonomous multi-agent pipelines, real-time safety hazard monitoring, and predictive computer vision risk models.",
+    toolkit: ["Agentic AI", "Computer Vision", "Risk Analytics", "Python", "Deep Learning"],
+    highlight: "AI Agentic Site Risk Analytics",
   },
   {
     id: "exp-2",
