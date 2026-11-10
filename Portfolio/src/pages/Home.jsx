@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { HiSparkles, HiChatBubbleLeftRight, HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowUpRight, HiChatBubbleLeftRight } from "react-icons/hi2";
 import resume from "../assets/disha resume.pdf";
 import profile from "../assets/hero photo.jpeg";
 import About from "./about";
@@ -9,34 +9,52 @@ import About from "./about";
 function Home() {
   return (
     <>
-      <section className="hero" id="home">
-        <div className="hero-bg-glow hero-bg-glow-left" aria-hidden="true" />
-        <div className="hero-bg-glow hero-bg-glow-right" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
+      <section className="hero hero-engineer-theme" id="home">
+        {/* Full Engineering Blueprint Grid & Crosshair Markers */}
+        <div className="hero-blueprint-grid" aria-hidden="true" />
+        <div className="hero-blueprint-vignette" aria-hidden="true" />
 
-        <div className="hero-inner">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <span className="hero-badge-dot" aria-hidden="true" />
-              <span>B.TECH CSE '26 • FULL-STACK &amp; AI/ML ENGINEER</span>
+        {/* Technical Blueprint Coordinates */}
+        <div className="hero-tech-marker marker-tl" aria-hidden="true">+ [23°35'12" N // 87°18'44" E]</div>
+        <div className="hero-tech-marker marker-tr" aria-hidden="true">+ [DISCIPLINE: COMP_SCI_ENG]</div>
+        <div className="hero-tech-marker marker-bl" aria-hidden="true">+ [SYSTEM: ONLINE // v2026]</div>
+        <div className="hero-tech-marker marker-br" aria-hidden="true">+ [CAD_REV: 04.2]</div>
+
+        {/* Photograph as Atmospheric Background Element */}
+        <div className="hero-photo-bg" aria-hidden="true">
+          <img
+            src={profile}
+            alt=""
+            className="hero-photo-bg-img"
+          />
+          <div className="hero-photo-bg-gradient" />
+        </div>
+
+        <div className="hero-inner hero-inner-engineer">
+          <div className="hero-content hero-content-full">
+            {/* Engineering Specification Badge */}
+            <div className="hero-spec-badge">
+              <span className="hero-spec-dot" aria-hidden="true" />
+              <span>[ SPEC: B.TECH CSE '26 // FULL-STACK &amp; SOFTWARE SYSTEMS ]</span>
             </div>
 
-            <h1 className="hero-name">
-              Disha <span>Mallick</span>
+            {/* Main Headline */}
+            <h1 className="hero-engineer-name">
+              DISHA <span>MALLICK</span>
             </h1>
 
-            <div className="hero-role" aria-label="Professional roles">
+            {/* Dynamic Role */}
+            <div className="hero-engineer-role" aria-label="Professional focus">
+              <span className="hero-role-prompt">&gt;</span>
               <TypeAnimation
                 sequence={[
-                  "Full-Stack Web Developer",
+                  "Full-Stack Software Engineer",
                   2200,
-                  "AI & Machine Learning Engineer",
+                  "Systems & Web Application Architect",
                   2200,
-                  "Computer Vision Specialist (CLIP & YOLO)",
+                  "Infosys Springboard Virtual Intern",
                   2200,
-                  "Robonixx Club Event Head",
-                  2200,
-                  "B.Tech CSE '26 @ BCET",
+                  "Robonixx Club Event Operations Head",
                   2200,
                 ]}
                 wrapper="span"
@@ -45,12 +63,14 @@ function Home() {
               />
             </div>
 
-            <p className="hero-description">
-              Final-year Computer Science engineer building intelligent multimodal
-              systems, responsive full-stack applications, and real-time computer vision
-              models that bridge creative design and high-performance engineering.
+            {/* Description */}
+            <p className="hero-engineer-description">
+              Final-year Computer Science engineer architecting robust full-stack applications,
+              scalable backend services, and clean digital systems with disciplined engineering
+              principles and modern frameworks.
             </p>
 
+            {/* Action Buttons */}
             <div className="hero-buttons">
               <a className="primary-btn" href="#projects">
                 <span>Explore Projects</span>
@@ -77,31 +97,21 @@ function Home() {
               </a>
             </div>
 
-            {/* Quick Metrics Strip */}
-            <div className="hero-stats-strip" aria-label="Key highlights">
-              <div className="hero-stat-item">
-                <span className="hero-stat-num">5+</span>
-                <span className="hero-stat-text">Projects Built</span>
-              </div>
-              <div className="hero-stat-divider" aria-hidden="true" />
-              <div className="hero-stat-item">
-                <span className="hero-stat-num">2</span>
-                <span className="hero-stat-text">Industry Internships</span>
-              </div>
-              <div className="hero-stat-divider" aria-hidden="true" />
-              <div className="hero-stat-item">
-                <span className="hero-stat-num">7.5</span>
-                <span className="hero-stat-text">B.Tech CGPA</span>
-              </div>
-              <div className="hero-stat-divider" aria-hidden="true" />
-              <div className="hero-stat-item">
-                <span className="hero-stat-num">Top 3</span>
-                <span className="hero-stat-text">Techfest &amp; NSS</span>
-              </div>
+            {/* Technical Metadata Tags */}
+            <div className="hero-meta-strip" aria-label="Quick specs">
+              <span className="hero-meta-chip">
+                <span className="meta-chip-label">ROLE:</span> Available for Software Roles
+              </span>
+              <span className="hero-meta-chip">
+                <span className="meta-chip-label">INSTITUTION:</span> BCET Durgapur (MAKAUT)
+              </span>
+              <span className="hero-meta-chip">
+                <span className="meta-chip-label">LOCATION:</span> West Bengal, India
+              </span>
             </div>
 
             {/* Social Connect Icons */}
-            <div className="hero-icons" aria-label="Social links">
+            <div className="hero-icons hero-icons-engineer" aria-label="Engineering links">
               <a
                 href="https://github.com/PDisha-01"
                 target="_blank"
@@ -126,45 +136,6 @@ function Home() {
                 <MdEmail />
                 <span>Email</span>
               </a>
-            </div>
-          </div>
-
-          {/* Right Column: Holographic 3D Profile Showcase */}
-          <div className="hero-image" aria-label="Disha Mallick profile showcase">
-            <div className="hero-visual">
-              <div className="hero-visual-glow" aria-hidden="true" />
-
-              {/* Floating Pill - Top Left */}
-              <div className="floating-card floating-card-one">
-                <span>SPECIALIZATION</span>
-                <strong>⚡ AI/ML &amp; React 19</strong>
-              </div>
-
-              {/* Holographic Profile Frame */}
-              <div className="hero-image-frame">
-                <img
-                  src={profile}
-                  alt="Disha Mallick - Full-Stack Developer & AI/ML Engineer"
-                  className="hero-computer-image"
-                />
-                <div className="hero-image-overlay" />
-                <div className="hero-image-label">
-                  <span className="status-dot" />
-                  <span>DISHA MALLICK • BCET '26</span>
-                </div>
-              </div>
-
-              {/* Floating Pill - Bottom Right */}
-              <div className="floating-card floating-card-two">
-                <span>HACKATHON</span>
-                <strong>🏆 Pantheon '25 BIT Mesra</strong>
-              </div>
-
-              {/* Floating Pill - Bottom Left */}
-              <div className="floating-card floating-card-three">
-                <span>LOCATION</span>
-                <strong>📍 West Bengal, India</strong>
-              </div>
             </div>
           </div>
         </div>

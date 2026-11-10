@@ -113,8 +113,8 @@ function Navbar() {
         fixed top-0 left-0 w-full z-50 transition-all duration-300
         ${
           scrolled
-            ? "bg-[#050816]/85 backdrop-blur-2xl border-b border-cyan-400/20 shadow-[0_10px_35px_rgba(0,0,0,0.5)] py-3"
-            : "bg-transparent backdrop-blur-md border-b border-white/5 py-4"
+            ? "dark:bg-[#050816]/90 bg-white/90 backdrop-blur-2xl border-b dark:border-cyan-400/20 border-slate-200 shadow-md py-3"
+            : "bg-transparent backdrop-blur-md border-b dark:border-white/5 border-slate-200/50 py-4"
         }
       `}
     >
@@ -127,31 +127,31 @@ function Navbar() {
             className="flex items-center gap-2 group font-mono"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-500 to-rose-500 p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shadow-[0_0_20px_rgba(34,211,238,0.35)]">
-              <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center">
-                <span className="font-bold text-base bg-gradient-to-r from-cyan-400 via-purple-300 to-rose-400 bg-clip-text text-transparent">
+              <div className="w-full h-full dark:bg-[#050816] bg-white rounded-[10px] flex items-center justify-center">
+                <span className="font-bold text-base bg-gradient-to-r from-cyan-400 via-purple-400 to-rose-400 bg-clip-text text-transparent">
                   DM
                 </span>
               </div>
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-sm tracking-wide text-white group-hover:text-cyan-400 transition">
+              <span className="font-bold text-sm tracking-wide dark:text-white text-slate-900 group-hover:text-cyan-500 transition">
                 Disha Mallick
               </span>
-              <span className="text-[10px] tracking-widest text-cyan-400/80 font-mono">
-                AI • FULL STACK
+              <span className="text-[10px] tracking-widest text-cyan-500 font-mono">
+                ENGINEERING • CS '26
               </span>
             </div>
           </a>
 
           {/* ONLINE STATUS BADGE */}
-          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-medium tracking-wide">
+          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-[11px] font-medium tracking-wide">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
             <span>Open to Roles</span>
           </div>
         </div>
 
         {/* DESKTOP NAV LINKS */}
-        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-inner">
+        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full dark:bg-white/[0.04] bg-slate-900/[0.04] dark:border-white/10 border-slate-300/60 backdrop-blur-xl shadow-inner">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -160,8 +160,8 @@ function Navbar() {
                 relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300
                 ${
                   active === item.link
-                    ? "text-cyan-300 bg-cyan-400/15 shadow-[0_0_15px_rgba(34,211,238,0.3)] font-semibold"
-                    : "text-gray-300 hover:text-white hover:bg-white/5"
+                    ? "text-cyan-600 dark:text-cyan-300 bg-cyan-400/15 shadow-[0_0_15px_rgba(34,211,238,0.25)] font-semibold"
+                    : "dark:text-gray-300 text-slate-700 hover:text-cyan-500 dark:hover:text-white dark:hover:bg-white/5 hover:bg-slate-200/50"
                 }
               `}
             >
@@ -275,7 +275,7 @@ function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden border-t border-cyan-400/10 bg-[#050816]/95 backdrop-blur-2xl px-6 py-6 animate-fadeIn">
+        <div className="md:hidden border-t dark:border-cyan-400/10 border-slate-200 dark:bg-[#050816]/95 bg-white/95 backdrop-blur-2xl px-6 py-6 animate-fadeIn">
           {/* Mobile Search */}
           <div className="relative mb-4">
             <Search
@@ -287,7 +287,7 @@ function Navbar() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search sections..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-[#0b1220] border border-cyan-400/20 text-white text-xs placeholder-gray-500 outline-none focus:border-cyan-400"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl dark:bg-[#0b1220] bg-slate-100 border dark:border-cyan-400/20 border-slate-300 dark:text-white text-slate-900 text-xs placeholder-gray-500 outline-none focus:border-cyan-400"
             />
           </div>
 
@@ -306,8 +306,8 @@ function Navbar() {
                   block px-4 py-2.5 rounded-xl text-sm font-medium tracking-wide transition-all
                   ${
                     active === item.link
-                      ? "text-cyan-400 bg-cyan-400/10 font-bold"
-                      : "text-gray-300 hover:text-cyan-400 hover:bg-white/5"
+                      ? "text-cyan-600 dark:text-cyan-400 dark:bg-cyan-400/10 bg-cyan-500/10 font-bold"
+                      : "dark:text-gray-300 text-slate-700 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-white/5"
                   }
                 `}
               >
@@ -317,14 +317,14 @@ function Navbar() {
           </div>
 
           {/* Mobile Tools Footer */}
-          <div className="flex items-center justify-between mt-5 pt-4 border-t border-cyan-400/10 text-xs">
+          <div className="flex items-center justify-between mt-5 pt-4 border-t dark:border-cyan-400/10 border-slate-200 text-xs">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="flex items-center gap-2 text-gray-300 hover:text-cyan-400"
+              className="flex items-center gap-2 dark:text-gray-300 text-slate-700 hover:text-cyan-500"
             >
-              {darkMode ? <><Sun size={15} /> Light</> : <><Moon size={15} /> Dark</>}
+              {darkMode ? <><Sun size={15} /> Light Mode</> : <><Moon size={15} /> Dark Mode</>}
             </button>
-            <div className="flex items-center gap-1.5 text-cyan-400 font-mono">
+            <div className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-mono">
               <Clock size={13} />
               <span>{time}</span>
             </div>

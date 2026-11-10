@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 
 import aicteLogo from "../assets/aicte.jpeg";
@@ -8,22 +9,22 @@ import robonixLogo from "../assets/robonix.jpeg";
 
 const experiences = [
   {
-    logo: robonixLogo,
-    company: "Robonixx Club @ BCET",
-    role: "Event Management Head",
-    duration: "Aug 2024 – Present",
-    location: "Durgapur, West Bengal, India",
-    domain: "Leadership & Technical Operations",
-    project: "Robotics workshops, tech fests, college hackathons, and participant coordination",
+    logo: downloadLogo,
+    company: "Infosys Springboard",
+    role: "Virtual Intern",
+    duration: "2026 – Present (Ongoing)",
+    location: "Virtual / Remote, India",
+    domain: "Software Engineering & Cloud Computing",
+    project: "Enterprise Application Development & Cloud Architecture",
     toolkit: [
-      "Team Leadership",
-      "Event Logistics",
-      "Public Speaking",
-      "Cross-Functional Coordination",
-      "Student Outreach",
+      "Java",
+      "Python",
+      "Cloud Fundamentals",
+      "Database Architecture",
+      "Agile Engineering",
     ],
     goal:
-      "Leading executive operations for BCET's robotics and tech club, orchestrating college fests and technical seminars.",
+      "Gaining industry-grade software development experience covering modern architecture patterns, cloud deployment, and scalable code design.",
   },
   {
     logo: aicteLogo,
@@ -44,27 +45,49 @@ const experiences = [
     goal:
       "Learnt backend integration, REST APIs, and responsive UI development.",
   },
-
   {
     logo: downloadLogo,
-    company: "Steel India Authority Limited",
-    role: "Vocational Trainee (internship)",
-    duration: "Jun 2025 - July 2025 (on-site)",
+    company: "Steel India Authority Limited (SAIL)",
+    role: "Vocational Trainee (Internship)",
+    duration: "Jun 2025 - July 2025 (On-site)",
     location: "Bokaro Steel Plant, Jharkhand, India",
     domain: "Machine Learning & AI",
-    project: "ML-Laboratory & study on python",
+    project: "ML-Laboratory & study on Python data science",
     toolkit: [
-      "Python pillow library",
-      "OS & Shutil library",
-      "ML with iris dataset",
-      "ML with titanic dataset",
+      "Python Pillow",
+      "OS & Shutil",
+      "Scikit-learn",
+      "Iris & Titanic ML Datasets",
     ],
     goal:
-      "Built a foundational understanding of python and machine-learning.",
+      "Built a foundational understanding of Python scripting, data processing pipelines, and supervised machine learning.",
+  },
+  {
+    logo: robonixLogo,
+    company: "Robonixx Club @ BCET",
+    role: "Event Management Head",
+    duration: "Aug 2024 – Present",
+    location: "Durgapur, West Bengal, India",
+    domain: "Leadership & Technical Operations",
+    project: "Robotics workshops, tech fests, college hackathons, and participant coordination",
+    toolkit: [
+      "Team Leadership",
+      "Event Logistics",
+      "Public Speaking",
+      "Cross-Functional Coordination",
+      "Student Outreach",
+    ],
+    goal:
+      "Leading executive operations for BCET's robotics and tech club, orchestrating college fests and technical seminars.",
   },
 ];
 
 export default function Experience() {
+  const [showAll, setShowAll] = useState(false);
+
+  // Initial visible experiences (first 2)
+  const visibleExperiences = showAll ? experiences : experiences.slice(0, 2);
+
   return (
     <section
       id="experience"
@@ -73,7 +96,7 @@ export default function Experience() {
         relative
         overflow-hidden
         px-6
-        py-24
+        py-20
         md:px-10
         lg:px-16
 
@@ -87,13 +110,7 @@ export default function Experience() {
         duration-500
       "
     >
-
-      {/* =========================================
-          BACKGROUND GLOWS
-      ========================================= */}
-
-      {/* Cyan Glow */}
-
+      {/* Background Glows */}
       <div
         className="
           absolute
@@ -108,8 +125,6 @@ export default function Experience() {
           pointer-events-none
         "
       />
-
-      {/* Purple Glow */}
 
       <div
         className="
@@ -126,10 +141,7 @@ export default function Experience() {
         "
       />
 
-      {/* =========================================
-          BLUEPRINT GRID
-      ========================================= */}
-
+      {/* Blueprint Grid */}
       <div
         className="
           absolute
@@ -140,49 +152,31 @@ export default function Experience() {
         "
         style={{
           backgroundImage: `
-            linear-gradient(
-              to right,
-              currentColor 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              to bottom,
-              currentColor 1px,
-              transparent 1px
-            )
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
-      {/* =========================================
-          CONTENT
-      ========================================= */}
-
       <div className="relative max-w-7xl mx-auto">
-
-        {/* =========================================
-            CHAPTER PILL
-        ========================================= */}
-
+        {/* Section Pill */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="
             inline-flex
             items-center
             gap-2
             px-4
-            py-2
+            py-1.5
             rounded-full
-
             border
             border-cyan-500/20
             bg-cyan-500/10
-
-            shadow-[0_0_25px_rgba(34,211,238,0.08)]
+            shadow-[0_0_20px_rgba(34,211,238,0.08)]
           "
         >
           <span
@@ -198,104 +192,75 @@ export default function Experience() {
 
           <span
             className="
-              text-xs
+              text-[11px]
               uppercase
-              tracking-[4px]
+              tracking-[3px]
               font-mono
               font-semibold
               text-cyan-600
               dark:text-cyan-400
             "
           >
-            Chapter • 02
+            CAREER &amp; WORK HISTORY
           </span>
         </motion.div>
 
-
-        {/* =========================================
-            MAIN HEADING
-        ========================================= */}
-
+        {/* Main Heading - Clean Font Size */}
         <motion.h2
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.15,
-            duration: 0.8,
-          }}
+          transition={{ delay: 0.1, duration: 0.6 }}
           viewport={{ once: true }}
           className="
-            mt-10
-            text-5xl
-            md:text-6xl
+            mt-6
+            text-3xl
+            md:text-5xl
             font-extrabold
             tracking-tight
-
             bg-gradient-to-r
             from-slate-900
             via-slate-700
             to-slate-400
-
             dark:from-white
             dark:via-gray-200
-            dark:to-gray-500
-
+            dark:to-gray-400
             bg-clip-text
             text-transparent
           "
         >
-          Blueprint of an Engineer
+          Experiences
         </motion.h2>
 
-
-        {/* =========================================
-            SUBTITLE
-        ========================================= */}
-
         <motion.p
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-          }}
+          transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
           className="
-            mt-8
+            mt-4
             max-w-3xl
-            text-lg
-            leading-8
-
+            text-base
+            md:text-lg
+            leading-relaxed
             text-slate-600
             dark:text-gray-400
-
             transition-colors
             duration-500
           "
         >
-          Every internship, collaboration, and engineering challenge has
-          added a new layer to my journey—shaping how I think, build, and
-          solve real-world problems through technology. Here's a glimpse of
-          my experience working with different companies, mentors, and
-          talented teams.
+          Hands-on internships, industrial vocational training, and technical club leadership
+          that have built my engineering discipline and problem-solving mindset.
         </motion.p>
 
-
-        {/* =========================================
-            DIVIDER
-        ========================================= */}
-
+        {/* Divider */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 1,
-          }}
+          transition={{ delay: 0.3, duration: 0.8 }}
           viewport={{ once: true }}
           className="
             origin-left
-            mt-16
+            mt-10
             h-px
             bg-gradient-to-r
             from-cyan-500
@@ -304,223 +269,176 @@ export default function Experience() {
           "
         />
 
-
-        {/* =========================================
-            EXPERIENCE CARDS
-        ========================================= */}
-
-        <div className="mt-16 pb-16">
-
+        {/* Experience Cards Grid */}
+        <div className="mt-12 pb-8">
           <div
             className="
               grid
               grid-cols-1
-              md:grid-cols-2
-              lg:grid-cols-3
+              lg:grid-cols-2
               gap-6
             "
           >
-
-            {experiences.map((exp, index) => (
-
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  y: 30,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.2,
-                }}
-                className="relative"
-              >
-                <ExperienceCard {...exp} />
-              </motion.div>
-
-            ))}
-
+            <AnimatePresence mode="popLayout">
+              {visibleExperiences.map((exp, index) => (
+                <motion.div
+                  key={exp.company}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="relative"
+                >
+                  <ExperienceCard {...exp} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
 
-
-          {/* =========================================
-              COMMUNITY ENGAGEMENT
-          ========================================= */}
-
-          <motion.section
-            className="
-              community-section
-              mt-24
-            "
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.3,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-          >
-
-            {/* Community Heading */}
-
-            <div className="community-heading">
-
-              <span className="heading-line" />
-
-              <h2
-                className="
-                  text-center
-                  font-bold
-                  tracking-[3px]
-
-                  text-slate-800
-                  dark:text-white
-
-                  transition-colors
-                  duration-500
-                "
-              >
-                ✦ COMMUNITY ENGAGEMENT ✦
-              </h2>
-
-              <span className="heading-line" />
-
-            </div>
-
-
-            {/* NSS Card */}
-
-            <div
+          {/* See More Toggle Button */}
+          <div className="flex justify-center mt-10">
+            <button
+              type="button"
+              onClick={() => setShowAll(!showAll)}
               className="
-                nss-card
-
-                mt-8
-
-                bg-white/70
-                dark:bg-white/[0.035]
-
+                px-8
+                py-3.5
+                rounded-full
+                font-mono
+                text-xs
+                md:text-sm
+                font-bold
+                tracking-wider
+                uppercase
                 border
-                border-slate-200
-                dark:border-white/10
-
-                backdrop-blur-xl
-
-                shadow-xl
-                dark:shadow-none
-
+                border-cyan-500/40
+                bg-cyan-500/10
+                text-cyan-600
+                dark:text-cyan-400
+                hover:bg-cyan-500/20
+                hover:border-cyan-400
                 transition-all
-                duration-500
+                duration-300
+                shadow-[0_0_20px_rgba(6,182,212,0.12)]
+                cursor-pointer
+                flex
+                items-center
+                gap-2
               "
             >
+              <span>
+                {showAll
+                  ? "Show Less ↑"
+                  : `See More Experiences & Activities (${experiences.length - 2} More) ↓`}
+              </span>
+            </button>
+          </div>
 
-              <div className="nss-content">
-
-                {/* NSS Title */}
-
-                <div
-                  className="
-                    nss-title
-                    flex
-                    items-center
-                    gap-4
-                  "
-                >
-
-                  <img
-                    src={nssLogo}
-                    alt="NSS Logo"
-                    className="
-                      nss-logo
-                      w-14
-                      h-14
-                      object-contain
-                    "
-                  />
-
+          {/* Community Engagement Section (Visible when expanded or always subtle) */}
+          <AnimatePresence>
+            {showAll && (
+              <motion.section
+                className="community-section mt-16"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="community-heading">
+                  <span className="heading-line" />
                   <h3
                     className="
+                      text-center
                       font-bold
-                      text-lg
-                      md:text-xl
-
-                      text-slate-900
+                      tracking-[2.5px]
+                      text-sm
+                      md:text-base
+                      text-slate-800
                       dark:text-white
-
                       transition-colors
                       duration-500
                     "
                   >
-                    National Service Scheme (NSS) Volunteer
+                    ✦ COMMUNITY SERVICE &amp; OUTREACH ✦
                   </h3>
-
+                  <span className="heading-line" />
                 </div>
 
-
-                {/* NSS Details */}
-
-                <ul
+                <div
                   className="
-                    mt-6
-                    space-y-3
-
-                    text-sm
-                    md:text-base
-
-                    text-slate-600
-                    dark:text-gray-400
-
-                    leading-7
+                    nss-card
+                    mt-8
+                    bg-white/80
+                    dark:bg-white/[0.035]
+                    border
+                    border-slate-200
+                    dark:border-white/10
+                    backdrop-blur-xl
+                    shadow-md
+                    dark:shadow-none
+                    transition-all
+                    duration-500
+                    p-6
+                    md:p-8
+                    rounded-2xl
                   "
                 >
+                  <div className="nss-content">
+                    <div className="nss-title flex items-center gap-4">
+                      <img
+                        src={nssLogo}
+                        alt="NSS Logo"
+                        className="nss-logo w-14 h-14 object-contain"
+                      />
+                      <div>
+                        <h4
+                          className="
+                            font-bold
+                            text-lg
+                            md:text-xl
+                            text-slate-900
+                            dark:text-white
+                            transition-colors
+                            duration-500
+                            m-0
+                          "
+                        >
+                          National Service Scheme (NSS) Volunteer
+                        </h4>
+                        <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 mt-1 block">
+                          Community Outreach &amp; Welfare Initiatives
+                        </span>
+                      </div>
+                    </div>
 
-                  <li>
-                    • Dedicated volunteer contributing to community
-                    service and outreach initiatives.
-                  </li>
-
-                  <li>
-                    • Participated in social awareness and community
-                    welfare campaigns.
-                  </li>
-
-                  <li>
-                    • Worked with fellow volunteers to organize
-                    impactful events.
-                  </li>
-
-                  <li>
-                    • Developed leadership, teamwork, communication,
-                    and social responsibility.
-                  </li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-          </motion.section>
-
+                    <ul
+                      className="
+                        mt-5
+                        space-y-2.5
+                        text-sm
+                        text-slate-600
+                        dark:text-gray-400
+                        leading-relaxed
+                      "
+                    >
+                      <li>
+                        • Dedicated volunteer contributing to community service, social awareness drives, and rural outreach campaigns.
+                      </li>
+                      <li>
+                        • Awarded <strong>3rd Position in Photography — AASHA 2024</strong> (NSS Wing) for creative visual storytelling.
+                      </li>
+                      <li>
+                        • Cultivated leadership, cross-functional collaboration, and civic responsibility through grassroots initiatives.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.section>
+            )}
+          </AnimatePresence>
         </div>
-
       </div>
-
     </section>
   );
 }

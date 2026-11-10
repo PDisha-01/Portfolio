@@ -20,7 +20,7 @@ export default function About() {
         >
           <div className="about-chapter-badge">
             <HiSparkles className="text-cyan-400" />
-            <span>Chapter • 01</span>
+            <span>Profile &amp; Narrative</span>
           </div>
 
           <h2>Behind The Code</h2>

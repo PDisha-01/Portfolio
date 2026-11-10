@@ -177,7 +177,7 @@ const Certifications = () => {
           <div className="credential-column-header">
 
             <span>
-              01 
+              VERIFIED CREDENTIALS
             </span>
 
             <h2>
@@ -270,7 +270,7 @@ const Certifications = () => {
           <div className="credential-column-header">
 
             <span>
-              02 
+              HACKATHONS &amp; COMPETITIONS
             </span>
 
             <h2>

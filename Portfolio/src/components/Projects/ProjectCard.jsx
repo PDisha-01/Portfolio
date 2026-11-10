@@ -5,72 +5,63 @@ import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 export default function ProjectCard({ project }) {
   return (
     <motion.div
-      className="project-card"
+      className="project-card-compact"
       layout
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.25 }}
     >
-      <div className="project-image">
+      {/* Thumbnail */}
+      <div className="project-thumb-box">
         <img
           src={project.image}
           alt={project.title}
-          className={project.id === 3 ? "portfolio-image" : ""}
+          className="project-thumb-img"
           loading="lazy"
         />
+        {project.status && (
+          <span className="project-status-pill">
+            ● {project.status}
+          </span>
+        )}
       </div>
 
-      <div className="project-content">
-        <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-          <span className="project-category">
+      {/* Card Content */}
+      <div className="project-compact-content">
+        <div className="flex items-center justify-between gap-2 mb-1.5">
+          <span className="project-compact-category">
             {project.category}
           </span>
+        </div>
 
-          {project.status && (
-            <span className="project-status">
-              ● {project.status}
-            </span>
+        <h3 className="project-compact-title">{project.title}</h3>
+
+        <p className="project-compact-tagline">{project.tagline}</p>
+
+        {/* Tech Chips */}
+        <div className="project-compact-tech">
+          {project.tech.slice(0, 4).map((tech) => (
+            <span key={tech}>{tech}</span>
+          ))}
+          {project.tech.length > 4 && (
+            <span className="tech-more">+{project.tech.length - 4}</span>
           )}
         </div>
 
-        {project.team && (
-          <div className="mb-2">
-            <span className="project-team">
-              {project.team}
-            </span>
-          </div>
-        )}
-
-        <h3>{project.title}</h3>
-
-        <p>{project.tagline}</p>
-
-        <div className="project-tech">
-          {project.tech.map((tech) => (
-            <span key={tech}>{tech}</span>
-          ))}
-        </div>
-
-        <div className="project-buttons">
-          <Link
-            to={`/projects/${project.slug}`}
-            className="case-study-btn"
-          >
-            Case Study →
-          </Link>
-
+        {/* Action Buttons */}
+        <div className="project-compact-actions">
           {project.live && (
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="live-demo-btn"
-              title="Open Live Deployed Application"
+              className="action-btn-live"
+              title="Open Live Deployment"
             >
               <span>Live Demo</span>
-              <HiArrowTopRightOnSquare className="text-base" />
+              <HiArrowTopRightOnSquare className="text-sm" />
             </a>
           )}
 
@@ -79,12 +70,20 @@ export default function ProjectCard({ project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="github-btn"
+              className="action-btn-github"
               title="View Source on GitHub"
             >
               GitHub ↗
             </a>
           )}
+
+          <Link
+            to={`/projects/${project.slug}`}
+            className="action-btn-details"
+            title="Read Case Study"
+          >
+            Details →
+          </Link>
         </div>
       </div>
     </motion.div>

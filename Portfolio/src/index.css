@@ -428,34 +428,195 @@ nav button {
 
 
 /* =========================================================
-   11. HERO
+   11. HERO (ENGINEERING THEME)
    ========================================================= */
 
 .hero {
   position: relative;
-
   min-height: 100vh;
-
   padding: 120px 6vw 90px;
-
   display: flex;
   align-items: center;
-
   overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      var(--glow-cyan),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      var(--glow-purple),
-      transparent 30%
-    );
-
+  background: var(--page-bg);
   isolation: isolate;
+}
+
+/* Technical Blueprint Grid */
+.hero-blueprint-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+.hero-blueprint-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 40% 50%, transparent 40%, var(--page-bg) 90%);
+  z-index: 2;
+}
+
+/* Engineering Technical Coordinate Markers */
+.hero-tech-marker {
+  position: absolute;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  opacity: 0.35;
+  letter-spacing: 1.5px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.marker-tl { top: 30px; left: 30px; }
+.marker-tr { top: 30px; right: 30px; }
+.marker-bl { bottom: 30px; left: 30px; }
+.marker-br { bottom: 30px; right: 30px; }
+
+/* Photograph as Atmospheric Background Element */
+.hero-photo-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 55%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-photo-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  opacity: 0.22;
+  filter: grayscale(35%) contrast(110%);
+  mask-image: radial-gradient(ellipse at 70% 50%, black 15%, rgba(0, 0, 0, 0.4) 55%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 70% 50%, black 15%, rgba(0, 0, 0, 0.4) 55%, transparent 80%);
+  transition: opacity 0.4s ease;
+}
+
+.dark .hero-photo-bg-img {
+  opacity: 0.28;
+}
+
+.hero-photo-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--page-bg) 20%, transparent 100%);
+}
+
+.hero-inner-engineer {
+  position: relative;
+  z-index: 5;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.hero-content-full {
+  max-width: 840px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-spec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-soft);
+  background: var(--accent-soft);
+  color: var(--accent-bright, var(--accent));
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+.hero-spec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-bright, var(--accent));
+  box-shadow: 0 0 10px var(--accent-bright, var(--accent));
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.hero-engineer-name {
+  margin: 0 0 14px;
+  font-family: "Cinzel", serif;
+  font-size: clamp(3.2rem, 7.5vw, 6rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.05;
+  color: var(--text-main);
+}
+
+.hero-engineer-name span {
+  color: var(--accent-bright, var(--accent));
+}
+
+.hero-engineer-role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--accent-bright, var(--accent));
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-role-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero-engineer-description {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 0 28px;
+}
+
+.hero-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.hero-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.74rem;
+  backdrop-filter: blur(12px);
+}
+
+.meta-chip-label {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero-icons-engineer {
+  margin-top: 26px;
 }
 
 

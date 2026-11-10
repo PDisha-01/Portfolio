@@ -18,13 +18,13 @@ export default function Projects() {
   return (
     <section id="projects" className="projects-section">
       <div className="projects-heading">
-        <span>ENGINEERING PORTFOLIO</span>
+        <span className="projects-subtitle">ENGINEERING PORTFOLIO</span>
 
         <h2>Featured Projects</h2>
 
-        <p>
-          Architecting intelligent solutions across multimodal AI, computer vision,
-          and modern full-stack systems with real-world impact.
+        <p className="projects-intro-text">
+          Compact, production-grade applications across full-stack engineering,
+          computer vision, and machine learning.
         </p>
 
         <div className="heading-line"></div>
@@ -37,7 +37,7 @@ export default function Projects() {
           onClick={() => setActiveFilter("all")}
           type="button"
         >
-          All Projects ({projects.length})
+          All ({projects.length})
         </button>
 
         <button
@@ -45,7 +45,7 @@ export default function Projects() {
           onClick={() => setActiveFilter("ai")}
           type="button"
         >
-          ⚡ AI &amp; Machine Learning ({aiCount})
+          AI &amp; Vision ({aiCount})
         </button>
 
         <button
@@ -53,12 +53,12 @@ export default function Projects() {
           onClick={() => setActiveFilter("web")}
           type="button"
         >
-          🌐 Full-Stack &amp; Web ({webCount})
+          Full-Stack &amp; Web ({webCount})
         </button>
       </div>
 
-      {/* Projects Grid */}
-      <div className="projects-row">
+      {/* Compact Responsive Grid */}
+      <div className="projects-compact-grid">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
