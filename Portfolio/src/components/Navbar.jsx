@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
   Clock,
-  FileText,
-  Menu,
+  MapPin,
   X,
   Compass,
   Code2,
@@ -11,34 +11,28 @@ import {
   GraduationCap,
   Sparkles,
 } from "lucide-react";
-import resume from "../assets/disha resume.pdf";
-
-const navLinks = [
-  { name: "About", href: "about" },
-  { name: "Experiences", href: "experience" },
-  { name: "Tech Arsenal", href: "skills" },
-  { name: "Projects", href: "projects" },
-  { name: "Credentials", href: "credentials" },
-  { name: "Contact", href: "contact" },
-];
 
 const searchItems = [
-  { name: "Home", type: "Section", link: "home", icon: Compass },
-  { name: "About Me", type: "Section", link: "about", icon: Compass },
-  { name: "Experiences & Internships", type: "Section", link: "experience", icon: Briefcase },
-  { name: "Technical Arsenal", type: "Section", link: "skills", icon: Code2 },
-  { name: "Featured Projects", type: "Section", link: "projects", icon: Code2 },
-  { name: "Credentials & Achievements", type: "Section", link: "credentials", icon: GraduationCap },
-  { name: "Contact & Collaboration", type: "Section", link: "contact", icon: Compass },
+  { name: "Home", type: "Section", link: "home", icon: Compass, desc: "Overview & landing" },
+  { name: "About Me", type: "Section", link: "about", icon: Compass, desc: "Background & story" },
+  { name: "Experiences", type: "Section", link: "experience", icon: Briefcase, desc: "Internships & leadership" },
+  { name: "Technical Arsenal", type: "Section", link: "skills", icon: Code2, desc: "Languages, tools & frameworks" },
+  { name: "Projects", type: "Section", link: "projects", icon: Code2, desc: "Featured software engineering projects" },
+  { name: "Credentials & Certifications", type: "Section", link: "credentials", icon: GraduationCap, desc: "Certificates & hackathons" },
+  { name: "Contact", type: "Section", link: "contact", icon: Compass, desc: "Collaborate & get in touch" },
+
+  // Projects & Experience highlights
+  { name: "FASHNOVA", type: "Project", link: "projects", icon: Sparkles, desc: "AI Fashion Intelligence Platform" },
+  { name: "TrafficOps+", type: "Project", link: "projects", icon: Code2, desc: "Smart City Traffic Management System" },
+  { name: "SAKHI", type: "Project", link: "projects", icon: Code2, desc: "Women Empowerment Platform" },
+  { name: "Python ML Suite", type: "Project", link: "projects", icon: Code2, desc: "Machine Learning Laboratory Suite" },
+  { name: "Infosys Springboard", type: "Experience", link: "experience", icon: Briefcase, desc: "AI Agentic Construction Site Risk Analytics" },
 ];
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const searchContainerRef = useRef(null);
 
   // Live time (IST)
   const [time, setTime] = useState(
@@ -52,22 +46,6 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
-      // Track active section for highlight
-      const sections = ["home", "about", "experience", "skills", "projects", "credentials", "contact"];
-      const scrollPosition = window.scrollY + 180;
-
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -87,31 +65,32 @@ function Navbar() {
     return () => clearInterval(timer);
   }, []);
 
-  // Close search dropdown on outside click
+  // Keyboard shortcut: Cmd/Ctrl + K to toggle, Escape to close
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(e.target)
-      ) {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
+      if (e.key === "Escape") {
         setSearchOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const filteredItems = searchItems.filter(
     (item) =>
       item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.type.toLowerCase().includes(search.toLowerCase())
+      item.type.toLowerCase().includes(search.toLowerCase()) ||
+      (item.desc && item.desc.toLowerCase().includes(search.toLowerCase()))
   );
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
       setSearchOpen(false);
       setSearch("");
     }
@@ -125,181 +104,157 @@ function Navbar() {
           ${
             scrolled
               ? "bg-[#09090b]/92 backdrop-blur-2xl border-b border-white/10 shadow-lg py-2.5"
-              : "bg-[#09090b]/75 backdrop-blur-md border-b border-white/5 py-3.5"
+              : "bg-[#09090b]/75 backdrop-blur-md border-b border-white/5 py-3"
           }
         `}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-4 sm:px-6">
-          {/* LEFT: BRAND MONOGRAM & NAME */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <button
-              type="button"
-              onClick={() => scrollTo("home")}
-              className="flex items-center gap-2 group font-mono text-left cursor-pointer"
-            >
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-400 via-zinc-400 to-zinc-700 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(6,182,212,0.2)]">
-                <div className="w-full h-full bg-[#121215] rounded-[10px] flex items-center justify-center">
-                  <span className="font-bold text-xs bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                    DM
-                  </span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xs tracking-wider text-white group-hover:text-cyan-300 transition-colors">
-                  DISHA MALLICK
-                </span>
-                <span className="text-[10px] tracking-wider text-zinc-400 font-mono hidden sm:inline-block">
-                  FULL-STACK &amp; CSE '27
+          {/* NAME INITIAL (DM) */}
+          <button
+            type="button"
+            onClick={() => scrollTo("home")}
+            className="flex items-center group font-mono cursor-pointer"
+            aria-label="Disha Mallick - Go to top"
+            title="Disha Mallick"
+          >
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 via-zinc-400 to-zinc-700 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(6,182,212,0.25)]">
+              <div className="w-full h-full bg-[#121215] rounded-[10px] flex items-center justify-center">
+                <span className="font-bold text-xs tracking-wider bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                  DM
                 </span>
               </div>
-            </button>
-          </div>
+            </div>
+          </button>
 
-          {/* CENTER: DIRECT NAVIGATION BAR (ABOUT, EXPERIENCES, PROJECTS, TECH ARSENAL, CREDENTIALS, CONTACT) */}
-          <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 shadow-inner">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.href;
-              return (
-                <button
-                  key={link.name}
-                  type="button"
-                  onClick={() => scrollTo(link.href)}
-                  className={`
-                    px-3 py-1 rounded-full text-xs font-mono font-medium transition-all duration-200 cursor-pointer
-                    ${
-                      isActive
-                        ? "bg-cyan-500/20 text-cyan-300 font-semibold shadow-[0_0_10px_rgba(6,182,212,0.15)]"
-                        : "text-zinc-400 hover:text-white hover:bg-zinc-800/60"
-                    }
-                  `}
-                >
-                  {link.name}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* RIGHT: SEARCH BUTTON, TIME & RESUME */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            {/* Search Toggle Button */}
-            <button
-              type="button"
-              onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 rounded-xl bg-zinc-900/90 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors cursor-pointer"
-              title="Search sections and projects"
-              aria-label="Search portfolio"
-            >
-              <Search size={14} />
-            </button>
-
-            {/* Time Widget */}
-            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-mono text-[11px]">
-              <Clock size={11} className="text-zinc-400" />
-              <span>{time} IST</span>
+          {/* LOCATION & TIME (CENTER / RESPONSIVE) */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Location */}
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-mono text-xs shadow-sm">
+              <MapPin size={12} className="text-cyan-400 flex-shrink-0" />
+              <span className="hidden sm:inline">West Bengal, India</span>
+              <span className="sm:hidden">India</span>
             </div>
 
-            {/* Resume Button */}
-            <a
-              href={resume}
-              download="Disha_Mallick_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold font-mono bg-white text-zinc-950 hover:bg-zinc-200 shadow-sm transition-all duration-200 hover:scale-105 active:scale-95"
-            >
-              <FileText size={12} />
-              <span>Resume</span>
-            </a>
+            {/* Live Time */}
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 font-mono text-xs shadow-sm">
+              <Clock size={12} className="text-cyan-400 flex-shrink-0" />
+              <span>{time} IST</span>
+            </div>
+          </div>
 
-            {/* Mobile Menu Hamburger Toggle */}
+          {/* SEARCH BUTTON (POPS UP THE SEARCH PALETTE) */}
+          <div className="flex items-center flex-shrink-0">
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-zinc-900/90 border border-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer"
-              aria-label="Toggle navigation menu"
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 hover:bg-zinc-800/90 border border-zinc-800 hover:border-cyan-500/50 text-zinc-300 hover:text-white transition-all duration-200 font-mono text-xs cursor-pointer shadow-sm group"
+              title="Search sections and projects (⌘K)"
+              aria-label="Open search popup"
             >
-              {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+              <Search size={13} className="text-zinc-400 group-hover:text-cyan-400 transition-colors" />
+              <span className="hidden md:inline text-zinc-400 group-hover:text-zinc-200">Search...</span>
+              <kbd className="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-zinc-500 bg-zinc-800/90 border border-zinc-700/60 rounded">
+                ⌘K
+              </kbd>
             </button>
           </div>
         </div>
-
-        {/* SEARCH OVERLAY / PALETTE */}
-        {searchOpen && (
-          <div
-            ref={searchContainerRef}
-            className="max-w-md mx-auto px-4 mt-2 transition-all duration-200"
-          >
-            <div className="relative flex items-center">
-              <Search
-                size={14}
-                className="absolute left-3.5 text-zinc-400 pointer-events-none"
-              />
-              <input
-                type="text"
-                value={search}
-                autoFocus
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Type to search About, Experiences, Projects, Skills..."
-                className="w-full pl-9 pr-9 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-white placeholder-zinc-500 text-xs font-mono outline-none shadow-xl"
-              />
-              {search && (
-                <button
-                  type="button"
-                  onClick={() => setSearch("")}
-                  className="absolute right-3 text-zinc-400 hover:text-white text-xs cursor-pointer"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-
-            {/* Results Dropdown */}
-            <div className="mt-1.5 max-h-60 overflow-y-auto rounded-xl bg-[#121215] border border-zinc-800 shadow-2xl p-1.5">
-              {filteredItems.length > 0 ? (
-                filteredItems.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={`${item.name}-${idx}`}
-                      type="button"
-                      onClick={() => scrollTo(item.link)}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-left text-xs font-mono text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors cursor-pointer"
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <Icon size={13} className="text-cyan-400" />
-                        <span>{item.name}</span>
-                      </div>
-                      <span className="text-[10px] text-zinc-500 font-sans px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">
-                        {item.type}
-                      </span>
-                    </button>
-                  );
-                })
-              ) : (
-                <div className="px-3 py-3 text-center text-xs text-zinc-500 font-mono">
-                  No matches found for "{search}"
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* MOBILE MENU DRAWER */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden px-4 pt-3 pb-4 mt-2 border-t border-zinc-800/80 bg-[#09090b]/98 backdrop-blur-2xl">
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  type="button"
-                  onClick={() => scrollTo(link.href)}
-                  className="w-full text-left px-3 py-2.5 rounded-xl text-xs font-mono font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <span className="text-zinc-600 font-mono text-[10px]">→</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </nav>
+
+      {/* POPUP SEARCH BAR & PALETTE MODAL */}
+      <AnimatePresence>
+        {searchOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-[100] flex items-start justify-center pt-20 sm:pt-28 px-4 bg-black/80 backdrop-blur-md"
+            onClick={() => setSearchOpen(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-lg rounded-2xl bg-[#121215] border border-zinc-800 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden"
+            >
+              {/* Search Bar Input */}
+              <div className="relative flex items-center px-4 py-3.5 border-b border-zinc-800">
+                <Search size={16} className="text-cyan-400 mr-3 flex-shrink-0" />
+                <input
+                  type="text"
+                  value={search}
+                  autoFocus
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Type to search About, Experiences, Projects, Skills..."
+                  className="w-full bg-transparent text-sm text-white placeholder-zinc-500 outline-none font-mono"
+                />
+                {search && (
+                  <button
+                    type="button"
+                    onClick={() => setSearch("")}
+                    className="mr-2 text-zinc-400 hover:text-white text-xs cursor-pointer px-1"
+                  >
+                    Clear
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setSearchOpen(false)}
+                  className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+                  aria-label="Close search popup"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+
+              {/* Search Results List */}
+              <div className="max-h-80 overflow-y-auto p-2">
+                {filteredItems.length > 0 ? (
+                  filteredItems.map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={`${item.name}-${idx}`}
+                        type="button"
+                        onClick={() => scrollTo(item.link)}
+                        className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left text-xs font-mono text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors cursor-pointer group"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-cyan-400 group-hover:border-cyan-500/40">
+                            <Icon size={14} />
+                          </div>
+                          <div>
+                            <div className="text-white font-medium">{item.name}</div>
+                            {item.desc && (
+                              <div className="text-[11px] text-zinc-500 font-sans">{item.desc}</div>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-[10px] text-zinc-400 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">
+                          {item.type}
+                        </span>
+                      </button>
+                    );
+                  })
+                ) : (
+                  <div className="py-10 text-center text-xs text-zinc-500 font-mono">
+                    No matching sections found for "{search}"
+                  </div>
+                )}
+              </div>
+
+              {/* Footer Guide */}
+              <div className="px-4 py-2.5 border-t border-zinc-800/80 bg-zinc-950/60 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+                <span>Click any item to jump directly</span>
+                <span>ESC to close</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
