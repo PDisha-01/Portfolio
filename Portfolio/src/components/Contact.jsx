@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="portfolio-section relative py-16 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden"
+      className="portfolio-section relative py-12 md:py-14 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden"
     >
       {/* Subtle Glow (No Grid Lines) */}
       <div
@@ -61,15 +61,15 @@ export default function Contact() {
 
       <div className="relative max-w-5xl mx-auto">
         {/* Section Header (Tasteful & Balanced) */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-2.5">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-[11px] uppercase tracking-[2px] font-mono font-semibold text-zinc-300">
               CONTACT &amp; COLLABORATION
             </span>
           </div>
 
-          <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-2">
+          <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-1.5">
             Let's Build Together
           </h2>
 

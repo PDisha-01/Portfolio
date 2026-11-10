@@ -370,27 +370,48 @@ nav button {
 
 .hero-profile-section {
   position: relative;
-  min-height: 92vh;
-  padding: 120px 6vw 70px;
+  min-height: auto;
+  padding: 95px 6vw 42px;
   display: flex;
   align-items: center;
   background: #09090b;
 }
 
 .hero-profile-container {
-  width: min(1200px, 100%);
+  width: min(1140px, 100%);
   margin: 0 auto;
+}
+
+/* Ambient Blurred Glow Behind Photo */
+.hero-photo-ambient-blur {
+  position: absolute;
+  inset: -14px;
+  border-radius: 36px;
+  background-size: cover;
+  background-position: center 15%;
+  filter: blur(38px);
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
+}
+
+.group\/photo:hover .hero-photo-ambient-blur {
+  opacity: 0.8;
+  filter: blur(48px);
+  transform: scale(1.05);
 }
 
 .hero-photo-frame {
   position: relative;
+  z-index: 2;
   width: min(340px, 100%);
   aspect-ratio: 4 / 5;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(6, 182, 212, 0.08);
-  background: #121215;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(6, 182, 212, 0.15);
+  background: #09090b;
 }
 
 .hero-photo-natural {
@@ -399,6 +420,40 @@ nav button {
   object-fit: cover;
   object-position: center 15%;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group\/photo:hover .hero-photo-natural {
+  transform: scale(1.04);
+}
+
+/* Soft Edge Blurred Vignette Transition */
+.hero-photo-blur-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    transparent 55%,
+    rgba(9, 9, 11, 0.35) 82%,
+    rgba(9, 9, 11, 0.95) 100%
+  );
+}
+
+/* Feathered Bottom Blurred Fade Transition */
+.hero-photo-bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: linear-gradient(
+    to top,
+    rgba(9, 9, 11, 0.98) 0%,
+    rgba(9, 9, 11, 0.5) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 

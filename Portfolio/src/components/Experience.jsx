@@ -87,7 +87,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="portfolio-section relative overflow-hidden px-5 py-16 md:px-10 lg:px-14 bg-[#09090b] text-[#f4f4f5]"
+      className="portfolio-section relative overflow-hidden px-5 py-12 md:py-14 md:px-8 bg-[#09090b] text-[#f4f4f5]"
     >
       {/* Subtle Glows (No Grid Lines) */}
       <div
@@ -101,7 +101,7 @@ export default function Experience() {
 
       <div className="relative max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}

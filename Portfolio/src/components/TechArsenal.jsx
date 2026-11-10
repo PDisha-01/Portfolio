@@ -93,11 +93,11 @@ export default function TechArsenal() {
   });
 
   return (
-    <section className="tech-section py-20 px-6 md:px-12" id="skills">
+    <section className="tech-section py-12 md:py-14 px-5 md:px-8" id="skills">
       <div className="max-w-7xl mx-auto">
         {/* Compact Header (No long explanation) */}
         <motion.div
-          className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -118,7 +118,7 @@ export default function TechArsenal() {
         </motion.div>
 
         {/* Adjustable Category Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-4 no-scrollbar">
           {categories.map((cat) => {
             const count =
               cat === "All"

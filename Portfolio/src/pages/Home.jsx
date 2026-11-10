@@ -5,11 +5,20 @@ import resume from "../assets/disha resume.pdf";
 import dishaPortrait from "../assets/disha-portrait.jpg";
 import About from "./about";
 
+const inPageLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experiences", href: "#experience" },
+  { label: "Tech Arsenal", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Credentials", href: "#credentials" },
+  { label: "Contact", href: "#contact" },
+];
+
 function Home() {
   return (
     <>
       <section className="hero-profile-section" id="home">
-        {/* Soft Ambient Light (Natural & Modern, No Grid Lines) */}
+        {/* Soft Ambient Glows (Smooth Transition) */}
         <div
           className="absolute top-1/4 right-1/4 w-[480px] h-[480px] rounded-full bg-cyan-500/[0.035] blur-[140px] pointer-events-none"
           aria-hidden="true"
@@ -20,35 +29,35 @@ function Home() {
         />
 
         <div className="hero-profile-container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             {/* Left Column: Developer Introduction & Highlights (7 Cols) */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               {/* Availability Status Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 mb-5 shadow-sm w-fit">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 mb-4 shadow-sm w-fit">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Open for Software Engineering Roles • 2027 Class</span>
+                <span>Open for Software Engineering Roles • 2026 Grad</span>
               </div>
 
               {/* Name Heading (Tasteful & Balanced) */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-3">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2.5">
                 Disha <span className="bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-500 bg-clip-text text-transparent">Mallick</span>
               </h1>
 
               {/* Clean Role Subtitle */}
-              <div className="flex items-center gap-2 text-base sm:text-lg md:text-xl font-medium text-cyan-400 mb-4">
+              <div className="flex items-center gap-2 text-base sm:text-lg md:text-xl font-medium text-cyan-400 mb-3.5">
                 <span className="font-mono text-zinc-500">&gt;</span>
-                <span>Full-Stack Developer &amp; AI/ML engineer </span>
+                <span>Full-Stack Software Engineer &amp; Systems Developer</span>
               </div>
 
               {/* Authentic Description */}
-              <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-6 max-w-xl">
-                Passionate about building innovative web applications and exploring the realms of artificial intelligence and machine learning. I thrive on solving complex problems and delivering impactful solutions that enhance user experiences. 
+              <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-5 max-w-xl">
+                Computer Science engineer at BCET Durgapur (MAKAUT). Currently a Virtual Intern at Infosys Springboard, architecting responsive full-stack applications, scalable backend microservices with Java &amp; Spring Boot, and practical Machine Learning systems.
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 mb-8">
+              <div className="flex flex-wrap items-center gap-2.5 mb-5">
                 <a
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-mono text-xs font-bold transition-all duration-200 shadow-md shadow-cyan-500/10"
+                  className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-mono text-xs font-bold transition-all duration-200 shadow-md shadow-cyan-500/10"
                   href="#projects"
                 >
                   <span>Explore Projects</span>
@@ -56,7 +65,7 @@ function Home() {
                 </a>
 
                 <a
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/80 text-white font-mono text-xs font-semibold transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/80 text-white font-mono text-xs font-semibold transition-all duration-200"
                   href={resume}
                   download="Disha_Mallick_Resume.pdf"
                   aria-label="Download Disha Mallick's resume"
@@ -66,7 +75,7 @@ function Home() {
                 </a>
 
                 <a
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800 text-zinc-300 hover:text-white font-mono text-xs font-medium transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800 text-zinc-300 hover:text-white font-mono text-xs font-medium transition-all duration-200"
                   href="#contact"
                   aria-label="Contact Disha"
                 >
@@ -75,64 +84,59 @@ function Home() {
                 </a>
               </div>
 
-              {/* Quick Specs Strip */}
-              <div className="flex flex-wrap items-center gap-2.5 text-xs text-zinc-400 font-mono mb-6">
-                <span className="px-3 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
+              {/* Quick Specs & Social Links */}
+              <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-400 font-mono mb-4">
+                <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
                   📍 West Bengal, India
                 </span>
-                
+                <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
+                  🎓 B.Tech CSE (2026)
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800 text-cyan-300">
+                  💼 Infosys Springboard Intern
+                </span>
               </div>
 
-              {/* Social Links */}
-              <div className="flex items-center gap-4 text-sm text-zinc-400">
-                <a
-                  href="https://github.com/PDisha-01"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1.5 hover:text-white transition-colors"
-                >
-                  <FaGithub />
-                  <span>GitHub</span>
-                </a>
-
-                <span className="text-zinc-700">•</span>
-
-                <a
-                  href="https://www.linkedin.com/in/dishamallick/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
-                >
-                  <FaLinkedin />
-                  <span>LinkedIn</span>
-                </a>
-
-                <span className="text-zinc-700">•</span>
-
-                <a
-                  href="mailto:mallickdisha186@gmail.com"
-                  className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
-                >
-                  <MdEmail />
-                  <span>Email</span>
-                </a>
+              {/* In-Home Navigation Bar (Direct access to all pages/sections) */}
+              <div className="pt-3.5 border-t border-zinc-800/70 flex flex-wrap items-center gap-1.5">
+                <span className="text-[11px] font-mono text-zinc-500 mr-1 hidden sm:inline-block">NAVIGATE:</span>
+                {inPageLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="px-2.5 py-1 rounded-lg bg-zinc-900/80 hover:bg-cyan-500/20 hover:text-cyan-300 hover:border-cyan-500/40 border border-zinc-800 text-zinc-300 font-mono text-[11px] transition-all duration-150"
+                  >
+                    {link.label}
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Right Column: Original Natural Photograph (5 Cols) */}
+            {/* Right Column: Photograph with Blurred Transition (5 Cols) */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Photo Frame Container (Full Natural Color, No Grayscale, No Watermark) */}
+              <div className="relative group/photo">
+                {/* Ambient Blurred Aura Transition Behind Photo */}
+                <div
+                  className="hero-photo-ambient-blur"
+                  style={{ backgroundImage: `url(${dishaPortrait})` }}
+                  aria-hidden="true"
+                />
+
+                {/* Photo Frame Container with Soft Blurred Transition Edges */}
                 <div className="hero-photo-frame">
                   <img
                     src={dishaPortrait}
                     alt="Disha Mallick"
                     className="hero-photo-natural"
                   />
+                  {/* Blurred Perimeter Vignette Transition */}
+                  <div className="hero-photo-blur-overlay" aria-hidden="true" />
+                  {/* Feathered Bottom Blurred Fade Transition */}
+                  <div className="hero-photo-bottom-fade" aria-hidden="true" />
                 </div>
 
-                {/* Micro Floating Badge */}
-                <div className="absolute -bottom-3 -left-3 sm:-left-5 px-3.5 py-2 rounded-xl bg-zinc-900/95 border border-zinc-700/80 backdrop-blur-md shadow-2xl flex items-center gap-2.5">
+                {/* Micro Floating Status Badge */}
+                <div className="absolute -bottom-3 -left-3 sm:-left-5 px-3.5 py-2 rounded-xl bg-zinc-900/95 border border-zinc-700/80 backdrop-blur-md shadow-2xl flex items-center gap-2.5 z-10">
                   <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
                   <div className="text-[11px] font-mono leading-tight">
                     <span className="block text-white font-semibold">Infosys Springboard</span>
@@ -140,8 +144,8 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Additional floating accolade badge */}
-                <div className="absolute -top-3 -right-3 sm:-right-4 px-3 py-1.5 rounded-xl bg-zinc-900/95 border border-zinc-700/80 backdrop-blur-md shadow-2xl flex items-center gap-2">
+                {/* Accolade Floating Badge */}
+                <div className="absolute -top-3 -right-3 sm:-right-4 px-3 py-1.5 rounded-xl bg-zinc-900/95 border border-zinc-700/80 backdrop-blur-md shadow-2xl flex items-center gap-2 z-10">
                   <HiSparkles className="text-cyan-400 text-xs" />
                   <span className="text-[10px] font-mono text-zinc-300 font-medium">
                     Event Head @ Robonixx
@@ -153,7 +157,7 @@ function Home() {
         </div>
       </section>
 
-      {/* About Bento Section */}
+      {/* About Section */}
       <About />
     </>
   );

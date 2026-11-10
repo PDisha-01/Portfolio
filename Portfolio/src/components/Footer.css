@@ -1,28 +1,16 @@
 .footer {
-
-  padding:60px 8% 40px;
-
-  background:#050816;
-
-  color:white;
-
+  padding: 36px 8% 28px;
+  background: #09090b;
+  color: white;
 }
-
-
 
 /* TOP LINE */
 
 .footer-line {
-
-  height:1px;
-
-  width:100%;
-
-  background:
-  rgba(255,255,255,.12);
-
-  margin-bottom:50px;
-
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 28px;
 }
 
 
