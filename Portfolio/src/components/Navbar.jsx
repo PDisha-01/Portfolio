@@ -13,25 +13,12 @@ import {
 } from "lucide-react";
 import resume from "../assets/disha resume.pdf";
 
-const navLinks = [
-  { name: "About", href: "about" },
-  { name: "Experiences", href: "experience" },
-  { name: "Tech Arsenal", href: "skills" },
-  { name: "Projects", href: "projects" },
-  { name: "Credentials", href: "credentials" },
-  { name: "Contact", href: "contact" },
-];
-
 const searchItems = [
   { name: "Home", type: "Section", link: "home", icon: Compass },
   { name: "About Me", type: "Section", link: "about", icon: Compass },
   { name: "Experiences & Internships", type: "Section", link: "experience", icon: Briefcase },
   { name: "Technical Arsenal", type: "Section", link: "skills", icon: Code2 },
   { name: "Featured Projects", type: "Section", link: "projects", icon: Code2 },
-  { name: "FASHNOVA (AI Fashion)", type: "Project", link: "projects", icon: Sparkles },
-  { name: "TrafficOps+ (Vision)", type: "Project", link: "projects", icon: Code2 },
-  { name: "SAKHI (Women Empowerment)", type: "Project", link: "projects", icon: Code2 },
-  { name: "Python ML Suite", type: "Project", link: "projects", icon: Code2 },
   { name: "Credentials & Achievements", type: "Section", link: "credentials", icon: GraduationCap },
   { name: "Contact & Collaboration", type: "Section", link: "contact", icon: Compass },
 ];
@@ -153,7 +140,7 @@ function Navbar() {
                   DISHA MALLICK
                 </span>
                 <span className="text-[10px] tracking-wider text-zinc-400 font-mono hidden sm:inline-block">
-                  FULL-STACK &amp; CSE '26
+                  FULL-STACK &amp; CSE '27
                 </span>
               </div>
             </button>

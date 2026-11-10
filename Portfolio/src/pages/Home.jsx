@@ -37,7 +37,7 @@ function Home() {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 mb-4 shadow-sm w-fit"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Open for Software Engineering Roles • 2026 Grad</span>
+                <span>Open for Software Engineering Roles • 2027 Class </span>
               </motion.div>
 
               {/* Name Heading (Tasteful & Balanced) */}
@@ -58,7 +58,7 @@ function Home() {
                 className="flex items-center gap-2 text-base sm:text-lg md:text-xl font-medium text-cyan-400 mb-3.5"
               >
                 <span className="font-mono text-zinc-500">&gt;</span>
-                <span>Full-Stack Software Engineer &amp; Systems Developer</span>
+                <span>Full-Stack Software Developer </span>
               </motion.div>
 
               {/* Authentic Description */}
@@ -68,7 +68,7 @@ function Home() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="text-sm md:text-base text-zinc-400 leading-relaxed mb-5 max-w-xl"
               >
-                Computer Science engineer at BCET Durgapur (MAKAUT). Currently a Virtual Intern at Infosys Springboard, architecting responsive full-stack applications, scalable backend microservices with Java &amp; Spring Boot, and practical Machine Learning systems.
+                Passionate about crafting seamless digital experiences, I specialize in building robust web applications with a focus on performance and user-centric design. With a strong foundation in both front-end and back-end technologies, I thrive on transforming complex problems into elegant solutions. Let's collaborate to bring innovative ideas to life!
               </motion.p>
 
               {/* Action Buttons */}
@@ -115,12 +115,6 @@ function Home() {
               >
                 <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
                   📍 West Bengal, India
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800">
-                  🎓 B.Tech CSE (2026)
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-zinc-900/80 border border-zinc-800 text-cyan-300">
-                  💼 Infosys Springboard Intern
                 </span>
               </motion.div>
 
