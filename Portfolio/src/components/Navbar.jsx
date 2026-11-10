@@ -13,6 +13,15 @@ import {
 } from "lucide-react";
 import resume from "../assets/disha resume.pdf";
 
+const navLinks = [
+  { name: "About", href: "about" },
+  { name: "Experiences", href: "experience" },
+  { name: "Tech Arsenal", href: "skills" },
+  { name: "Projects", href: "projects" },
+  { name: "Credentials", href: "credentials" },
+  { name: "Contact", href: "contact" },
+];
+
 const searchItems = [
   { name: "Home", type: "Section", link: "home", icon: Compass },
   { name: "About Me", type: "Section", link: "about", icon: Compass },
