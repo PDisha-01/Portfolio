@@ -639,3 +639,12 @@
   background: #ffffff;
   color: #09090b;
 }
+
+/* =========================================================
+   GLIDER SHOWCASE STYLES
+   ========================================================= */
+.projects-glider-section {
+  position: relative;
+  background: #09090b;
+  min-height: auto;
+}

@@ -1,442 +1,267 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  HiAcademicCap,
+  HiTrophy,
+  HiChatBubbleBottomCenterText,
+  HiCheckBadge,
+  HiSparkles,
+} from "react-icons/hi2";
 import "./Certifications.css";
 
-
-/* =========================================================
-   CERTIFICATIONS / ACHIEVEMENTS
-   ========================================================= */
-
-const certifications = [
+const credentialsData = [
+  // Certifications
   {
-    id: "01",
-    category: "NATIONAL EVENT",
-    title: "78th Independence Day Ceremonial Parade",
-    issuer: "Event Participation",
+    id: "cert-1",
+    type: "cert",
+    category: "CLOUD TECHNOLOGY",
+    title: "AWS Certified Solutions Architecture",
+    issuer: "Forage • Cloud Systems",
     year: "2025",
-    skills: [
-      "Discipline",
-      "Teamwork",
-      "Leadership",
-    ],
+    skills: ["AWS Cloud", "Architecture", "Cloud Design"],
   },
-
   {
-    id: "02",
-    category: "PHOTOGRAPHY ACHIEVEMENT",
-    title: "3rd Position in Photography - AASHA",
-    issuer: "NSS Wing",
-    year: "2024",
-    skills: [
-      "Photography",
-      "Creativity",
-      "Visual Storytelling",
-    ],
-  },
-
-  {
-    id: "03",
-    category: "COMPETITION ACHIEVEMENT",
-    title: "2nd Position in Memory Race",
-    issuer: "Athlika 2024",
-    year: "2024",
-    skills: [
-      "Focus",
-      "Memory Skills",
-      "Problem Solving",
-    ],
-  },
-
-  {
-    id: "04",
+    id: "cert-2",
+    type: "cert",
     category: "LANGUAGE CERTIFICATION",
-    title: "Fit in Deutsch - German Certification",
+    title: "Fit in Deutsch (German A1)",
     issuer: "Goethe Institut Kolkata",
     year: "Level 1",
-    skills: [
-      "German Language",
-      "Communication",
-      "A1 Level",
-    ],
+    skills: ["German Language", "A1 Goethe", "Communication"],
   },
-
   {
-    id: "05",
-    category: "CLOUD TECHNOLOGY",
-    title: "AWS Certified Solutions",
-    issuer: "Forage",
+    id: "cert-3",
+    type: "cert",
+    category: "NATIONAL EVENT",
+    title: "78th Independence Day Ceremonial Parade",
+    issuer: "National Ceremonial Event",
     year: "2025",
-    skills: [
-      "AWS",
-      "Cloud Computing",
-      "Solutions Architecture",
-    ],
+    skills: ["Discipline", "Team Leadership", "Precision"],
   },
-];
-
-
-/* =========================================================
-   HACKATHONS
-   ========================================================= */
-
-const hackathons = [
   {
-    id: "01",
-    category: "HACKATHON",
-    title: "PANTHEON TECHFEST",
-    organizer: "BIT MESRA, Ranchi",
+    id: "cert-4",
+    type: "cert",
+    category: "PHOTOGRAPHY ACHIEVEMENT",
+    title: "3rd Position in Photography",
+    issuer: "NSS Wing • AASHA 2024",
+    year: "2024",
+    skills: ["Visual Arts", "Composition", "Storytelling"],
+  },
+  {
+    id: "cert-5",
+    type: "cert",
+    category: "COMPETITION ACHIEVEMENT",
+    title: "2nd Position in Memory Race",
+    issuer: "Athlika 2024 • BCET",
+    year: "2024",
+    skills: ["Cognitive Focus", "Speed", "Problem Solving"],
+  },
+
+  // Hackathons
+  {
+    id: "hack-1",
+    type: "hackathon",
+    category: "HACKATHON FINALIST",
+    title: "PANTHEON TECHFEST '25",
+    issuer: "BIT Mesra, Ranchi",
     year: "2025",
-    role: "Participant",
-    project: "Traffic Ops+ : Smart City traffic management system",
-    skills: [
-      "Streamlit",
-      "OpenCV",
-      "YOLOv8",
-      "Python",
-    ],
+    skills: ["TrafficOps+", "YOLOv8", "Streamlit", "OpenCV"],
   },
 
-];
-
-
-/* =========================================================
-   TESTIMONIALS
-   ========================================================= */
-
-const testimonials = [
+  // Testimonials / Recommendations
   {
-    id: "❝",
-    name: "Tanay Sinha",
-    role: "JSCO, Robonixx Club, @BCET",
-    message:
-      "As a fellow member of the club, I have seen her being responsible with patience, integrity & accountability. I have seen her demonstrate perseverance, professionalism and genuine commitment towards excellence.",
+    id: "test-1",
+    type: "testimonial",
+    category: "PEER RECOMMENDATION",
+    title: "Tanay Sinha",
+    issuer: "JSCO, Robonixx Club @ BCET",
+    year: "2025",
+    quote:
+      "Responsible with patience, integrity & accountability. Consistently demonstrates perseverance, professionalism and genuine commitment towards engineering excellence.",
+    skills: ["Accountability", "Leadership"],
   },
-
   {
-    id: "❝",
-    name: "Ananya Rout",
-    role: "Intern from SAIL, Bokaro.",
-    message:
-      "As a fellow intern at SAIL Bokaro, I had the opportunity to work closely with them and observe their dedication, teamwork, and problem-solving skills. They consistently approached every task with enthusiasm and professionalism, making them a dependable and supportive teammate.",
+    id: "test-2",
+    type: "testimonial",
+    category: "INDUSTRY PEER",
+    title: "Ananya Rout",
+    issuer: "Vocational Intern @ SAIL Bokaro",
+    year: "2025",
+    quote:
+      "Approached every ML task with enthusiasm and professionalism, making her a highly dependable and supportive technical teammate.",
+    skills: ["Teamwork", "Problem Solving"],
   },
-
   {
-    id: "❝",
-    name: "Harshvardhan Raj",
-    role: "BTech, Final Year, @BCET",
-    message:
-      "Working alongside her has been a rewarding experience. She brings a positive attitude, reliability, and a strong sense of responsibility to every collaboration. Her discipline, creativity, and dedication towards achieving goals demonstrate her ability to work effectively while maintaining professionalism and respect for others.",
+    id: "test-3",
+    type: "testimonial",
+    category: "COLLEAGUE",
+    title: "Harshvardhan Raj",
+    issuer: "B.Tech CSE @ BCET",
+    year: "2025",
+    quote:
+      "Brings a positive attitude, reliability, and strong sense of responsibility to collaborations with great creative discipline.",
+    skills: ["Collaboration", "Engineering"],
   },
 ];
 
+export default function Certifications() {
+  const [activeTab, setActiveTab] = useState("all");
 
-const Certifications = () => {
+  const filteredData = credentialsData.filter((item) => {
+    if (activeTab === "all") return true;
+    return item.type === activeTab;
+  });
+
+  const certCount = credentialsData.filter((i) => i.type === "cert").length;
+  const hackCount = credentialsData.filter((i) => i.type === "hackathon").length;
+  const testCount = credentialsData.filter((i) => i.type === "testimonial").length;
+
   return (
-
     <section
-      className="certifications"
       id="credentials"
+      className="portfolio-section relative py-16 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden"
     >
+      {/* Background Subtle Blueprint Grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.035]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #ffffff 1px, transparent 1px),
+            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
-
-      <div className="cert-header">
-
-        <p className="cert-tag">
-          ACHIEVEMENTS / LEARNING
-        </p>
-
-        <h1>
-          PERSONAL
-          <span> ACHIEVEMENTS</span>
-        </h1>
-
-        <div className="cert-line"></div>
-
-        <p className="cert-desc">
-          A collection of professional learning experiences,
-          achievements, hackathons and verified skill development.
-        </p>
-
-      </div>
-
-
-      {/* =====================================================
-          CREDENTIALS GRID
-      ===================================================== */}
-
-      <div className="credentials-grid">
-
-
-        {/* ===================================================
-            CERTIFICATIONS
-        =================================================== */}
-
-        <div className="credential-column">
-
-          <div className="credential-column-header">
-
-            <span>
-              VERIFIED CREDENTIALS
+      <div className="relative max-w-6xl mx-auto">
+        {/* Section Header (Tasteful & Balanced) */}
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-3">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-[11px] uppercase tracking-[2.5px] font-mono font-semibold text-zinc-300">
+              VERIFIED CREDENTIALS &amp; RECOGNITION
             </span>
-
-            <h2>
-              Certification Archive
-            </h2>
-
-            <p>
-              Learning experiences, achievements and
-              professional skill development.
-            </p>
-
           </div>
 
-
-          <div className="cert-list">
-
-            {certifications.map((cert) => (
-
-              <div
-                className="cert-item"
-                key={cert.id}
-              >
-
-                <div className="cert-number">
-                  {cert.id}
-                </div>
-
-
-                <div className="cert-details">
-
-                  <p className="cert-category">
-                    {cert.category}
-                  </p>
-
-
-                  <h2>
-                    {cert.title}
-                  </h2>
-
-
-                  <div className="cert-meta">
-
-                    <p>
-                      ISSUED BY
-                      <strong>
-                        {cert.issuer}
-                      </strong>
-                    </p>
-
-
-                    <p>
-                      YEAR
-                      <strong>
-                        {cert.year}
-                      </strong>
-                    </p>
-
-                  </div>
-
-
-                  <div className="cert-skills">
-
-                    {cert.skills.map((skill, index) => (
-
-                      <span key={index}>
-                        {skill}
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-
-        {/* ===================================================
-            HACKATHONS
-        =================================================== */}
-
-        <div className="credential-column hackathon-column">
-
-          <div className="credential-column-header">
-
-            <span>
-              HACKATHONS &amp; COMPETITIONS
-            </span>
-
-            <h2>
-              Hackathon Archive
-            </h2>
-
-            <p>
-              Collaborative problem solving, innovation and
-              project building under real-world challenges.
-            </p>
-
-          </div>
-
-
-          <div className="hackathon-list">
-
-            {hackathons.map((hackathon) => (
-
-              <div
-                className="hackathon-item"
-                key={hackathon.id}
-              >
-
-                <div className="hackathon-number">
-                  {hackathon.id}
-                </div>
-
-
-                <div className="hackathon-details">
-
-                  <p className="hackathon-category">
-                    {hackathon.category}
-                  </p>
-
-
-                  <h2>
-                    {hackathon.title}
-                  </h2>
-
-
-                  <div className="hackathon-meta">
-
-                    <p>
-                      ORGANIZED BY
-                      <strong>
-                        {hackathon.organizer}
-                      </strong>
-                    </p>
-
-
-                    <p>
-                      YEAR
-                      <strong>
-                        {hackathon.year}
-                      </strong>
-                    </p>
-
-
-                    <p>
-                      ROLE
-                      <strong>
-                        {hackathon.role}
-                      </strong>
-                    </p>
-
-                  </div>
-
-
-                  <div className="hackathon-project">
-
-                    <span>
-                      PROJECT
-                    </span>
-
-                    <p>
-                      {hackathon.project}
-                    </p>
-
-                  </div>
-
-
-                  <div className="hackathon-skills">
-
-                    {hackathon.skills.map((skill, index) => (
-
-                      <span key={index}>
-                        {skill}
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          TESTIMONIALS
-      ===================================================== */}
-
-      <div className="testimonial-section">
-
-        <div className="testimonial-header">
-
-          <p>
-            FEEDBACK FROM PEERS
-          </p>
-
-          <h2>
-            What Others Say ~
+          <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-2">
+            Credentials &amp; Achievements
           </h2>
 
+          <p className="text-xs md:text-sm text-zinc-400">
+            Verified certifications, hackathon projects, and professional endorsements.
+          </p>
         </div>
 
+        {/* Filter Switcher Tabs (Less Scrollable) */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 mb-8">
+          <button
+            type="button"
+            onClick={() => setActiveTab("all")}
+            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeTab === "all"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+            }`}
+          >
+            All ({credentialsData.length})
+          </button>
 
-        <div className="testimonial-list">
+          <button
+            type="button"
+            onClick={() => setActiveTab("cert")}
+            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeTab === "cert"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+            }`}
+          >
+            Certificates ({certCount})
+          </button>
 
-          {testimonials.map((item, index) => (
+          <button
+            type="button"
+            onClick={() => setActiveTab("hackathon")}
+            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeTab === "hackathon"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+            }`}
+          >
+            Hackathons ({hackCount})
+          </button>
 
-            <div
-              className="testimonial-item"
-              key={`${item.name}-${index}`}
-            >
-
-              <div className="testimonial-number">
-                {item.id}
-              </div>
-
-
-              <div className="testimonial-content">
-
-                <h3>
-                  {item.name}
-                </h3>
-
-                <span>
-                  {item.role}
-                </span>
-
-                <p>
-                  "{item.message}"
-                </p>
-
-              </div>
-
-            </div>
-
-          ))}
-
+          <button
+            type="button"
+            onClick={() => setActiveTab("testimonial")}
+            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+              activeTab === "testimonial"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+            }`}
+          >
+            Endorsements ({testCount})
+          </button>
         </div>
 
+        {/* Small Compact Cards Grid (Zero Endless Scrolling) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <AnimatePresence mode="popLayout">
+            {filteredData.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="group relative flex flex-col justify-between p-4.5 rounded-2xl bg-zinc-900/70 border border-zinc-800/80 hover:border-cyan-500/50 hover:bg-zinc-900/95 transition-all duration-300 backdrop-blur-md shadow-sm"
+              >
+                <div>
+                  {/* Top: Category Pill + Year */}
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[10px] font-mono font-semibold tracking-wider uppercase text-cyan-400 truncate">
+                      {item.category}
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  {/* Title / Name */}
+                  <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-1">
+                    {item.title}
+                  </h3>
+
+                  {/* Issuer or Role */}
+                  <p className="text-xs text-zinc-400 font-medium mb-2.5 truncate">
+                    {item.issuer}
+                  </p>
+
+                  {/* Quote if Testimonial */}
+                  {item.quote && (
+                    <p className="text-xs text-zinc-300 italic leading-relaxed mb-3 line-clamp-3 bg-zinc-950/50 p-2.5 rounded-xl border border-zinc-800/60">
+                      "{item.quote}"
+                    </p>
+                  )}
+                </div>
+
+                {/* Bottom: Skills Tags */}
+                <div className="pt-2.5 border-t border-zinc-800/60 flex flex-wrap gap-1">
+                  {item.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-2 py-0.5 text-[10px] rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/50 font-mono"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
-
     </section>
   );
-};
-
-
-export default Certifications;
+}

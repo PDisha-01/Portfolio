@@ -1,4 +1,3 @@
-import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { HiArrowUpRight, HiChatBubbleLeftRight } from "react-icons/hi2";
@@ -9,10 +8,9 @@ import About from "./about";
 function Home() {
   return (
     <>
-      <section className="hero hero-mono-theme" id="home">
-        {/* Subtle Engineering Grid & Vignette */}
+      <section className="hero hero-watermark-layout" id="home">
+        {/* Engineering Blueprint Grid */}
         <div className="hero-blueprint-grid" aria-hidden="true" />
-        <div className="hero-blueprint-vignette" aria-hidden="true" />
 
         {/* Technical Coordinate Markers */}
         <div className="hero-tech-marker marker-tl" aria-hidden="true">+ [23°35'12" N // 87°18'44" E]</div>
@@ -20,38 +18,38 @@ function Home() {
         <div className="hero-tech-marker marker-bl" aria-hidden="true">+ [SYSTEM: ONLINE // v2026]</div>
         <div className="hero-tech-marker marker-br" aria-hidden="true">+ [CAD_REV: 04.2]</div>
 
-        <div className="hero-inner hero-inner-grid">
-          {/* Left Column: Information & Actions */}
-          <div className="hero-content">
+        {/* Watermark-Style Photograph Background with Low Opacity */}
+        <div className="hero-watermark-bg" aria-hidden="true">
+          <img
+            src={dishaPortrait}
+            alt=""
+            className="hero-watermark-img"
+          />
+          <div className="hero-watermark-overlay" />
+        </div>
+
+        {/* Foreground Content */}
+        <div className="hero-inner-watermark">
+          <div className="hero-content hero-content-proportional">
+            {/* Engineering Status Tag */}
             <div className="hero-spec-badge">
               <span className="hero-spec-dot" aria-hidden="true" />
               <span>[ SPEC: B.TECH CSE '26 // FULL-STACK &amp; SOFTWARE SYSTEMS ]</span>
             </div>
 
-            <h1 className="hero-engineer-name">
+            {/* Name Heading (Adjusted Font Size - Tasteful & Balanced) */}
+            <h1 className="hero-name-adjusted">
               DISHA <span className="text-zinc-400">MALLICK</span>
             </h1>
 
-            <div className="hero-engineer-role" aria-label="Professional focus">
-              <span className="hero-role-prompt">&gt;</span>
-              <TypeAnimation
-                sequence={[
-                  "Full-Stack Software Engineer",
-                  2200,
-                  "Systems & Web Application Architect",
-                  2200,
-                  "Infosys Springboard Virtual Intern",
-                  2200,
-                  "Robonixx Club Event Operations Head",
-                  2200,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
+            {/* Static Clean Title (No Sliding Phrases) */}
+            <div className="hero-static-role">
+              <span className="text-zinc-500 font-mono text-sm mr-2">&gt;</span>
+              <span>Full-Stack Software Engineer &amp; Systems Developer</span>
             </div>
 
-            <p className="hero-engineer-description">
+            {/* Description */}
+            <p className="hero-description-proportional">
               Final-year Computer Science engineer architecting robust full-stack applications,
               scalable backend services, and clean digital systems with disciplined engineering
               principles and modern frameworks.
@@ -61,7 +59,7 @@ function Home() {
             <div className="hero-buttons">
               <a className="primary-btn-mono" href="#projects">
                 <span>Explore Projects</span>
-                <HiArrowUpRight aria-hidden="true" className="text-lg" />
+                <HiArrowUpRight aria-hidden="true" className="text-base" />
               </a>
 
               <a
@@ -75,7 +73,7 @@ function Home() {
               </a>
 
               <a
-                className="secondary-btn-mono hero-connect-btn"
+                className="secondary-btn-mono"
                 href="#contact"
                 aria-label="Contact Disha"
               >
@@ -87,10 +85,10 @@ function Home() {
             {/* Technical Metadata Chips */}
             <div className="hero-meta-strip" aria-label="Quick specs">
               <span className="hero-meta-chip">
-                <span className="meta-chip-label">ROLE:</span> Available for Software Roles
+                <span className="meta-chip-label">ROLE:</span> Open to Software Engineering Roles
               </span>
               <span className="hero-meta-chip">
-                <span className="meta-chip-label">INSTITUTION:</span> BCET Durgapur (MAKAUT)
+                <span className="meta-chip-label">CAMPUS:</span> BCET Durgapur (MAKAUT)
               </span>
               <span className="hero-meta-chip">
                 <span className="meta-chip-label">LOCATION:</span> West Bengal, India
@@ -123,29 +121,6 @@ function Home() {
                 <MdEmail />
                 <span>Email</span>
               </a>
-            </div>
-          </div>
-
-          {/* Right Column: Disha's Portrait Showcase */}
-          <div className="hero-portrait-column" aria-label="Disha Mallick Portrait">
-            <div className="hero-portrait-frame">
-              <div className="hero-portrait-corner-tl" aria-hidden="true">+</div>
-              <div className="hero-portrait-corner-tr" aria-hidden="true">+</div>
-              <div className="hero-portrait-corner-bl" aria-hidden="true">+</div>
-              <div className="hero-portrait-corner-br" aria-hidden="true">+</div>
-
-              <div className="hero-portrait-img-box">
-                <img
-                  src={dishaPortrait}
-                  alt="Disha Mallick - Software Engineer"
-                  className="hero-portrait-img"
-                />
-              </div>
-
-              <div className="hero-portrait-badge">
-                <span className="hero-portrait-dot" />
-                <span>DISHA MALLICK // SOFTWARE ENGINEER</span>
-              </div>
             </div>
           </div>
         </div>

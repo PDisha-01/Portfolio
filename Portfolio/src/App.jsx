@@ -46,7 +46,7 @@ function MainPortfolio() {
 
   return (
 
-    <div className="bg-[var(--page-bg)] text-[var(--text-main)] min-h-screen transition-colors duration-300">
+    <div className="dark bg-[#09090b] text-[#f4f4f5] min-h-screen">
 
       <Navbar />
 
