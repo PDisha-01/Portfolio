@@ -79,20 +79,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="projects-glider-section relative py-16 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden">
-      {/* Background Subtle Blueprint Grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.035]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #ffffff 1px, transparent 1px),
-            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Subtle Glows */}
+      {/* Subtle Ambient Light (No Grid Lines) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto">
@@ -100,8 +87,8 @@ export default function Projects() {
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-3">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[11px] uppercase tracking-[2.5px] font-mono font-semibold text-zinc-300">
-              FEATURED ENGINEERING SHOWCASE
+            <span className="text-[11px] uppercase tracking-[2px] font-mono font-semibold text-zinc-300">
+              FEATURED PROJECTS
             </span>
           </div>
 

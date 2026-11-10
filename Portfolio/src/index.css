@@ -173,40 +173,12 @@ h6 {
 
 
 /* =========================================================
-   5. GRID
+   5. BACKGROUND CANVAS (NO GRID LINES)
    ========================================================= */
 
 #root::before {
   content: "";
-
-  position: fixed;
-  inset: 0;
-
-  pointer-events: none;
-
-  z-index: -1;
-
-  background-image:
-    linear-gradient(
-      to right,
-      var(--grid-color) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      var(--grid-color) 1px,
-      transparent 1px
-    );
-
-  background-size: 55px 55px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black 0%,
-      rgba(0, 0, 0, 0.65) 60%,
-      transparent 100%
-    );
+  display: none;
 }
 
 
@@ -392,85 +364,43 @@ nav button {
   isolation: isolate;
 }
 
-/* Technical Blueprint Grid */
-.hero-blueprint-grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-  background-size: 36px 36px;
-  z-index: 1;
-}
+/* =========================================================
+   HERO PROFILE LAYOUT (NATURAL FULL-COLOR PHOTO, NO GRID)
+   ========================================================= */
 
-.hero-blueprint-vignette {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, transparent 40%, var(--page-bg) 95%);
-  z-index: 2;
-}
-
-/* Engineering Technical Coordinate Markers */
-.hero-tech-marker {
-  position: absolute;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  opacity: 0.45;
-  letter-spacing: 1.5px;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.marker-tl { top: 25px; left: 25px; }
-.marker-tr { top: 25px; right: 25px; }
-.marker-bl { bottom: 25px; left: 25px; }
-.marker-br { bottom: 25px; right: 25px; }
-
-/* Watermark Layout */
-.hero-watermark-layout {
+.hero-profile-section {
   position: relative;
   min-height: 92vh;
-  padding: 110px 6vw 70px;
+  padding: 120px 6vw 70px;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background: var(--page-bg);
-  isolation: isolate;
+  background: #09090b;
 }
 
-/* Watermark Background Photo (Low Opacity) */
-.hero-watermark-bg {
-  position: absolute;
-  right: 4%;
-  top: 50%;
-  transform: translateY(-46%);
-  width: min(540px, 60vw);
-  height: min(650px, 85vh);
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
+.hero-profile-container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
 }
 
-.hero-watermark-img {
+.hero-photo-frame {
+  position: relative;
+  width: min(340px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(6, 182, 212, 0.08);
+  background: #121215;
+}
+
+.hero-photo-natural {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
-  opacity: 0.13;
-  filter: grayscale(100%) contrast(125%);
-  mask-image: radial-gradient(ellipse at 50% 50%, black 15%, rgba(0, 0, 0, 0.45) 55%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 15%, rgba(0, 0, 0, 0.45) 55%, transparent 80%);
-  transition: opacity 0.4s ease;
+  object-position: center 15%;
+  display: block;
 }
 
-.hero-watermark-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 35%, #09090b 90%);
-}
 
 .hero-inner-watermark {
   position: relative;

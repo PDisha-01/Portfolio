@@ -18,6 +18,7 @@ import TrafficOps from "./pages/ProjectDetails/TrafficOps";
 import ZenithProject from "./pages/ProjectDetails/ZenithProject";
 import SakhiProject from "./pages/ProjectDetails/SakhiProject";
 import FashnovaProject from "./pages/ProjectDetails/FashnovaProject";
+import CustomCursor from "./components/CustomCursor";
 
 
 function MainPortfolio() {
@@ -72,7 +73,8 @@ function App() {
   return (
 
     <BrowserRouter>
-    <ScrollToHash />
+      <CustomCursor />
+      <ScrollToHash />
 
       <Routes>
 

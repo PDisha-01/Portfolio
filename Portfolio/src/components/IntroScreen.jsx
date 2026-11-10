@@ -45,17 +45,7 @@ function IntroScreen({ onFinish }) {
 
   return (
     <div className="intro-screen-container">
-      {/* Blueprint Grid & Radial Vignette */}
-      <div className="intro-blueprint-grid" aria-hidden="true" />
-      <div className="intro-blueprint-overlay" aria-hidden="true" />
-
-      {/* Crosshair Markers */}
-      <div className="intro-crosshair crosshair-tl">+ [023.58° N]</div>
-      <div className="intro-crosshair crosshair-tr">+ [087.32° E]</div>
-      <div className="intro-crosshair crosshair-bl">+ [CAD: SPEC-2026]</div>
-      <div className="intro-crosshair crosshair-br">+ [DISCIPLINE: CSE]</div>
-
-      {/* Main Engineering Console Card */}
+      {/* Main Developer Console Card */}
       <div className="intro-console-card">
         <div className="intro-console-header">
           <div className="intro-console-dots">
@@ -63,8 +53,8 @@ function IntroScreen({ onFinish }) {
             <span className="intro-console-dot" />
             <span className="intro-console-dot" />
           </div>
-          <span>ENGINEERING CONSOLE // BOOTLOADER v2.6</span>
-          <span>[64 KB]</span>
+          <span>disha-portfolio // initializing</span>
+          <span>v2026</span>
         </div>
 
         <div className="intro-console-body">

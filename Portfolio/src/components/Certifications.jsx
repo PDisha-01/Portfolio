@@ -105,12 +105,9 @@ const credentialsData = [
 ];
 
 export default function Certifications() {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("cert");
 
-  const filteredData = credentialsData.filter((item) => {
-    if (activeTab === "all") return true;
-    return item.type === activeTab;
-  });
+  const filteredData = credentialsData.filter((item) => item.type === activeTab);
 
   const certCount = credentialsData.filter((i) => i.type === "cert").length;
   const hackCount = credentialsData.filter((i) => i.type === "hackathon").length;
@@ -121,16 +118,9 @@ export default function Certifications() {
       id="credentials"
       className="portfolio-section relative py-16 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden"
     >
-      {/* Background Subtle Blueprint Grid */}
+      {/* Soft Ambient Light (No Grid Lines) */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.035]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #ffffff 1px, transparent 1px),
-            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
+        className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-cyan-500/[0.025] blur-[120px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -139,8 +129,8 @@ export default function Certifications() {
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-3">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[11px] uppercase tracking-[2.5px] font-mono font-semibold text-zinc-300">
-              VERIFIED CREDENTIALS &amp; RECOGNITION
+            <span className="text-[11px] uppercase tracking-[2px] font-mono font-semibold text-zinc-300">
+              CREDENTIALS &amp; RECOGNITION
             </span>
           </div>
 
@@ -153,27 +143,15 @@ export default function Certifications() {
           </p>
         </div>
 
-        {/* Filter Switcher Tabs (Less Scrollable) */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 mb-8">
-          <button
-            type="button"
-            onClick={() => setActiveTab("all")}
-            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === "all"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
-                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
-            }`}
-          >
-            All ({credentialsData.length})
-          </button>
-
+        {/* Filter Switcher Tabs (Only Certificates, Hackathons, Endorsements) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           <button
             type="button"
             onClick={() => setActiveTab("cert")}
-            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
               activeTab === "cert"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
-                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60 shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-700"
             }`}
           >
             Certificates ({certCount})
@@ -182,10 +160,10 @@ export default function Certifications() {
           <button
             type="button"
             onClick={() => setActiveTab("hackathon")}
-            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
               activeTab === "hackathon"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
-                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60 shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-700"
             }`}
           >
             Hackathons ({hackCount})
@@ -194,10 +172,10 @@ export default function Certifications() {
           <button
             type="button"
             onClick={() => setActiveTab("testimonial")}
-            className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold transition-all cursor-pointer ${
               activeTab === "testimonial"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60"
-                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/60 shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-700"
             }`}
           >
             Endorsements ({testCount})

@@ -89,20 +89,7 @@ export default function Experience() {
       id="experience"
       className="portfolio-section relative overflow-hidden px-5 py-16 md:px-10 lg:px-14 bg-[#09090b] text-[#f4f4f5]"
     >
-      {/* Background Blueprint Grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.035]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #ffffff 1px, transparent 1px),
-            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Subtle Glows */}
+      {/* Subtle Glows (No Grid Lines) */}
       <div
         className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-cyan-500/[0.03] blur-[100px] pointer-events-none"
         aria-hidden="true"

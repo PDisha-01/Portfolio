@@ -16,37 +16,6 @@
   transition: opacity 0.5s ease;
 }
 
-/* Technical Drafting Grid */
-.intro-blueprint-grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.intro-blueprint-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at center, transparent 30%, rgba(9, 9, 11, 0.9) 80%);
-}
-
-/* Crosshair Markers */
-.intro-crosshair {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 0.65rem;
-  letter-spacing: 1px;
-}
-
-.crosshair-tl { top: 24px; left: 24px; }
-.crosshair-tr { top: 24px; right: 24px; }
-.crosshair-bl { bottom: 24px; left: 24px; }
-.crosshair-br { bottom: 24px; right: 24px; }
-
 /* Main Console Card */
 .intro-console-card {
   position: relative;
