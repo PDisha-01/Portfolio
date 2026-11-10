@@ -104,15 +104,15 @@ export default function TechArsenal() {
           viewport={{ once: true }}
         >
           <div>
-            <span className="text-[11px] uppercase tracking-[3px] font-mono font-bold text-cyan-600 dark:text-cyan-400 block mb-2">
+            <span className="text-[11px] uppercase tracking-[3px] font-mono font-bold text-zinc-500 dark:text-zinc-400 block mb-2">
               SKILLS &amp; TECHNOLOGIES
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight m-0 text-slate-900 dark:text-white">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight m-0 text-zinc-950 dark:text-white">
               Technical Arsenal
             </h2>
           </div>
 
-          <div className="text-xs font-mono text-slate-500 dark:text-gray-400 flex items-center gap-2">
+          <div className="text-xs font-mono text-zinc-500 dark:text-zinc-400 flex items-center gap-2">
             <span>← Sideways Scrollable →</span>
           </div>
         </motion.div>
@@ -135,8 +135,8 @@ export default function TechArsenal() {
                   px-4 py-2 rounded-full font-mono text-xs font-bold tracking-wider whitespace-nowrap transition-all cursor-pointer
                   ${
                     isActive
-                      ? "bg-cyan-500 text-slate-950 shadow-[0_0_15px_rgba(6,182,212,0.4)] border border-cyan-400"
-                      : "bg-white/70 dark:bg-white/[0.04] text-slate-700 dark:text-gray-300 border border-slate-200 dark:border-white/10 hover:border-cyan-500/40 hover:text-cyan-600 dark:hover:text-cyan-400"
+                      ? "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950 shadow-md border dark:border-white border-zinc-950"
+                      : "bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600"
                   }
                 `}
               >
@@ -159,7 +159,7 @@ export default function TechArsenal() {
               pt-2
               px-1
               scrollbar-thin
-              scrollbar-thumb-cyan-500/30
+              scrollbar-thumb-zinc-700
               scrollbar-track-transparent
             "
           >
@@ -189,17 +189,17 @@ export default function TechArsenal() {
                       cursor-default
                       ${
                         tech.highlight
-                          ? "bg-cyan-500/[0.08] dark:bg-cyan-500/[0.07] border-cyan-500/30 text-slate-900 dark:text-white shadow-sm"
-                          : "bg-white/70 dark:bg-white/[0.03] border-slate-200 dark:border-white/10 text-slate-800 dark:text-gray-200"
+                          ? "bg-zinc-200/80 dark:bg-zinc-800/80 border-zinc-300 dark:border-zinc-700 text-zinc-950 dark:text-white shadow-sm"
+                          : "bg-zinc-100/70 dark:bg-zinc-900/60 border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300"
                       }
                     `}
                   >
-                    <Icon className="text-xl text-cyan-500 flex-shrink-0" />
+                    <Icon className="text-xl text-zinc-800 dark:text-zinc-200 flex-shrink-0" />
                     <div className="flex flex-col">
                       <span className="font-semibold text-xs tracking-wide">
                         {tech.name}
                       </span>
-                      <span className="text-[10px] font-mono text-slate-500 dark:text-gray-400">
+                      <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-400">
                         {tech.category}
                       </span>
                     </div>

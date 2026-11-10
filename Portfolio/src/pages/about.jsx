@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaAward, FaTerminal, FaUsers, FaHeart, FaBasketballBall } from "react-icons/fa";
 import { HiSparkles, HiAcademicCap, HiCamera } from "react-icons/hi2";
-import profile from "../assets/profile-photo.jpeg";
+import dishaPortrait from "../assets/disha-portrait.jpg";
 import collegeLogo from "../assets/BCET.jpeg";
 import schoolLogo from "../assets/dps.jpeg";
 import "./about.css";
@@ -45,7 +45,7 @@ export default function About() {
               <div className="bento-story-top">
                 <div className="bento-photo-wrapper">
                   <img
-                    src={profile}
+                    src={dishaPortrait}
                     alt="Disha Mallick"
                     className="bento-profile-img"
                   />

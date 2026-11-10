@@ -113,8 +113,8 @@ function Navbar() {
         fixed top-0 left-0 w-full z-50 transition-all duration-300
         ${
           scrolled
-            ? "dark:bg-[#050816]/90 bg-white/90 backdrop-blur-2xl border-b dark:border-cyan-400/20 border-slate-200 shadow-md py-3"
-            : "bg-transparent backdrop-blur-md border-b dark:border-white/5 border-slate-200/50 py-4"
+            ? "dark:bg-[#09090b]/90 bg-white/90 backdrop-blur-2xl border-b dark:border-white/10 border-zinc-200 shadow-md py-3"
+            : "bg-transparent backdrop-blur-md border-b dark:border-white/5 border-zinc-200/50 py-4"
         }
       `}
     >
@@ -126,32 +126,32 @@ function Navbar() {
             href="#home"
             className="flex items-center gap-2 group font-mono"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-500 to-rose-500 p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shadow-[0_0_20px_rgba(34,211,238,0.35)]">
-              <div className="w-full h-full dark:bg-[#050816] bg-white rounded-[10px] flex items-center justify-center">
-                <span className="font-bold text-base bg-gradient-to-r from-cyan-400 via-purple-400 to-rose-400 bg-clip-text text-transparent">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-zinc-300 via-zinc-500 to-zinc-700 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <div className="w-full h-full dark:bg-[#121215] bg-white rounded-[10px] flex items-center justify-center">
+                <span className="font-bold text-base bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
                   DM
                 </span>
               </div>
             </div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-sm tracking-wide dark:text-white text-slate-900 group-hover:text-cyan-500 transition">
+              <span className="font-bold text-sm tracking-wide dark:text-white text-zinc-900 group-hover:text-zinc-300 transition">
                 Disha Mallick
               </span>
-              <span className="text-[10px] tracking-widest text-cyan-500 font-mono">
+              <span className="text-[10px] tracking-widest text-zinc-400 font-mono">
                 ENGINEERING • CS '26
               </span>
             </div>
           </a>
 
           {/* ONLINE STATUS BADGE */}
-          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-[11px] font-medium tracking-wide">
+          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-medium tracking-wide">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
             <span>Open to Roles</span>
           </div>
         </div>
 
         {/* DESKTOP NAV LINKS */}
-        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full dark:bg-white/[0.04] bg-slate-900/[0.04] dark:border-white/10 border-slate-300/60 backdrop-blur-xl shadow-inner">
+        <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full dark:bg-zinc-900/60 bg-zinc-100 dark:border-white/10 border-zinc-200 backdrop-blur-xl shadow-inner">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -160,8 +160,8 @@ function Navbar() {
                 relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300
                 ${
                   active === item.link
-                    ? "text-cyan-600 dark:text-cyan-300 bg-cyan-400/15 shadow-[0_0_15px_rgba(34,211,238,0.25)] font-semibold"
-                    : "dark:text-gray-300 text-slate-700 hover:text-cyan-500 dark:hover:text-white dark:hover:bg-white/5 hover:bg-slate-200/50"
+                    ? "text-white dark:bg-white/10 bg-zinc-900 text-zinc-100 font-semibold shadow-sm"
+                    : "dark:text-zinc-400 text-zinc-600 hover:text-white dark:hover:text-white dark:hover:bg-white/5 hover:bg-zinc-200"
                 }
               `}
             >
@@ -179,9 +179,8 @@ function Navbar() {
             download="Disha_Mallick_Resume.pdf"
             className="
               inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold
-              bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500
-              text-[#04111c] shadow-[0_0_20px_rgba(34,211,238,0.35)]
-              transition-all duration-300 hover:scale-105 active:scale-95
+              dark:bg-white bg-zinc-900 text-zinc-900 dark:text-zinc-900 dark:bg-zinc-100
+              hover:bg-zinc-200 shadow-md transition-all duration-300 hover:scale-105 active:scale-95
             "
           >
             <FileText size={14} />

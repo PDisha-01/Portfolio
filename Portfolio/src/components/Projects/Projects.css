@@ -430,17 +430,17 @@
 }
 
 .filter-tab-btn:hover {
-  color: #00d9ff;
-  border-color: rgba(0, 217, 255, 0.35);
-  background: rgba(0, 217, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .filter-tab-btn.active {
-  background: #00d9ff;
-  color: #030712;
-  border-color: #00d9ff;
+  background: #ffffff;
+  color: #09090b;
+  border-color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .live-demo-btn {
@@ -486,8 +486,8 @@
 }
 
 .project-card-compact:hover {
-  border-color: var(--accent);
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
 
 .project-thumb-box {
@@ -630,12 +630,12 @@
 }
 
 .action-btn-details {
-  background: var(--accent-soft);
-  color: var(--accent-bright, var(--accent));
-  border: 1px solid var(--accent-soft);
+  background: var(--surface-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border);
 }
 
 .action-btn-details:hover {
-  background: var(--accent);
-  color: #030712;
+  background: #ffffff;
+  color: #09090b;
 }

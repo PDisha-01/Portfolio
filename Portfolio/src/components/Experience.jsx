@@ -100,17 +100,17 @@ export default function Experience() {
         md:px-10
         lg:px-16
 
-        bg-slate-50
-        text-slate-900
+        bg-zinc-100
+        text-zinc-900
 
-        dark:bg-[#050816]
-        dark:text-white
+        dark:bg-[#09090b]
+        dark:text-zinc-100
 
         transition-colors
-        duration-500
+        duration-400
       "
     >
-      {/* Background Glows */}
+      {/* Background Subtle Gray Glows */}
       <div
         className="
           absolute
@@ -119,8 +119,7 @@ export default function Experience() {
           w-96
           h-96
           rounded-full
-          bg-cyan-400/10
-          dark:bg-cyan-400/10
+          bg-white/[0.02]
           blur-[120px]
           pointer-events-none
         "
@@ -134,8 +133,7 @@ export default function Experience() {
           w-[420px]
           h-[420px]
           rounded-full
-          bg-purple-400/10
-          dark:bg-purple-500/10
+          bg-zinc-500/[0.03]
           blur-[150px]
           pointer-events-none
         "
@@ -174,9 +172,11 @@ export default function Experience() {
             py-1.5
             rounded-full
             border
-            border-cyan-500/20
-            bg-cyan-500/10
-            shadow-[0_0_20px_rgba(34,211,238,0.08)]
+            border-zinc-300
+            dark:border-zinc-800
+            bg-zinc-200/60
+            dark:bg-zinc-900/80
+            shadow-sm
           "
         >
           <span
@@ -184,9 +184,9 @@ export default function Experience() {
               w-2
               h-2
               rounded-full
-              bg-cyan-400
+              bg-zinc-700
+              dark:bg-white
               animate-pulse
-              shadow-[0_0_10px_#22d3ee]
             "
           />
 
@@ -197,8 +197,8 @@ export default function Experience() {
               tracking-[3px]
               font-mono
               font-semibold
-              text-cyan-600
-              dark:text-cyan-400
+              text-zinc-700
+              dark:text-zinc-300
             "
           >
             CAREER &amp; WORK HISTORY
@@ -218,12 +218,12 @@ export default function Experience() {
             font-extrabold
             tracking-tight
             bg-gradient-to-r
-            from-slate-900
-            via-slate-700
-            to-slate-400
+            from-zinc-950
+            via-zinc-800
+            to-zinc-500
             dark:from-white
-            dark:via-gray-200
-            dark:to-gray-400
+            dark:via-zinc-200
+            dark:to-zinc-400
             bg-clip-text
             text-transparent
           "
@@ -242,10 +242,10 @@ export default function Experience() {
             text-base
             md:text-lg
             leading-relaxed
-            text-slate-600
-            dark:text-gray-400
+            text-zinc-600
+            dark:text-zinc-400
             transition-colors
-            duration-500
+            duration-400
           "
         >
           Hands-on internships, industrial vocational training, and technical club leadership
@@ -263,8 +263,8 @@ export default function Experience() {
             mt-10
             h-px
             bg-gradient-to-r
-            from-cyan-500
-            via-purple-500
+            from-zinc-400
+            via-zinc-700
             to-transparent
           "
         />
@@ -312,15 +312,17 @@ export default function Experience() {
                 tracking-wider
                 uppercase
                 border
-                border-cyan-500/40
-                bg-cyan-500/10
-                text-cyan-600
-                dark:text-cyan-400
-                hover:bg-cyan-500/20
-                hover:border-cyan-400
+                border-zinc-300
+                dark:border-zinc-700
+                bg-zinc-200
+                dark:bg-zinc-800
+                text-zinc-900
+                dark:text-zinc-100
+                hover:bg-zinc-300
+                dark:hover:bg-zinc-700
                 transition-all
                 duration-300
-                shadow-[0_0_20px_rgba(6,182,212,0.12)]
+                shadow-sm
                 cursor-pointer
                 flex
                 items-center
