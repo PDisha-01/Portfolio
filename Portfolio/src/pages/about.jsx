@@ -8,13 +8,22 @@ import "./about.css";
 export default function About() {
   return (
     <section className="about-section" id="about">
-      <div className="about-container">
+      {/* Delicate Glowing Bridge Line */}
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+
+      <motion.div
+        className="about-container"
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Header: Behind The Code + About Lines and Skills (Without any card) */}
         <motion.div
           className="about-header-modern"
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <div className="about-chapter-badge">
@@ -226,7 +235,7 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

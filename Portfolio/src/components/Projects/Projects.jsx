@@ -79,10 +79,19 @@ export default function Projects() {
 
   return (
     <section id="projects" className="projects-glider-section relative py-12 md:py-14 px-4 md:px-8 bg-[#09090b] text-[#f4f4f5] overflow-hidden">
+      {/* Delicate Glowing Bridge Line */}
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+
       {/* Subtle Ambient Light (No Grid Lines) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto">
+      <motion.div
+        className="relative max-w-5xl mx-auto"
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Header (Adjusted Font Size - Tasteful & Balanced) */}
         <div className="text-center max-w-2xl mx-auto mb-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-2.5">
@@ -284,7 +293,7 @@ export default function Projects() {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

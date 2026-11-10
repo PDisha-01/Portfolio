@@ -124,7 +124,16 @@ export default function Certifications() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-6xl mx-auto">
+      {/* Delicate Glowing Bridge Line */}
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+
+      <motion.div
+        className="relative max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Section Header (Tasteful & Balanced) */}
         <div className="text-center max-w-2xl mx-auto mb-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 shadow-sm mb-2.5">
@@ -239,7 +248,7 @@ export default function Certifications() {
             ))}
           </AnimatePresence>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

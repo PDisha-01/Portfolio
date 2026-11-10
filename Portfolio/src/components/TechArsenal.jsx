@@ -94,7 +94,16 @@ export default function TechArsenal() {
 
   return (
     <section className="tech-section py-12 md:py-14 px-5 md:px-8" id="skills">
-      <div className="max-w-7xl mx-auto">
+      {/* Delicate Glowing Bridge Line */}
+      <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent mb-10" />
+
+      <motion.div
+        className="max-w-7xl mx-auto"
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Compact Header (No long explanation) */}
         <motion.div
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5"
@@ -209,7 +218,7 @@ export default function TechArsenal() {
             </AnimatePresence>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
