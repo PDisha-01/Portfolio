@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaAward, FaTerminal, FaUsers, FaHeart, FaBasketballBall } from "react-icons/fa";
 import { HiSparkles, HiAcademicCap, HiCamera } from "react-icons/hi2";
-import dishaPortrait from "../assets/disha-portrait.jpg";
 import collegeLogo from "../assets/BCET.jpeg";
 import schoolLogo from "../assets/dps.jpeg";
 import "./about.css";
@@ -10,7 +9,7 @@ export default function About() {
   return (
     <section className="about-section" id="about">
       <div className="about-container">
-        {/* Header */}
+        {/* Header: Behind The Code + About Lines and Skills (Without any card) */}
         <motion.div
           className="about-header-modern"
           initial={{ opacity: 0, y: 25 }}
@@ -25,61 +24,21 @@ export default function About() {
 
           <h2>Behind The Code</h2>
 
-          <p>
-            Final-year Computer Science engineer, multimodal AI builder, and tech
-            community leader turning complex challenges into elegant, impactful solutions.
+          <p className="about-header-bio">
+            I am a final-year Computer Science &amp; Engineering student at Bengal College of Engineering and Technology (MAKAUT, CGPA 7.5) with a deep passion for Full-Stack Systems, Artificial Intelligence, and Computer Vision. Currently gaining industry experience as a Virtual Intern at Infosys Springboard, I love architecting robust backend services, scalable web applications, and leading student engineering communities.
           </p>
+
+          <div className="about-header-tags">
+            <span className="bento-tag-pill">⚡ Multimodal AI</span>
+            <span className="bento-tag-pill">👁️ Computer Vision (CLIP &amp; YOLO)</span>
+            <span className="bento-tag-pill">⚛️ React 19 &amp; Tailwind</span>
+            <span className="bento-tag-pill">☕ Java &amp; Spring Boot</span>
+            <span className="bento-tag-pill">🐍 Python &amp; FastAPI</span>
+            <span className="bento-tag-pill">🗄️ PostgreSQL &amp; MongoDB</span>
+          </div>
         </motion.div>
 
-        {/* Bento Grid Row 1: Story + Terminal */}
-        <div className="about-bento-grid">
-          {/* Card 1: Story & Vision (7 Cols) */}
-          <motion.div
-            className="bento-card bento-story-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div>
-              <div className="bento-story-top">
-                <div className="bento-photo-wrapper">
-                  <img
-                    src={dishaPortrait}
-                    alt="Disha Mallick"
-                    className="bento-profile-img"
-                  />
-                </div>
-
-                <div className="bento-story-info">
-                  <span className="bento-story-tag">B.TECH CSE '26 • FULL-STACK &amp; AI/ML</span>
-                  <h3>Disha Mallick</h3>
-                  <div className="bento-story-degree">
-                    Bengal College of Engineering and Technology (MAKAUT) • CGPA 7.5
-                  </div>
-                </div>
-              </div>
-
-              <p className="bento-story-bio">
-                I am a final-year Computer Science &amp; Engineering student with a deep
-                passion for Artificial Intelligence, Machine Learning, Computer Vision, and
-                Full-Stack Web Development. From building AI-powered applications to leading tech communities, I thrive on solving complex problems and delivering innovative solutions.
-              </p>
-            </div>
-
-            <div className="bento-tags">
-              <span className="bento-tag-pill">⚡ Multimodal AI</span>
-              <span className="bento-tag-pill">👁️ Computer Vision (CLIP &amp; YOLO)</span>
-              <span className="bento-tag-pill">⚛️ React 19 &amp; Tailwind</span>
-              <span className="bento-tag-pill">🐍 Python &amp; FastAPI</span>
-              <span className="bento-tag-pill">☕ Java &amp; Spring Boot</span>
-              <span className="bento-tag-pill">🗄️ PostgreSQL &amp; MongoDB</span>
-            </div>
-          </motion.div>
-
-        </div>
-
-        {/* Bento Grid Row 2: Leadership, Community & Beyond Code */}
+        {/* Bento Grid: Leadership, Community & Beyond Code (3 Equal Cards) */}
         <div className="about-bento-grid">
           {/* Card 3: Robonixx Leadership */}
           <motion.div
